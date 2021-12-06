@@ -1,23 +1,21 @@
 import { Request, Response } from 'express';
 
+import { GameSettings } from '../models/GameSettings';
 import { Sheet } from '../models/Sheet';
 
-export const SheetController = {
+export const sheetController = {
     async store(req:Request,res:Response) {
-        const {playerName, name, age, gender, sheets, skills, attributes} =req.body;
+        const {name} =req.body;
 
-        const sheetsJSON = JSON.stringify(sheets);
-        const skillsJSON = JSON.stringify(skills);
-        const attributesJSON = JSON.stringify(attributes);
+        const gameSettings = await GameSettings.findAll()[0];
+
+        const defaultAttributes = gameSettings.attributes;
+        const defaultSkills = gameSettings.skills;
 
         const sheet = await Sheet.create({
             name:name,
-            playerName: playerName,
-            age: age,
-            gender: gender,
-            sheets: sheetsJSON,
-            skills: skillsJSON,
-            attributes: attributesJSON,
+            skills: defaultSkills,
+            attributes: defaultAttributes,
         }).catch((err)=>{
             return res.status(500).json({error:err});
         });
@@ -25,21 +23,10 @@ export const SheetController = {
         return res.status(200).json({sheet:sheet});
     },
 
-    async getSheetById(req:Request,res:Response) {
-        const {id} =req.body;
-
-        const sheet = await Sheet.findOne({where:{id:id}})
-        .catch((err)=>res.status(500).json({error:err}));
-        
-        if(sheet){
-            return res.status(200).json({sheet:sheet});
-        }
-    },
-
     async deleteById(req:Request,res:Response) {
         const {id} =req.body;
 
-        await Sheet.destroy({where:{id:id}})
+        return await Sheet.destroy({where:{id:id}})
         .then((_)=>res.status(200).send('Sheet deleted'))
         .catch((err)=>res.status(500).json({error:err}));
     }, 
@@ -59,6 +46,23 @@ export const SheetController = {
         });
 
         return res.status(200).json({sheet:sheet});
+    },
+
+    async getSheetById(req:Request,res:Response) {
+        const {id} =req.body;
+
+        const sheet = await Sheet.findOne({where:{id:id}})
+        .catch((err)=>res.status(500).json({error:err}));
+        
+        if(sheet){
+            return res.status(200).json({sheet:sheet});
+        }
+    },
+
+    async getAll(req:Request,res:Response){
+        const sheetList = await Sheet.findAll();
+
+        return res.status(200).json({sheetList: sheetList});
     },
 
     async updateMany(sheetList: any) {

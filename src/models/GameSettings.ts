@@ -17,10 +17,6 @@ export const GameSettings = db.define('gameSettings',{
         type: Sequelize.INTEGER,
         defaultValue: 2,
     },
-    sheets: {
-        type: Sequelize.JSON,
-        allowNull: true, 
-    },
     skills: {
         type: Sequelize.JSON,
         allowNull: true,

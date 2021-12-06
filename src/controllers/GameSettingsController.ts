@@ -1,29 +1,34 @@
 import { Request, Response } from 'express';
 
 import { GameSettings } from '../models/GameSettings';
-import { SheetController } from './SheetController';
+import { sheetController } from './SheetController';
 
 export const gameSettingsController = {
-    async store(req:Request,res:Response) {
+    async save(req:Request,res:Response) {
         const {diceScreenTime, diceCooldown, sheets, skills, attributes} =req.body;
 
-        const sheetsJSON = JSON.stringify(sheets);
         const skillsJSON = JSON.stringify(skills);
         const attributesJSON = JSON.stringify(attributes);
 
-        const gameSettings = await GameSettings.create({
-            diceScreenTime:diceScreenTime,
-            diceCooldown: diceCooldown,
-            sheets: sheetsJSON,
-            skills: skillsJSON,
-            attributes: attributesJSON,
-        }).catch((err)=>{
-            return res.status(500).json({error:err});
-        });
+        const gameSettingsFound = await GameSettings.findOne({where:{id:1}});
 
-        await SheetController.updateMany(sheets);
+        if(gameSettingsFound){
+            const gameSettings = await GameSettings.create({
+                diceScreenTime:diceScreenTime,
+                diceCooldown: diceCooldown,
+                skills: skillsJSON,
+                attributes: attributesJSON,
+            }).catch((err)=>{
+                return res.status(500).json({error:err});
+            });
+            await sheetController.updateMany(sheets);
 
-        return res.status(200).json({gameSettings:gameSettings});
+            return res.status(200).json({gameSettings:gameSettings});
+        }
+        else {
+            return res.status(500);
+        }
+
     },
     async getGameSettings(req:Request,res:Response) {
         const gameSettings = await GameSettings.findAll();
