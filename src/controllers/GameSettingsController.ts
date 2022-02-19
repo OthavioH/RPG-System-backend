@@ -37,8 +37,11 @@ export const gameSettingsController = {
         }
     },
     async getGameSettings(req:Request,res:Response) {
-        const gameSettings = await GameSettings.findAll()[0];
-        if(gameSettings == undefined) {
+        let gameSettings
+        gameSettings = await GameSettings.findAll().catch((err)=>{
+            gameSettings = gameSettingsController.createGameSettings();
+        });
+        if(gameSettings != undefined) {
             return res.status(200).json({gameSettings:gameSettings});
         }
         else {
