@@ -12,8 +12,8 @@ export const gameSettingsController = {
     async saveSkillsAndAttributes(req:Request,res:Response) {
         const {skills, attributes} = <any>req.body;
 
-        const skillsJSON = JSON.stringify(skills);
-        const  attributesJSON = JSON.stringify(attributes);
+        const skillsJSON = JSON.parse(JSON.stringify(skills));
+        const  attributesJSON = JSON.parse(JSON.stringify(attributes));
 
         const gameSettings:any = await GameSettings.update({
             skills: skillsJSON,
