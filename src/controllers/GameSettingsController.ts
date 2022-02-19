@@ -21,7 +21,7 @@ export const gameSettingsController = {
         },{where:{id:1}});
         
 
-        return res.status(200).json(gameSettings.gameSettings);
+        return res.status(200).json(gameSettings);
     },
     async saveTimers(req:Request,res:Response){
         const {diceCooldown, diceScreenTime} = <any>req.body;
@@ -31,7 +31,7 @@ export const gameSettingsController = {
             diceScreenTime: diceScreenTime,
         },{where:{id:1}});
 
-        return res.status(200).json(gameSettings.gameSettings);
+        return res.status(200).json(gameSettings);
     },
     async getGameSettings(req:Request,res:Response) {
         let gameSettings;
