@@ -37,17 +37,12 @@ export const gameSettingsController = {
         }
     },
     async getGameSettings(req:Request,res:Response) {
+        await gameSettingsController.createGameSettings();
         const gameSettings = await GameSettings.findAll()[0];
-        console.log("a");
         if(gameSettings) {
             console.log("b");
             return res.status(200).json({gameSettings:gameSettings});
         }
-        else {
-            console.log("c");
-            const newGameSettings = gameSettingsController.createGameSettings();
-            console.log(newGameSettings);
-            return res.status(200).json({gameSettings:newGameSettings});
-        }
+
     },
 };
