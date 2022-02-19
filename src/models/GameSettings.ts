@@ -19,4 +19,7 @@ export const GameSettings = db.define('gameSettings',{
         type: DataTypes.JSON,
         allowNull: true,
     }
+},
+{
+    tableName: 'gameSettings'
 });
