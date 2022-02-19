@@ -15,29 +15,30 @@ export const gameSettingsController = {
         const skillsJSON = JSON.stringify(skills);
         const  attributesJSON = JSON.stringify(attributes);
 
-        const gameSettings = await (await GameSettings.findByPk(1)).update(1,{
+        const gameSettings:any = await GameSettings.update({
             skills: skillsJSON,
             attributes: attributesJSON,
-        });
+        },{where:{id:1}});
+        
 
-        return res.status(200).json({gameSettings:gameSettings});
+        return res.status(200).json(gameSettings.gameSettings);
     },
     async saveTimers(req:Request,res:Response){
         const {diceCooldown, diceScreenTime} = <any>req.body;
 
-        const gameSettings = await (await GameSettings.findByPk(1)).update(1,{
-            diceScreenTime:diceScreenTime,
-            diceCooldown:diceCooldown,
-        });
+        const gameSettings:any = await GameSettings.update({
+            diceCooldown: diceCooldown,
+            diceScreenTime: diceScreenTime,
+        },{where:{id:1}});
 
-        return res.status(200).json({gameSettings:gameSettings});
+        return res.status(200).json(gameSettings.gameSettings);
     },
     async getGameSettings(req:Request,res:Response) {
         let gameSettings;
         gameSettings = await GameSettings.findByPk(1);
         
         if(gameSettings) {
-            return res.status(200).json({gameSettings:gameSettings});
+            return res.status(200).json(gameSettings);
         }
         return res.status(500);
     },
