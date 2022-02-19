@@ -37,12 +37,11 @@ export const gameSettingsController = {
         }
     },
     async getGameSettings(req:Request,res:Response) {
-        let gameSettings
-        gameSettings = await GameSettings.findAll().catch((err)=>{
-            gameSettings = gameSettingsController.createGameSettings();
-        })[0];
-        if(gameSettings != undefined) {
-            console.log(gameSettings.diceScreenTime)
+        let gameSettings;
+        gameSettings = await GameSettings.findByPk(1);
+        
+        if(gameSettings) {
+            console.log(gameSettings.diceScreenTime);
             return res.status(200).json({gameSettings:gameSettings});
         }
         return res.status(500);
