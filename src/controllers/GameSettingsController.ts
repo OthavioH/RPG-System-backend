@@ -38,8 +38,7 @@ export const gameSettingsController = {
     },
     async getGameSettings(req:Request,res:Response) {
         const gameSettings = await GameSettings.findAll()[0];
-        console.log(gameSettings.diceCooldown);
-        if(gameSettings) {
+        if(gameSettings == undefined) {
             return res.status(200).json({gameSettings:gameSettings});
         }
         else {
