@@ -40,14 +40,11 @@ export const gameSettingsController = {
         let gameSettings
         gameSettings = await GameSettings.findAll().catch((err)=>{
             gameSettings = gameSettingsController.createGameSettings();
-        });
+        })[0];
         if(gameSettings != undefined) {
+            console.log(gameSettings.diceScreenTime)
             return res.status(200).json({gameSettings:gameSettings});
         }
-        else {
-            const newGameSettings = gameSettingsController.createGameSettings();
-            console.log(newGameSettings);
-            return res.status(200).json({gameSettings:newGameSettings});
-        }
+        return res.status(500);
     },
 };
