@@ -38,7 +38,7 @@ export const gameSettingsController = {
     },
     async getGameSettings(req:Request,res:Response) {
         const gameSettings = await GameSettings.findAll()[0];
-        if(gameSettings) {
+        if(gameSettings != null || gameSettings != {}) {
             return res.status(200).json({gameSettings:gameSettings});
         }
         else {
