@@ -4,7 +4,7 @@ import { GameSettings } from '../models/GameSettings';
 
 export const gameSettingsController = {
     async createGameSettings() {
-        const gameSettings = await GameSettings.create().catch((err)=>{
+        const gameSettings = await GameSettings.create({id:1}).catch((err)=>{
             console.error(err);
         });
         return gameSettings;
