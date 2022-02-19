@@ -9,39 +9,36 @@ export const gameSettingsController = {
         });
         return gameSettings;
     },
-    async save(req:Request,res:Response) {
-        const {diceScreenTime, diceCooldown, skills, attributes} = <any>req.body;
+    async saveSkillsAndAttributes(req:Request,res:Response) {
+        const {skills, attributes} = <any>req.body;
 
-        let skillsJSON;
-        let attributesJSON;
-        if (skills != null) skillsJSON = JSON.stringify(skills);
-        
-        if (attributes != null) attributesJSON = JSON.stringify(attributes);
+        const skillsJSON = JSON.stringify(skills);
+        const  attributesJSON = JSON.stringify(attributes);
 
-        const gameSettingsFound = await GameSettings.findAll()[0];
+        const gameSettings = await GameSettings.upsert({
+            id: 1,
+            attributes:attributesJSON,
+            skills:skillsJSON,
+        });
 
-        if(gameSettingsFound){
-            const gameSettings = await GameSettings.create({
-                diceScreenTime:diceScreenTime,
-                diceCooldown: diceCooldown,
-                skills: skillsJSON,
-                attributes: attributesJSON,
-            }).catch((err)=>{
-                return res.status(500).json({error:err});
-            });
+        return res.status(200).json({gameSettings:gameSettings});
+    },
+    async saveTimers(req:Request,res:Response){
+        const {diceCooldown, diceScreenTime} = <any>req.body;
 
-            return res.status(200).json({gameSettings:gameSettings});
-        }
-        else {
-            return res.status(500);
-        }
+        const gameSettings = await GameSettings.upsert({
+            id: 1,
+            diceScreenTime:diceScreenTime,
+            diceCooldown:diceCooldown,
+        });
+
+        return res.status(200).json({gameSettings:gameSettings});
     },
     async getGameSettings(req:Request,res:Response) {
         let gameSettings;
         gameSettings = await GameSettings.findByPk(1);
         
         if(gameSettings) {
-            console.log(gameSettings.diceScreenTime);
             return res.status(200).json({gameSettings:gameSettings});
         }
         return res.status(500);

@@ -10,7 +10,8 @@ routes.get('/', (req,res)=>{
 });
 
 routes.get('/gamesettings', gameSettingsController.getGameSettings);
-routes.get('/gamesettings/save', gameSettingsController.save);
+routes.post('/gamesettings/save/properties', gameSettingsController.saveSkillsAndAttributes);
+routes.post('/gamesettings/save/timers', gameSettingsController.saveTimers);
 
 routes.get('/sheets', sheetController.getAll);
 routes.get('/sheets/:id', sheetController.getSheetById);
