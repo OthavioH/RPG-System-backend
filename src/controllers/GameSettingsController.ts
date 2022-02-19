@@ -15,10 +15,9 @@ export const gameSettingsController = {
         const skillsJSON = JSON.stringify(skills);
         const  attributesJSON = JSON.stringify(attributes);
 
-        const gameSettings = await GameSettings.upsert({
-            id: 1,
-            attributes:attributesJSON,
-            skills:skillsJSON,
+        const gameSettings = await (await GameSettings.findByPk(1)).update(1,{
+            skills: skillsJSON,
+            attributes: attributesJSON,
         });
 
         return res.status(200).json({gameSettings:gameSettings});
@@ -26,8 +25,7 @@ export const gameSettingsController = {
     async saveTimers(req:Request,res:Response){
         const {diceCooldown, diceScreenTime} = <any>req.body;
 
-        const gameSettings = await GameSettings.upsert({
-            id: 1,
+        const gameSettings = await (await GameSettings.findByPk(1)).update(1,{
             diceScreenTime:diceScreenTime,
             diceCooldown:diceCooldown,
         });
