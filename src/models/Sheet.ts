@@ -25,6 +25,14 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.STRING,
         defaultValue: '',
     },
+    hp: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+    },
+    occultismPoints:{
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+    },
     skills: {
         type: Sequelize.JSON,
         allowNull: true,

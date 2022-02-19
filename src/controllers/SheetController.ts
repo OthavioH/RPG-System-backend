@@ -32,13 +32,15 @@ export const sheetController = {
     }, 
 
     async updateOne(req:Request,res:Response) {
-        const {id,playerName, name, age, gender, skills, attributes} =req.body;
+        const {id,playerName, name, age, gender, hp, occultismPoints, skills, attributes} =req.body;
 
         const sheet = await Sheet.update({
             name:name,
             playerName: playerName,
             age: age,
             gender: gender,
+            hp: hp,
+            occultismPoints: occultismPoints,
             skills: JSON.stringify(skills),
             attributes: JSON.stringify(attributes),
         }, {where:{id:id}}).catch((err)=>{
@@ -72,6 +74,8 @@ export const sheetController = {
             playerName: sheet.playerName,
             age: sheet.age,
             gender: sheet.gender,
+            hp: sheet.hp,
+            occultismPoints: sheet.occultismPoints,
             sheets: JSON.stringify(sheet.sheets),
             skills: JSON.stringify(sheet.skills),
             attributes: JSON.stringify(sheet.attributes)

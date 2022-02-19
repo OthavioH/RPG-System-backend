@@ -1,16 +1,24 @@
 import { Request, Response } from 'express';
 
 import { GameSettings } from '../models/GameSettings';
-import { sheetController } from './SheetController';
 
 export const gameSettingsController = {
+    async createGameSettings() {
+        const gameSettings = await GameSettings.create().catch((err)=>{
+            console.error(err);
+        });
+        return gameSettings;
+    },
     async save(req:Request,res:Response) {
-        const {diceScreenTime, diceCooldown, sheets, skills, attributes} =req.body;
+        const {diceScreenTime, diceCooldown, skills, attributes} = <any>req.body;
 
-        const skillsJSON = JSON.stringify(skills);
-        const attributesJSON = JSON.stringify(attributes);
+        let skillsJSON;
+        let attributesJSON;
+        if (skills != null) skillsJSON = JSON.stringify(skills);
+        
+        if (attributes != null) attributesJSON = JSON.stringify(attributes);
 
-        const gameSettingsFound = await GameSettings.findOne({where:{id:1}});
+        const gameSettingsFound = await GameSettings.findAll()[0];
 
         if(gameSettingsFound){
             const gameSettings = await GameSettings.create({
@@ -21,19 +29,25 @@ export const gameSettingsController = {
             }).catch((err)=>{
                 return res.status(500).json({error:err});
             });
-            await sheetController.updateMany(sheets);
 
             return res.status(200).json({gameSettings:gameSettings});
         }
         else {
             return res.status(500);
         }
-
     },
     async getGameSettings(req:Request,res:Response) {
-        const gameSettings = await GameSettings.findAll();
-        if(gameSettings){
-            return res.status(200).json({gameSettings:gameSettings[0]});
+        const gameSettings = await GameSettings.findAll()[0];
+        console.log("a");
+        if(gameSettings) {
+            console.log("b");
+            return res.status(200).json({gameSettings:gameSettings});
+        }
+        else {
+            console.log("c");
+            const newGameSettings = gameSettingsController.createGameSettings();
+            console.log(newGameSettings);
+            return res.status(200).json({gameSettings:newGameSettings});
         }
     },
 };

@@ -9,8 +9,8 @@ routes.get('/', (req,res)=>{
     return res.send('Olá');
 });
 
-routes.get('/dashboard', gameSettingsController.getGameSettings);
-routes.get('/dashboard/save', gameSettingsController.save);
+routes.get('/gamesettings', gameSettingsController.getGameSettings);
+routes.get('/gamesettings/save', gameSettingsController.save);
 
 routes.get('/sheets', sheetController.getAll);
 routes.get('/sheets/:id', sheetController.getSheetById);
