@@ -4,18 +4,11 @@ import { GameSettings } from '../models/GameSettings';
 import { Sheet } from '../models/Sheet';
 
 export const sheetController = {
-    async store(req:Request,res:Response) {
+    async createSheet(req:Request,res:Response) {
         const {name} =req.body;
-
-        const gameSettings = await GameSettings.findAll()[0];
-
-        const defaultAttributes = gameSettings.attributes;
-        const defaultSkills = gameSettings.skills;
 
         const sheet = await Sheet.create({
             name:name,
-            skills: defaultSkills,
-            attributes: defaultAttributes,
         }).catch((err)=>{
             return res.status(500).json({error:err});
         });
@@ -30,7 +23,21 @@ export const sheetController = {
         .then((_)=>res.status(200).send('Sheet deleted'))
         .catch((err)=>res.status(500).json({error:err}));
     }, 
+    async updateHpAndSanity(req:Request, res:Response) {
+        const {id, hp, maxHp, sanity, maxSanity} =req.body;
 
+        const sheet = await Sheet.findByPk(id);
+        if (!sheet) {
+            return res.status(500).send('Sheet not found');
+        }
+        await sheet.update(id,{
+            hp:hp,
+            maxHp:maxHp,
+            sanity:sanity,
+            maxSanity:maxSanity,
+        });
+        return res.status(200);
+    },
     async updateOne(req:Request,res:Response) {
         const {id,playerName, name, age, gender, hp, occultismPoints, skills, attributes} =req.body;
 

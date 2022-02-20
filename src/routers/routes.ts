@@ -16,5 +16,6 @@ routes.post('/gamesettings/save/timers', gameSettingsController.saveTimers);
 
 routes.get('/sheets', sheetController.getAll);
 routes.get('/sheets/:id', sheetController.getSheetById);
+routes.get('/sheets/:id/status/update', sheetController.updateHpAndSanity);
 routes.get('/sheets/:id/update', sheetController.updateOne);
 export default routes;

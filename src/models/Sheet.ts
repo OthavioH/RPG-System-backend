@@ -29,7 +29,15 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    occultismPoints:{
+    maxHp: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+    },
+    sanity:{
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+    },
+    maxSanity: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
