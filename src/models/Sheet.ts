@@ -45,7 +45,7 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.JSON,
         allowNull: true,
     },
-    attribute: {
+    attributes: {
         type: Sequelize.JSON,
         allowNull: true,
     }
