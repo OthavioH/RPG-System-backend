@@ -45,7 +45,7 @@ export const sheetController = {
     },
     async updateOne(req:Request,res:Response) {
         const {id} = req.params;
-        const {playerName, name, age, gender, hp, occultismPoints, skills, attributes} =req.body;
+        const {playerName, name, age, gender, hp, maxHp, sanity, maxSanity, skills, attributes} =req.body;
 
         const sheet = await Sheet.update({
             name:name,
@@ -53,9 +53,11 @@ export const sheetController = {
             age: age,
             gender: gender,
             hp: hp,
-            occultismPoints: occultismPoints,
-            skills: JSON.stringify(skills),
-            attributes: JSON.stringify(attributes),
+            maxHp: maxHp,
+            sanity: sanity,
+            maxSanity: maxSanity,
+            skills: JSON.parse(JSON.stringify(skills)),
+            attributes: JSON.parse(JSON.stringify(attributes)),
         }, {where:{id:id}}).catch((err)=>{
             return res.status(500).json({error:err});
         });
@@ -88,19 +90,21 @@ export const sheetController = {
             age: sheet.age,
             gender: sheet.gender,
             hp: sheet.hp,
-            occultismPoints: sheet.occultismPoints,
-            sheets: JSON.stringify(sheet.sheets),
-            skills: JSON.stringify(sheet.skills),
-            attributes: JSON.stringify(sheet.attributes)
+            maxHp: sheet.maxHp,
+            sanity: sheet.sanity,
+            maxSanity: sheet.maxSanity,
+            sheets: JSON.parse(JSON.stringify(sheet.sheets)),
+            skills: JSON.parse(JSON.stringify(sheet.skills)),
+            attributes: JSON.parse(JSON.stringify(sheet.attributes)),
         },{where:{id:sheet.id}})
         : await Sheet.create({
             name: sheet.name,
             playerName: sheet.playerName,
             age: sheet.age,
             gender: sheet.gender,
-            sheets: JSON.stringify(sheet.sheets),
-            skills: JSON.stringify(sheet.skills),
-            attributes: JSON.stringify(sheet.attributes),
+            sheets: JSON.parse(JSON.stringify(sheet.sheets)),
+            skills: JSON.parse(JSON.stringify(sheet.skills)),
+            attributes: JSON.parse(JSON.stringify(sheet.attributes)),
         }));
     }
 };
