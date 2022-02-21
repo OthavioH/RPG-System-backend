@@ -15,10 +15,12 @@ export const gameSettingsController = {
         const skillsJSON = skills != null ? JSON.parse(JSON.stringify(skills)) : skills;
         const  attributesJSON = attributes != null ? JSON.parse(JSON.stringify(attributes)) : attributes;
 
-        const gameSettings:any = await GameSettings.update({
+        await GameSettings.update({
             skills: skillsJSON,
             attributes: attributesJSON,
         },{where:{id:1}});
+
+        const gameSettings = await GameSettings.findByPk(1);
         
 
         return res.status(200).json(gameSettings);
