@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { createNoSubstitutionTemplateLiteral } from 'typescript';
 
 import { GameSettings } from '../models/GameSettings';
 import { Sheet } from '../models/Sheet';
@@ -6,6 +7,9 @@ import { Sheet } from '../models/Sheet';
 export const sheetController = {
     async createSheet(req:Request,res:Response) {
         const {name} =req.body;
+
+        console.log(name);
+        console.log(req.body);
 
         const sheet = await Sheet.create({
             name:name,
