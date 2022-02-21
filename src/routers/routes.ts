@@ -15,7 +15,7 @@ routes.post('/gamesettings/save/timers', gameSettingsController.saveTimers);
 routes.get('/gamesettings', gameSettingsController.getGameSettings);
 
 routes.post('/sheets/create', sheetController.createSheet);
-routes.post('/sheets/:id/status/update', sheetController.updateHpAndSanity);
+routes.put('/sheets/:id/status/update', sheetController.updateHpAndSanity);
 routes.put('/sheets/:id/update', sheetController.updateOne);
 routes.get('/sheets/:id', sheetController.getSheetById);
 routes.get('/sheets', sheetController.getAll);
