@@ -47,6 +47,9 @@ export const sheetController = {
         const {id} = req.params;
         const {playerName, name, age, gender, hp, maxHp, sanity, maxSanity, skills, attributes} =req.body;
 
+        console.log(req.body);
+        console.log(req.params);
+
         const sheet = await Sheet.update({
             name:name,
             playerName: playerName,
