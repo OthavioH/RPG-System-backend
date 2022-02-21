@@ -6,7 +6,7 @@ import { Sheet } from '../models/Sheet';
 
 export const sheetController = {
     async createSheet(req:Request,res:Response) {
-        const {name} =req.body;
+        const {name} = <any>req.body;
 
         console.log(name);
         console.log(req.body);
@@ -28,7 +28,8 @@ export const sheetController = {
         .catch((err)=>res.status(500).json({error:err}));
     }, 
     async updateHpAndSanity(req:Request, res:Response) {
-        const {id, hp, maxHp, sanity, maxSanity} =req.body;
+        const {id} = req.params;
+        const {hp, maxHp, sanity, maxSanity} =req.body;
 
         const sheet = await Sheet.findByPk(id);
         if (!sheet) {
@@ -43,7 +44,8 @@ export const sheetController = {
         return res.status(200);
     },
     async updateOne(req:Request,res:Response) {
-        const {id,playerName, name, age, gender, hp, occultismPoints, skills, attributes} =req.body;
+        const {id} = req.params;
+        const {playerName, name, age, gender, hp, occultismPoints, skills, attributes} =req.body;
 
         const sheet = await Sheet.update({
             name:name,
@@ -62,7 +64,7 @@ export const sheetController = {
     },
 
     async getSheetById(req:Request,res:Response) {
-        const {id} =req.body;
+        const {id} =req.params;
 
         const sheet = await Sheet.findOne({where:{id:id}})
         .catch((err)=>res.status(500).json({error:err}));
