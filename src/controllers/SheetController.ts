@@ -36,15 +36,13 @@ export const sheetController = {
         console.log(hp);
         console.log(sanity);
 
-        const sheet = await Sheet.findByPk(id);
-        if (!sheet) {
-            return res.status(500).send('Sheet not found');
-        }
-        await sheet.update(id,{
+        const sheet = await Sheet.update({
             hp:hp,
             maxHp:maxHp,
             sanity:sanity,
             maxSanity:maxSanity,
+        },{where:{id:id}}).catch((err)=>{
+            return res.status(500).json({error:err});
         });
         return res.status(200);
     },
