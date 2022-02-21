@@ -29,7 +29,12 @@ export const sheetController = {
     }, 
     async updateHpAndSanity(req:Request, res:Response) {
         const {id} = req.params;
-        const {hp, maxHp, sanity, maxSanity} =req.body;
+        const {character} =req.body;
+
+        const {hp, maxHp, sanity, maxSanity} = character;
+
+        console.log(hp);
+        console.log(sanity);
 
         const sheet = await Sheet.findByPk(id);
         if (!sheet) {
