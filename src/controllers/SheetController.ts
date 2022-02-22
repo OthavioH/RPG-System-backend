@@ -24,7 +24,7 @@ export const sheetController = {
         await Sheet.destroy({where:{id:id}})
         .catch((err)=>error = err);
 
-        if (error) {
+        if (error != null) {
             res.status(500).json({error:error});
         }
         else {
