@@ -17,10 +17,17 @@ export const sheetController = {
 
     async deleteById(req:Request,res:Response) {
         const {id} =req.params;
+        
+        let error = null;
+        await Sheet.destroy({where:{id:id}})
+        .catch((err)=>error = err);
 
-        return await Sheet.destroy({where:{id:id}})
-        .then((_)=>res.status(200).send('Sheet deleted'))
-        .catch((err)=>res.status(500).json({error:err}));
+        if (error) {
+            res.status(500).json({error:error});
+        }
+        else {
+            res.status(200).send('Sheet deleted');
+        }
     }, 
     async updateHpAndSanity(req:Request, res:Response) {
         const {id} = req.params;
