@@ -28,10 +28,12 @@ export const gameSettingsController = {
     async saveTimers(req:Request,res:Response){
         const {diceCooldown, diceScreenTime} = <any>req.body;
 
-        const gameSettings:any = await GameSettings.update({
+        await GameSettings.update({
             diceCooldown: diceCooldown,
             diceScreenTime: diceScreenTime,
         },{where:{id:1}});
+
+        const gameSettings = GameSettings.findByPk(1);
 
         return res.status(200).json(gameSettings);
     },
