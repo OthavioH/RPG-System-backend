@@ -17,7 +17,7 @@ routes.get('/gamesettings', gameSettingsController.getGameSettings);
 routes.post('/sheets/create', sheetController.createSheet);
 routes.put('/sheets/:id/status/update', sheetController.updateHpAndSanity);
 routes.put('/sheets/:id/update', sheetController.updateOne);
-routes.delete('/sheets/:id/delete', sheetController.deleteById);
+routes.put('/sheets/:id/delete', sheetController.deleteById);
 routes.get('/sheets/:id', sheetController.getSheetById);
 routes.get('/sheets', sheetController.getAll);
 export default routes;

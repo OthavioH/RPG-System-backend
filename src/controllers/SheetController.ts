@@ -28,7 +28,7 @@ export const sheetController = {
             res.status(500).json({error:error});
         }
         else {
-            res.status(200).send('Sheet deleted');
+            res.status(200).json({message:'Sheet deleted'});
         }
     }, 
     async updateHpAndSanity(req:Request, res:Response) {
