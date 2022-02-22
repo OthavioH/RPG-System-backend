@@ -33,7 +33,7 @@ export const gameSettingsController = {
             diceScreenTime: diceScreenTime,
         },{where:{id:1}});
 
-        const gameSettings = GameSettings.findByPk(1);
+        const gameSettings = await GameSettings.findByPk(1);
 
         return res.status(200).json(gameSettings);
     },
