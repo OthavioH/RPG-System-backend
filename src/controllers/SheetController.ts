@@ -1,7 +1,5 @@
 import { Request, Response } from 'express';
-import { createNoSubstitutionTemplateLiteral } from 'typescript';
 
-import { GameSettings } from '../models/GameSettings';
 import { Sheet } from '../models/Sheet';
 
 export const sheetController = {
@@ -18,7 +16,7 @@ export const sheetController = {
     },
 
     async deleteById(req:Request,res:Response) {
-        const {id} =req.body;
+        const {id} =req.params;
 
         return await Sheet.destroy({where:{id:id}})
         .then((_)=>res.status(200).send('Sheet deleted'))
