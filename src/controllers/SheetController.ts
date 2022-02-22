@@ -8,9 +8,6 @@ export const sheetController = {
     async createSheet(req:Request,res:Response) {
         const {name} = <any>req.body;
 
-        console.log(name);
-        console.log(req.body);
-
         const sheet = await Sheet.create({
             name:name,
         }).catch((err)=>{
@@ -33,10 +30,7 @@ export const sheetController = {
 
         const {hp, maxHp, sanity, maxSanity} = character;
 
-        console.log(hp);
-        console.log(sanity);
-
-        const sheet = await Sheet.update({
+        await Sheet.update({
             hp:hp,
             maxHp:maxHp,
             sanity:sanity,
@@ -48,7 +42,7 @@ export const sheetController = {
     },
     async updateOne(req:Request,res:Response) {
         const {id} = req.params;
-        const {playerName, name, age, gender, hp, maxHp, sanity, maxSanity, skills, attributes} =req.body;
+        const {playerName, name, age, gender, hp, maxHp, sanity, maxSanity, skills, attributes, notes} =req.body;
 
         console.log(req.body);
         console.log(req.params);
@@ -64,6 +58,7 @@ export const sheetController = {
             maxSanity: maxSanity,
             skills: JSON.parse(JSON.stringify(skills)),
             attributes: JSON.parse(JSON.stringify(attributes)),
+            notes: notes,
         }, {where:{id:id}}).catch((err)=>{
             return res.status(500).json({error:err});
         });
@@ -102,6 +97,7 @@ export const sheetController = {
             sheets: JSON.parse(JSON.stringify(sheet.sheets)),
             skills: JSON.parse(JSON.stringify(sheet.skills)),
             attributes: JSON.parse(JSON.stringify(sheet.attributes)),
+            notes:sheet.notes,
         },{where:{id:sheet.id}})
         : await Sheet.create({
             name: sheet.name,
@@ -111,6 +107,7 @@ export const sheetController = {
             sheets: JSON.parse(JSON.stringify(sheet.sheets)),
             skills: JSON.parse(JSON.stringify(sheet.skills)),
             attributes: JSON.parse(JSON.stringify(sheet.attributes)),
+            notes:sheet.notes,
         }));
     }
 };
