@@ -10,14 +10,17 @@ routes.get('/', (req,res)=>{
 });
 
 routes.get('/gamesettings/create', gameSettingsController.createGameSettings);
-routes.post('/gamesettings/save/properties', gameSettingsController.saveGameProperties);
-routes.post('/gamesettings/save/timers', gameSettingsController.saveTimers);
 routes.get('/gamesettings', gameSettingsController.getGameSettings);
 
+routes.post('/gamesettings/save/properties', gameSettingsController.saveGameProperties);
+routes.post('/gamesettings/save/timers', gameSettingsController.saveTimers);
+
 routes.post('/sheets/create', sheetController.createSheet);
+
 routes.put('/sheets/:id/status/update', sheetController.updateHpAndSanity);
 routes.put('/sheets/:id/update', sheetController.updateOne);
 routes.put('/sheets/:id/delete', sheetController.deleteById);
+
 routes.get('/sheets/:id', sheetController.getSheetById);
 routes.get('/sheets', sheetController.getAll);
 export default routes;

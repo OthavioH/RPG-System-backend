@@ -74,7 +74,6 @@ export const sheetController = {
 
         return res.status(200).json({sheet:sheet});
     },
-
     async getSheetById(req:Request,res:Response) {
         const {id} =req.params;
 
