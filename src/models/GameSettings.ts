@@ -1,28 +1,28 @@
-import { DataTypes } from 'sequelize';
+import Sequelize from 'sequelize';
 
 import { db } from '../config/db';
 
 export const GameSettings = db.define('gameSettings',{
     id:{
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
     },
     diceScreenTime: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         defaultValue: 5,
     },
     diceCooldown: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         defaultValue: 2,
     },
     skills: {
-        type: DataTypes.JSON,
+        type: Sequelize.JSON,
         allowNull: true,
     },
     attributes: {
-        type: DataTypes.JSON,
+        type: Sequelize.JSON,
         allowNull: true,
-    }
+    },
 });

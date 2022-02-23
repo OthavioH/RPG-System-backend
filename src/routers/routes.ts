@@ -10,7 +10,7 @@ routes.get('/', (req,res)=>{
 });
 
 routes.post('/gamesettings/create', gameSettingsController.createGameSettings);
-routes.post('/gamesettings/save/properties', gameSettingsController.saveSkillsAndAttributes);
+routes.post('/gamesettings/save/properties', gameSettingsController.saveGameProperties);
 routes.post('/gamesettings/save/timers', gameSettingsController.saveTimers);
 routes.get('/gamesettings', gameSettingsController.getGameSettings);
 

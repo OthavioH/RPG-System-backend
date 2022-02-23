@@ -49,6 +49,14 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.JSON,
         allowNull: true,
     },
+    weapons: {
+        type: Sequelize.JSON,
+        allowNull: true,
+    },
+    equipments: {
+        type: Sequelize.JSON,
+        allowNull: true,
+    },
     notes:{
         type: Sequelize.STRING,
         defaultValue: '',

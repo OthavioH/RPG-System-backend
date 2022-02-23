@@ -9,8 +9,8 @@ export const gameSettingsController = {
         });
         return gameSettings;
     },
-    async saveSkillsAndAttributes(req:Request,res:Response) {
-        const {skills, attributes} = <any>req.body;
+    async saveGameProperties(req:Request,res:Response) {
+        const {skills, attributes,} = <any>req.body;
 
         const skillsJSON = skills != null ? JSON.parse(JSON.stringify(skills)) : skills;
         const  attributesJSON = attributes != null ? JSON.parse(JSON.stringify(attributes)) : attributes;

@@ -49,7 +49,7 @@ export const sheetController = {
     },
     async updateOne(req:Request,res:Response) {
         const {id} = req.params;
-        const {playerName, name, age, gender, hp, maxHp, sanity, maxSanity, skills, attributes, notes} =req.body;
+        const {playerName, name, age, gender, hp, maxHp, sanity, maxSanity, skills, attributes, equipments, weapons, notes} =req.body;
 
         console.log(req.body);
         console.log(req.params);
@@ -65,6 +65,8 @@ export const sheetController = {
             maxSanity: maxSanity,
             skills: JSON.parse(JSON.stringify(skills)),
             attributes: JSON.parse(JSON.stringify(attributes)),
+            equipments:JSON.parse(JSON.stringify(equipments)),
+            weapons:JSON.parse(JSON.stringify(weapons)),
             notes: notes,
         }, {where:{id:id}}).catch((err)=>{
             return res.status(500).json({error:err});
@@ -89,32 +91,4 @@ export const sheetController = {
 
         return res.status(200).json({sheetList: sheetList});
     },
-
-    async updateMany(sheetList: any) {
-        await sheetList.map(async(sheet)=> await Sheet.findOne({where:{id:sheet.id}}) != null 
-        ? await Sheet.update({
-            name: sheet.name,
-            playerName: sheet.playerName,
-            age: sheet.age,
-            gender: sheet.gender,
-            hp: sheet.hp,
-            maxHp: sheet.maxHp,
-            sanity: sheet.sanity,
-            maxSanity: sheet.maxSanity,
-            sheets: JSON.parse(JSON.stringify(sheet.sheets)),
-            skills: JSON.parse(JSON.stringify(sheet.skills)),
-            attributes: JSON.parse(JSON.stringify(sheet.attributes)),
-            notes:sheet.notes,
-        },{where:{id:sheet.id}})
-        : await Sheet.create({
-            name: sheet.name,
-            playerName: sheet.playerName,
-            age: sheet.age,
-            gender: sheet.gender,
-            sheets: JSON.parse(JSON.stringify(sheet.sheets)),
-            skills: JSON.parse(JSON.stringify(sheet.skills)),
-            attributes: JSON.parse(JSON.stringify(sheet.attributes)),
-            notes:sheet.notes,
-        }));
-    }
 };
