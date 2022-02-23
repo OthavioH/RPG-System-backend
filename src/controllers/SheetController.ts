@@ -49,7 +49,7 @@ export const sheetController = {
     },
     async updateOne(req:Request,res:Response) {
         const {id} = req.params;
-        const {playerName, name, age, gender, hp, maxHp, sanity, maxSanity, skills, attributes, equipments, weapons, notes} =req.body;
+        const {playerName, name, age, gender, hp, maxHp, sanity, maxSanity, skills, attributes, inventory, weapons, notes} =req.body;
 
         console.log(req.body);
         console.log(req.params);
@@ -65,7 +65,7 @@ export const sheetController = {
             maxSanity: maxSanity,
             skills: JSON.parse(JSON.stringify(skills)),
             attributes: JSON.parse(JSON.stringify(attributes)),
-            equipments:JSON.parse(JSON.stringify(equipments)),
+            inventory:JSON.parse(JSON.stringify(inventory)),
             weapons:JSON.parse(JSON.stringify(weapons)),
             notes: notes,
         }, {where:{id:id}}).catch((err)=>{
