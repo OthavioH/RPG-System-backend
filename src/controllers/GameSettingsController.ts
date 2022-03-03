@@ -16,6 +16,8 @@ export const gameSettingsController = {
         const attributesJSON = attributes != null ? JSON.parse(JSON.stringify(attributes)) : attributes;
         const abilitiesJSON = abilities != null ? JSON.parse(JSON.stringify(abilities)) : abilities;
 
+        console.log(skills);
+
         await GameSettings.update({
             skills: skillsJSON,
             attributes: attributesJSON,
