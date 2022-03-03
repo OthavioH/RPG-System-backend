@@ -25,6 +25,22 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.STRING,
         defaultValue: '',
     },
+    nex: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+    },
+    rank:{
+        type: Sequelize.STRING,
+        defaultValue: '',
+    },
+    class:{
+        type: Sequelize.STRING,
+        defaultValue: '',
+    },
+    origin:{
+        type: Sequelize.STRING,
+        defaultValue: '',
+    },
     hp: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
@@ -41,11 +57,27 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
+    stressPoints:{
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+    },
+    maxStressPoints:{
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+    },
+    proficiencies:{
+        type: Sequelize.STRING,
+        defaultValue: '',
+    },
     skills: {
         type: Sequelize.JSON,
         allowNull: true,
     },
     attributes: {
+        type: Sequelize.JSON,
+        allowNull: true,
+    },
+    abilities: {
         type: Sequelize.JSON,
         allowNull: true,
     },
@@ -55,8 +87,47 @@ export const Sheet = db.define('sheet',{
     },
     inventory: {
         type: Sequelize.JSON,
-        defaultValue:'{"weight":0, "maxWeight":0,"items":[]}',
         allowNull: true,
+    },
+    passiveDefense:{
+        type:Sequelize.NUMBER,
+        defaultValue:0,
+    },
+    blockDefense:{
+        type:Sequelize.NUMBER,
+        defaultValue:0,
+    },
+    dodgeDefense:{
+        type:Sequelize.NUMBER,
+        defaultValue:0,
+    },
+    physicsResistence:{
+        type:Sequelize.NUMBER,
+        defaultValue:0,
+    },
+    ballisticResistence:{
+        type:Sequelize.NUMBER,
+        defaultValue:0,
+    },
+    bloodResistence:{
+        type:Sequelize.NUMBER,
+        defaultValue:0,
+    },
+    energyResistence:{
+        type:Sequelize.NUMBER,
+        defaultValue:0,
+    },
+    deathResistence:{
+        type:Sequelize.NUMBER,
+        defaultValue:0,
+    },
+    knowledgeResistence:{
+        type:Sequelize.NUMBER,
+        defaultValue:0,
+    },
+    insanityResistence:{
+        type:Sequelize.NUMBER,
+        defaultValue:0,
     },
     notes:{
         type: Sequelize.STRING,

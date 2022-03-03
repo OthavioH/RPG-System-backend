@@ -10,18 +10,19 @@ export const gameSettingsController = {
         return gameSettings;
     },
     async saveGameProperties(req:Request,res:Response) {
-        const {skills, attributes,} = <any>req.body;
+        const {skills, attributes,abilities} = <any>req.body;
 
         const skillsJSON = skills != null ? JSON.parse(JSON.stringify(skills)) : skills;
-        const  attributesJSON = attributes != null ? JSON.parse(JSON.stringify(attributes)) : attributes;
+        const attributesJSON = attributes != null ? JSON.parse(JSON.stringify(attributes)) : attributes;
+        const abilitiesJSON = abilities != null ? JSON.parse(JSON.stringify(abilities)) : abilities;
 
         await GameSettings.update({
             skills: skillsJSON,
             attributes: attributesJSON,
+            abilities:abilitiesJSON,
         },{where:{id:1}});
 
         const gameSettings = await GameSettings.findByPk(1);
-        
 
         return res.status(200).json(gameSettings);
     },
@@ -37,9 +38,21 @@ export const gameSettingsController = {
 
         return res.status(200).json(gameSettings);
     },
+    async updateLastRollsList(req:Request,res:Response){
+        const {lastRollsList} = req.body;
+
+        const lastRollsJSON = JSON.parse(JSON.stringify(lastRollsList));
+
+        await GameSettings.update({
+            lastRolls:lastRollsJSON
+        },{where:{id:1}});
+
+        const gameSettings = await GameSettings.findByPk(1);
+
+        return res.status(200).json(gameSettings);
+    },
     async getGameSettings(req:Request,res:Response) {
-        let gameSettings;
-        gameSettings = await GameSettings.findByPk(1);
+        const gameSettings = await GameSettings.findByPk(1);
         
         if(gameSettings) {
             return res.status(200).json(gameSettings);

@@ -15,4 +15,4 @@ app.use(morgan('dev'));
 db.sync();
 
 app.use(routes);
-app.listen(process.env.PORT || 3333, ()=> console.log('Server starded'));
+app.listen(process.env.PORT || 3333, ()=> console.log('Server started'));

@@ -12,12 +12,14 @@ routes.get('/', (req,res)=>{
 routes.get('/gamesettings/create', gameSettingsController.createGameSettings);
 routes.get('/gamesettings', gameSettingsController.getGameSettings);
 
-routes.post('/gamesettings/save/properties', gameSettingsController.saveGameProperties);
-routes.post('/gamesettings/save/timers', gameSettingsController.saveTimers);
+routes.post('/gamesettings/properties/save', gameSettingsController.saveGameProperties);
+routes.post('/gamesettings/timers/save', gameSettingsController.saveTimers);
+routes.post('/gamesettings/rolls/save', gameSettingsController.updateLastRollsList);
 
 routes.post('/sheets/create', sheetController.createSheet);
 
-routes.put('/sheets/:id/status/update', sheetController.updateHpAndSanity);
+routes.put('/sheets/:id/hp/update', sheetController.updateHp);
+routes.put('/sheets/:id/sanity/update', sheetController.updateSanity);
 routes.put('/sheets/:id/update', sheetController.updateOne);
 routes.put('/sheets/:id/delete', sheetController.deleteById);
 
