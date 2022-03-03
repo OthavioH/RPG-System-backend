@@ -55,7 +55,7 @@ export const Sheet = db.define('sheet',{
     },
     inventory: {
         type: Sequelize.JSON,
-        defaultValue:"{weight:0, maxWeight:0,items:[]}",
+        defaultValue:'{"weight":0, "maxWeight":0,"items":[]}',
         allowNull: true,
     },
     notes:{
