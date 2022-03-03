@@ -90,43 +90,43 @@ export const Sheet = db.define('sheet',{
         allowNull: true,
     },
     passiveDefense:{
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         defaultValue:0,
     },
     blockDefense:{
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         defaultValue:0,
     },
     dodgeDefense:{
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         defaultValue:0,
     },
     physicsResistence:{
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         defaultValue:0,
     },
     ballisticResistence:{
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         defaultValue:0,
     },
     bloodResistence:{
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         defaultValue:0,
     },
     energyResistence:{
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         defaultValue:0,
     },
     deathResistence:{
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         defaultValue:0,
     },
     knowledgeResistence:{
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         defaultValue:0,
     },
     insanityResistence:{
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         defaultValue:0,
     },
     notes:{
