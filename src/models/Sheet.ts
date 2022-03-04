@@ -81,6 +81,10 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.JSON,
         allowNull: true,
     },
+    rituals:{
+        type: Sequelize.JSON,
+        allowNull: true,
+    },
     weapons: {
         type: Sequelize.JSON,
         allowNull: true,
