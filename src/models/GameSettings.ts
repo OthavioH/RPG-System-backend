@@ -17,6 +17,10 @@ export const GameSettings = db.define('gameSettings',{
         type: Sequelize.INTEGER,
         defaultValue: 2,
     },
+    lastRolls:{
+        type:Sequelize.JSON,
+        allowNull: true,
+    },
     skills: {
         type: Sequelize.JSON,
         allowNull: true,
@@ -25,4 +29,8 @@ export const GameSettings = db.define('gameSettings',{
         type: Sequelize.JSON,
         allowNull: true,
     },
+    abilities: {
+        type: Sequelize.JSON,
+        allowNull: true,
+    }
 });

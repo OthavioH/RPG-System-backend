@@ -31,15 +31,27 @@ export const sheetController = {
             res.status(200).json({message:'Sheet deleted'});
         }
     }, 
-    async updateHpAndSanity(req:Request, res:Response) {
+    async updateHp(req:Request, res:Response) {
         const {id} = req.params;
         const {character} =req.body;
 
-        const {hp, maxHp, sanity, maxSanity} = character;
+        const {hp, maxHp} = character;
 
         await Sheet.update({
             hp:hp,
             maxHp:maxHp,
+        },{where:{id:id}}).catch((err)=>{
+            return res.status(500).json({error:err});
+        });
+        return res.status(200);
+    },
+    async updateSanity(req:Request, res:Response) {
+        const {id} = req.params;
+        const {character} =req.body;
+
+        const {sanity, maxSanity} = character;
+
+        await Sheet.update({
             sanity:sanity,
             maxSanity:maxSanity,
         },{where:{id:id}}).catch((err)=>{
@@ -49,26 +61,14 @@ export const sheetController = {
     },
     async updateOne(req:Request,res:Response) {
         const {id} = req.params;
-        const {playerName, name, age, gender, hp, maxHp, sanity, maxSanity, skills, attributes, equipments, weapons, notes} =req.body;
+        const {character} =req.body;
 
-        console.log(req.body);
-        console.log(req.params);
-
-        const sheet = await Sheet.update({
-            name:name,
-            playerName: playerName,
-            age: age,
-            gender: gender,
-            hp: hp,
-            maxHp: maxHp,
-            sanity: sanity,
-            maxSanity: maxSanity,
-            skills: JSON.parse(JSON.stringify(skills)),
-            attributes: JSON.parse(JSON.stringify(attributes)),
-            equipments:JSON.parse(JSON.stringify(equipments)),
-            weapons:JSON.parse(JSON.stringify(weapons)),
-            notes: notes,
-        }, {where:{id:id}}).catch((err)=>{
+        const sheet = await Sheet.update(
+            character, {
+                where:{id:id}
+            }
+            ).catch(
+                (err)=>{
             return res.status(500).json({error:err});
         });
 
