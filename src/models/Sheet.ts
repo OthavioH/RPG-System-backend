@@ -65,7 +65,7 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    proficiencies:{
+    proficiences:{
         type: Sequelize.STRING,
         defaultValue: '',
     },

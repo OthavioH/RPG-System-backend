@@ -63,9 +63,6 @@ export const sheetController = {
         const {id} = req.params;
         const {character} =req.body;
 
-        console.log(req.body);
-        console.log(req.params);
-
         const sheet = await Sheet.update(
             character, {
                 where:{id:id}
