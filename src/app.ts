@@ -24,6 +24,7 @@ const io = new Server(server, {cors: {origin: '*', methods:["GET", "POST"]}});
 io.on('connection',(socket)=>{
     console.log("connected");
     io.on('changeCharacter',(character)=>{
+        console.log(character);
         io.emit('characterChanged', character);
     });
 });
