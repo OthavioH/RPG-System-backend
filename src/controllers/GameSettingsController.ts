@@ -59,7 +59,7 @@ export const gameSettingsController = {
         const gameSettings = await GameSettings.findByPk(1);
         
         if(gameSettings) {
-            return res.status(200).json({gameSettings:gameSettings, port:process.env.PORT});
+            return res.status(200).json(gameSettings);
         }
         return res.status(500);
     },
