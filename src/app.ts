@@ -25,9 +25,6 @@ io.on('connection',(socket)=>{
     console.log("connected");
 });
 
-io.on('changeCharacter',(character)=>{
-    console.log(character);
-    io.emit('characterChanged', character);
-});
+export const socket = io;
 
 server.listen(process.env.PORT || 3333, ()=> console.log('Server started'));

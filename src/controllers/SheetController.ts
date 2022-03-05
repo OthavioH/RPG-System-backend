@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { socket } from '../app';
 
 import { Sheet } from '../models/Sheet';
 
@@ -71,6 +72,8 @@ export const sheetController = {
                 (err)=>{
             return res.status(500).json({error:err});
         });
+
+        socket.emit('characterChanged', character);
 
         return res.status(200).json({sheet:sheet});
     },
