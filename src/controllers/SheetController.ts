@@ -11,7 +11,7 @@ export const sheetController = {
             name:name,
             inventory:{"weight":"0", "maxWeight":"0","items":"[]"}
         }).catch((err)=>{
-            return err;
+            return res.status(500).json({error:err});
         });
 
         return res.status(200).json({sheet:sheet});
@@ -82,7 +82,7 @@ export const sheetController = {
         const {id} =req.params;
 
         const sheet = await Sheet.findOne({where:{id:id}})
-        .catch((err)=>res.status(500).json({error:err}));
+        .catch((err)=>err);
         
         if(sheet){
             return res.status(200).json({sheet:sheet});
