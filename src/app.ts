@@ -1,6 +1,8 @@
 import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
+import http from 'http';
+import { Server } from 'socket.io';
 
 import routes from './routers/routes';
 import {db} from './config/db';
@@ -15,4 +17,14 @@ app.use(morgan('dev'));
 db.sync();
 
 app.use(routes);
-app.listen(process.env.PORT || 3333, ()=> console.log('Server started'));
+
+const server = http.createServer(app);
+const io = new Server(server, {cors: {origin: '*', methods:["GET", "POST"]}});
+
+io.on('connection',(socket)=>{
+    console.log("connected");
+});
+
+export const socket = io;
+
+server.listen(process.env.PORT || 3333, ()=> console.log('Server started'));

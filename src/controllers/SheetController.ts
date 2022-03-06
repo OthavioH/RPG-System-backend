@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { socket } from '../app';
 
 import { Sheet } from '../models/Sheet';
 
@@ -8,6 +9,7 @@ export const sheetController = {
 
         const sheet = await Sheet.create({
             name:name,
+            inventory:{"weight":"0", "maxWeight":"0","items":"[]"}
         }).catch((err)=>{
             return res.status(500).json({error:err});
         });
@@ -72,17 +74,17 @@ export const sheetController = {
             return res.status(500).json({error:err});
         });
 
+        socket.emit('characterChanged', character);
+
         return res.status(200).json({sheet:sheet});
     },
     async getSheetById(req:Request,res:Response) {
         const {id} =req.params;
 
         const sheet = await Sheet.findOne({where:{id:id}})
-        .catch((err)=>res.status(500).json({error:err}));
+        .catch((err)=>err);
         
-        if(sheet){
-            return res.status(200).json({sheet:sheet});
-        }
+        return res.status(200).json({sheet:sheet});
     },
 
     async getAll(req:Request,res:Response){
