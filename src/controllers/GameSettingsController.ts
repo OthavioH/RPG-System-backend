@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { socket } from '../app';
 
 import { GameSettings } from '../models/GameSettings';
 
@@ -42,18 +43,25 @@ export const gameSettingsController = {
 
         return res.status(200).json(gameSettings);
     },
-    async updateLastRollsList(req:Request,res:Response){
-        const {lastRollsList} = req.body;
+    async addNewRoll(req:Request,res:Response){
+        const {roll, oldRollList} = req.body;
+        const rollList:any[] = oldRollList;
+        rollList.unshift(roll);
+        if (rollList.length >= 11) {
+            rollList.pop();
+        }
+        
+        const actualRollList = rollList;
 
-        const lastRollsJSON = JSON.parse(JSON.stringify(lastRollsList));
+        const lastRollsJSON = JSON.parse(JSON.stringify(actualRollList));
 
         await GameSettings.update({
             lastRolls:lastRollsJSON
         },{where:{id:1}});
 
-        const gameSettings = await GameSettings.findByPk(1);
+        socket.emit('lastRollListChanged', actualRollList);
 
-        return res.status(200).json(gameSettings);
+        return res.status(200).json(actualRollList);
     },
     async getGameSettings(req:Request,res:Response) {
         const gameSettings = await GameSettings.findByPk(1);
