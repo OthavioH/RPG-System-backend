@@ -10,8 +10,8 @@ export const sheetController = {
         const sheet = await Sheet.create({
             name:name,
             inventory:{"weight":"0", "maxWeight":"0","items":"[]"}
-        }).catch((err)=>{
-            return res.status(500).json({error:err});
+        }).then((asdasd)=>asdasd).catch((err)=>{
+            return err;
         });
 
         return res.status(200).json({sheet:sheet});
