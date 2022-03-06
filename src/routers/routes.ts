@@ -14,7 +14,7 @@ routes.get('/gamesettings', gameSettingsController.getGameSettings);
 
 routes.post('/gamesettings/properties/save', gameSettingsController.saveGameProperties);
 routes.post('/gamesettings/timers/save', gameSettingsController.saveTimers);
-routes.post('/gamesettings/rolls/save', gameSettingsController.updateLastRollsList);
+routes.post('/gamesettings/roll/save', gameSettingsController.addNewRoll);
 
 routes.post('/sheets/create', sheetController.createSheet);
 
