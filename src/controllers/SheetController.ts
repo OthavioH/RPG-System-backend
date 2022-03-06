@@ -84,9 +84,7 @@ export const sheetController = {
         const sheet = await Sheet.findOne({where:{id:id}})
         .catch((err)=>err);
         
-        if(sheet){
-            return res.status(200).json({sheet:sheet});
-        }
+        return res.status(200).json({sheet:sheet});
     },
 
     async getAll(req:Request,res:Response){
