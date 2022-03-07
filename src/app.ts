@@ -23,11 +23,9 @@ const io = new Server(server, {cors: {origin: '*', methods:["GET", "POST"]}});
 
 io.on('connection',(socket)=>{
     console.log("connected");
-});
-
-
-io.sockets.on('diceRoll',(timer)=>{
-    io.emit('diceOnCooldown',timer);
+    socket.on('diceRoll',(timer)=>{
+        io.emit('diceOnCooldown',timer);
+    });
 });
 
 export const socket = io;
