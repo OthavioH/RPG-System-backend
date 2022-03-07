@@ -13,6 +13,10 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.STRING,
         defaultValue: '',
     },
+    profileImageUrl: {
+        type: Sequelize.STRING,
+        defaultValue: '',
+    },
     name: {
         type: Sequelize.STRING,
         defaultValue: '',

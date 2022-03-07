@@ -9,7 +9,8 @@ export const sheetController = {
 
         const sheet = await Sheet.create({
             name:name,
-            inventory:{"weight":"0", "maxWeight":"0","items":"[]"}
+            inventory:{"weight":"0", "maxWeight":"0","items":"[]"},
+            weapons:[],
         }).catch((err)=>{
             return res.status(500).json({error:err});
         });
@@ -19,8 +20,6 @@ export const sheetController = {
 
     async deleteById(req:Request,res:Response) {
         const {id} =req.params;
-
-        console.log(id);
         
         let error = null;
         await Sheet.destroy({where:{id:id}})
