@@ -19,8 +19,6 @@ export const sheetController = {
 
     async deleteById(req:Request,res:Response) {
         const {id} =req.params;
-
-        console.log(id);
         
         let error = null;
         await Sheet.destroy({where:{id:id}})
