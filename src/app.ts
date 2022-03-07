@@ -25,7 +25,8 @@ io.on('connection',(socket)=>{
     console.log("connected");
 });
 
-io.on('diceRoll',(timer)=>{
+
+io.sockets.on('diceRoll',(timer)=>{
     io.emit('diceOnCooldown',timer);
 });
 
