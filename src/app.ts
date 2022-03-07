@@ -25,6 +25,10 @@ io.on('connection',(socket)=>{
     console.log("connected");
 });
 
+io.on('diceRoll',(timer)=>{
+    io.emit('diceOnCooldown',timer);
+});
+
 export const socket = io;
 
 server.listen(process.env.PORT || 3333, ()=> console.log('Server started'));
