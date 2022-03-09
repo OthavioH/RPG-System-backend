@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { socket } from '../app';
+import { APIError } from '../models/APIError';
 
 import { Sheet } from '../models/Sheet';
 
@@ -13,27 +14,27 @@ export const sheetController = {
             gameId:gameId,
             inventory:{"usedSlots":"0", "maxSlots":"0","items":"[]"},
             weapons:[],
-        }).catch((err)=>{
-            return res.status(500).json({error:err});
-        });
+        }).catch((err)=>new APIError(err));
 
+        if (sheet instanceof APIError) {
+            console.error(sheet.errorMessage);
+            return res.status(500);
+        }
         return res.status(200).json({sheet:sheet});
+
     },
 
     async deleteById(req:Request,res:Response) {
         const {id} = req.params;
         const {gameId} =req.query;
         
-        let error = null;
-        await Sheet.destroy({where:{id:id,gameId:gameId}})
-        .catch((err)=>error = err);
+        const deletedSheet = await Sheet.destroy({where:{id:id,gameId:gameId}}).catch((err)=>new APIError(err));
 
-        if (error != null) {
-            res.status(500).json({error:error});
+        if (deletedSheet instanceof APIError) {
+            console.error(deletedSheet.errorMessage);
+            return res.status(500);
         }
-        else {
-            res.status(200).json({message:'Sheet deleted'});
-        }
+        return res.status(200).json({message:'Sheet deleted'});
     }, 
     async updateHp(req:Request, res:Response) {
         const {id} = req.params;
@@ -42,13 +43,16 @@ export const sheetController = {
 
         const {hp, maxHp} = character;
 
-        await Sheet.update({
+        const sheet = await Sheet.update({
             hp:hp,
             maxHp:maxHp,
-        },{where:{id:id,gameId:gameId}}).catch((err)=>{
-            return res.status(500).json({error:err});
-        });
-        return res.status(200);
+        },{where:{id:id,gameId:gameId}}).catch((err)=>new APIError(err));
+
+        if (sheet instanceof APIError) {
+            console.error(sheet.errorMessage);
+            return res.status(500);
+        }
+        return res.status(200).json({sheet:sheet});
     },
     async updateSanity(req:Request, res:Response) {
         const {id} = req.params;
@@ -57,12 +61,15 @@ export const sheetController = {
 
         const {sanity, maxSanity} = character;
 
-        await Sheet.update({
+        const sheet = await Sheet.update({
             sanity:sanity,
             maxSanity:maxSanity,
-        },{where:{id:id,gameId:gameId}}).catch((err)=>{
-            return res.status(500).json({error:err});
-        });
+        },{where:{id:id,gameId:gameId}}).catch((err)=>new APIError(err));
+
+        if (sheet instanceof APIError) {
+            console.error(sheet.errorMessage);
+            return res.status(500);
+        }
         return res.status(200);
     },
     async updateOne(req:Request,res:Response) {
@@ -75,10 +82,12 @@ export const sheetController = {
                 where:{id:id,gameId:gameId},
             }
             ).catch(
-                (err)=>{
-            return res.status(500).json({error:err});
-        });
+                (err)=>new APIError(err));
 
+        if (sheet instanceof APIError) {
+            console.error(sheet.errorMessage);
+            return res.status(500);
+        }
         socket.emit('characterChanged', {character:character,gameId:gameId});
 
         return res.status(200).json({sheet:sheet});
@@ -88,7 +97,12 @@ export const sheetController = {
         const {gameId} =req.query;
 
         const sheet = await Sheet.findOne({where:{id:id, gameId:gameId}})
-        .catch((err)=>err);
+        .catch((err)=>new APIError(err));
+
+        if (sheet instanceof APIError) {
+            console.error(sheet.errorMessage);
+            return res.status(500);
+        }
         
         return res.status(200).json({sheet:sheet});
     },
@@ -97,7 +111,12 @@ export const sheetController = {
 
         const {gameId} = req.query;
 
-        const sheetList = await Sheet.findAll({where: {gameId:gameId}});
+        const sheetList = await Sheet.findAll({where: {gameId:gameId}}).catch(err =>new APIError(err));
+
+        if (sheetList instanceof APIError) {
+            console.error(sheetList.errorMessage);
+            return res.status(500);
+        }
 
         return res.status(200).json({sheetList: sheetList});
     },
