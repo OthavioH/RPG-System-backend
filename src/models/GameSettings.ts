@@ -4,8 +4,7 @@ import { db } from '../config/db';
 
 export const GameSettings = db.define('gameSettings',{
     id:{
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
+        type: Sequelize.STRING,
         allowNull: false,
         primaryKey: true,
     },

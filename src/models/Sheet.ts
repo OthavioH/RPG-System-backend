@@ -9,6 +9,10 @@ export const Sheet = db.define('sheet',{
         allowNull: false,
         primaryKey: true,
     },
+    gameId:{
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
     playerName: {
         type: Sequelize.STRING,
         defaultValue: '',

@@ -21,13 +21,11 @@ app.use(routes);
 const server = http.createServer(app);
 const io = new Server(server, {cors: {origin: '*', methods:["GET", "POST"]}});
 
-io.on('connection',(socket)=>{
+export const socket = io.on('connection',(socket)=>{
     console.log("connected");
-    socket.on('diceRoll',(timer)=>{
-        io.emit('diceOnCooldown',timer);
+    socket.on('diceRoll',(request:{timer:number,gameId:string})=>{
+        io.emit('diceOnCooldown',{timer:request.timer,gameId:request.gameId});
     });
 });
-
-export const socket = io;
 
 server.listen(process.env.PORT || 3333, ()=> console.log('Server started'));
