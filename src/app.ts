@@ -22,7 +22,6 @@ const server = http.createServer(app);
 const io = new Server(server, {cors: {origin: '*', methods:["GET", "POST"]}});
 
 export const socket = io.on('connection',(socket)=>{
-    console.log("connected");
     socket.on('diceRoll',(request:{timer:number,gameId:string})=>{
         io.emit('diceOnCooldown',{timer:request.timer,gameId:request.gameId});
     });
