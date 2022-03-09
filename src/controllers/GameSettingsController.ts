@@ -5,8 +5,7 @@ import { GameSettings } from '../models/GameSettings';
 
 export const gameSettingsController = {
     async createGameSettings(req:Request,res:Response) {
-        const id = req.query["id"];
-        console.log(req.query);
+        const {id} = req.params;
 
         const gameSettings = await GameSettings.create({id:id}).catch((err)=>{
             console.error(err);

@@ -5,10 +5,6 @@ import { sheetController } from '../controllers/SheetController';
 
 const routes = express.Router();
 
-routes.get('/', (req,res)=>{
-    return res.send('Olá');
-});
-
 routes.post('/gamesettings/create', gameSettingsController.createGameSettings);
 routes.get('/gamesettings', gameSettingsController.getGameSettings);
 
