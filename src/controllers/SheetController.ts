@@ -12,7 +12,7 @@ export const sheetController = {
         const sheet = await Sheet.create({
             name:name,
             gameId:gameId,
-            inventory:{"usedSlots":"0", "maxSlots":"0","items":"[]"},
+            inventory:{"usedSlots":0, "maxSlots":0,"items":[]},
             weapons:[],
         }).catch((err)=>new APIError(err));
 
