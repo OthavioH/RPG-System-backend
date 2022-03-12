@@ -70,7 +70,7 @@ export const Sheet = db.define('sheet',{
         defaultValue: 0,
     },
     proficiences:{
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING(999),
         defaultValue: '',
     },
     skills: {
@@ -138,7 +138,7 @@ export const Sheet = db.define('sheet',{
         defaultValue:0,
     },
     notes:{
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING(999),
         defaultValue: '',
     }
 });
