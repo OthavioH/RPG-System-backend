@@ -11,10 +11,9 @@ export const gameSettingsController = {
         return gameSettings;
     },
     async saveGameProperties(req:Request,res:Response) {
-        const {skills, attributes,abilities,rituals} = <any>req.body;
+        const {skills, abilities,rituals} = <any>req.body;
 
         const skillsJSON = skills != null ? JSON.parse(JSON.stringify(skills)) : skills;
-        const attributesJSON = attributes != null ? JSON.parse(JSON.stringify(attributes)) : attributes;
         const abilitiesJSON = abilities != null ? JSON.parse(JSON.stringify(abilities)) : abilities;
         const ritualsJSON = rituals != null ? JSON.parse(JSON.stringify(rituals)) : rituals;
 
@@ -22,7 +21,6 @@ export const gameSettingsController = {
 
         await GameSettings.update({
             skills: skillsJSON,
-            attributes: attributesJSON,
             abilities:abilitiesJSON,
             rituals:ritualsJSON,
         },{where:{id:1}});
