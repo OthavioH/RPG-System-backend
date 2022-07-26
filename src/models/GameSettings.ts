@@ -15,7 +15,7 @@ export const GameSettings = db.define('gameSettings',{
     },
     diceCooldown: {
         type: Sequelize.INTEGER,
-        defaultValue: 2,
+        defaultValue: 8,
     },
     lastRolls:{
         type:Sequelize.JSON,
