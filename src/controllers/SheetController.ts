@@ -11,11 +11,11 @@ export const sheetController = {
             name:name,
             inventory:{"usedSlots":"0", "maxSlots":"5","items":[]},
             attributes:{
-                "strength":{"id":"1","value":"1", "name":"Força","abbreviation":"FOR"},
-                "agility":{"id":"2","value":"1", "name":"Agilidade","abbreviation":"AGI"},
-                "vigor":{"id":"3","value":"1", "name":"Vigor","abbreviation":"VIG"},
-                "intelligence":{"id":"4","value":"1", "name":"Inteligência","abbreviation":"INT"},
-                "presence":{"id":"5","value":"1", "name":"Presença","abbreviation":"PRE"},
+                "strength":{"id":"1","value":1, "name":"Força","abbreviation":"FOR"},
+                "agility":{"id":"2","value":1, "name":"Agilidade","abbreviation":"AGI"},
+                "vigor":{"id":"3","value":1, "name":"Vigor","abbreviation":"VIG"},
+                "intelligence":{"id":"4","value":1, "name":"Inteligência","abbreviation":"INT"},
+                "presence":{"id":"5","value":1, "name":"Presença","abbreviation":"PRE"},
             },
             weapons:[],
         }).catch((err)=>{
@@ -69,13 +69,15 @@ export const sheetController = {
     },
     async updateOne(req:Request,res:Response) {
         const {id} = req.params;
-        const {character} =req.body;
+        const {character} = req.body;
+
+        console.log("id", id);
+        console.log(character);
 
         const sheet = await Sheet.update(
             character, {
                 where:{id:id}
-            }
-            ).catch(
+            }).catch(
                 (err)=>{
             return res.status(500).json({error:err});
         });
