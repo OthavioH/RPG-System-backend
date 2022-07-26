@@ -9,7 +9,14 @@ export const sheetController = {
 
         const sheet = await Sheet.create({
             name:name,
-            inventory:{"usedSlots":"0", "maxSlots":"0","items":[]},
+            inventory:{"usedSlots":"0", "maxSlots":"5","items":[]},
+            attibutes:{
+                "strength":{"id":"1","value":"1", "name":"Força","abbreviation":"FOR"},
+                "agility":{"id":"2","value":"1", "name":"Agilidade","abbreviation":"AGI"},
+                "vigor":{"id":"3","value":"1", "name":"Vigor","abbreviation":"VIG"},
+                "intelligence":{"id":"4","value":"1", "name":"Inteligência","abbreviation":"INT"},
+                "presence":{"id":"5","value":"1", "name":"Presença","abbreviation":"PRE"},
+            },
             weapons:[],
         }).catch((err)=>{
             return res.status(500).json({error:err});

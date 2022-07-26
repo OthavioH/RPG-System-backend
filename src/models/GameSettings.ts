@@ -25,10 +25,6 @@ export const GameSettings = db.define('gameSettings',{
         type: Sequelize.JSON,
         allowNull: true,
     },
-    attributes: {
-        type: Sequelize.JSON,
-        allowNull: true,
-    },
     abilities: {
         type: Sequelize.JSON,
         allowNull: true,
