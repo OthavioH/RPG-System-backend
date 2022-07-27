@@ -69,6 +69,7 @@ export const sheetController = {
     },
     async updateOne(req:Request,res:Response) {
         const {id} = req.params;
+
         const {character} = req.body;
 
         const attributesJSON = character.attributes != null ? JSON.parse(JSON.stringify(character.attributes)) : character.attributes;
