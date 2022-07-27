@@ -71,11 +71,48 @@ export const sheetController = {
         const {id} = req.params;
         const {character} = req.body;
 
-        console.log("id", id);
-        console.log(character);
+        const skillsJSON = character.skills != null ? JSON.parse(JSON.stringify(character.skills)) : character.skills;
+        const abilitesJSON = character.abilities != null ? JSON.parse(JSON.stringify(character.abilities)) : character.abilities;
+        const ritualsJSON = character.rituals != null ? JSON.parse(JSON.stringify(character.rituals)) : character.rituals;
+        const weaponsJSON = character.weapons != null ? JSON.parse(JSON.stringify(character.weapons)) : character.weapons;
+        const inventoryJSON = character.inventory != null ? JSON.parse(JSON.stringify(character.inventory)) : character.inventory;
 
         const sheet = await Sheet.update(
-            character, {
+            {
+                name:character.name,
+                playerName:character.playerName,
+                age:character.age,
+                gender:character.gender,
+                nex:character.nex,
+                rank:character.rank,
+                class:character.class,
+                origin:character.origin,
+                effortPoints:character.effortPoints,
+                maxEffortPoints:character.maxEffortPoints,
+                proficiencies:character.proficiencies,
+                profileImageUrl:character.profileImageUrl,
+                attributes:character.attributes,
+                skills:skillsJSON,
+                abilities:abilitesJSON,
+                rituals:ritualsJSON,
+                weapons:weaponsJSON,
+                inventory:inventoryJSON,
+                hp:character.hp,
+                maxHp:character.maxHp,
+                sanity:character.sanity,
+                maxSanity:character.maxSanity,
+                notes:character.notes,
+                passiveDefense:character.passiveDefense,
+                blockDefense:character.blockDefense,
+                dodgeDefense:character.dodgeDefense,
+                physicsResistence:character.physicsResistence,
+                ballisticResistence:character.ballisticResistence,
+                bloodResistence:character.bloodResistence,
+                energyResistence:character.energyResistence,
+                deathResistence:character.deathResistence,
+                knowledgeResistence:character.knowledgeResistence,
+                insanityResistence:character.insanityResistence,
+            }, {
                 where:{id:id}
             }).catch(
                 (err)=>{
