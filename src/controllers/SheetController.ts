@@ -71,7 +71,7 @@ export const sheetController = {
         const {id} = req.params;
         const {character} = req.body;
 
-        const attributesJSON = character.attributes != null ? JSON.parse(character.attributes) : character.attributes;
+        const attributesJSON = character.attributes != null ? JSON.parse(JSON.stringify(character.attributes)) : character.attributes;
         const skillsJSON = character.skills != null ? JSON.parse(JSON.stringify(character.skills)) : character.skills;
         const abilitesJSON = character.abilities != null ? JSON.parse(JSON.stringify(character.abilities)) : character.abilities;
         const ritualsJSON = character.rituals != null ? JSON.parse(JSON.stringify(character.rituals)) : character.rituals;
