@@ -61,11 +61,11 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    stressPoints:{
+    effortPoints:{
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    maxStressPoints:{
+    maxEffortPoints:{
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },

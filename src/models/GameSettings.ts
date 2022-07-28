@@ -15,17 +15,13 @@ export const GameSettings = db.define('gameSettings',{
     },
     diceCooldown: {
         type: Sequelize.INTEGER,
-        defaultValue: 2,
+        defaultValue: 8,
     },
     lastRolls:{
         type:Sequelize.JSON,
         allowNull: true,
     },
     skills: {
-        type: Sequelize.JSON,
-        allowNull: true,
-    },
-    attributes: {
         type: Sequelize.JSON,
         allowNull: true,
     },
