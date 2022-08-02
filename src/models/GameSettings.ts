@@ -2,8 +2,10 @@ import Sequelize from 'sequelize';
 
 import { db } from '../config/db';
 
-export const GameSettings = db.define('gameSettings',{
-    id:{
+const skillsJson = require('../shared/skills.json');
+
+export const GameSettings = db.define('gameSettings', {
+    id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
@@ -17,13 +19,13 @@ export const GameSettings = db.define('gameSettings',{
         type: Sequelize.INTEGER,
         defaultValue: 8,
     },
-    lastRolls:{
-        type:Sequelize.JSON,
+    lastRolls: {
+        type: Sequelize.JSON,
         allowNull: true,
     },
     skills: {
         type: Sequelize.JSON,
-        allowNull: true,
+        defaultValue: skillsJson
     },
     abilities: {
         type: Sequelize.JSON,
