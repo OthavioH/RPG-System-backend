@@ -1,0 +1,396 @@
+[
+	{
+		"id": "0df1e826-cac0-86b7-7dd9-470b9ad6c608",
+		"name": "Armadura de Sangue",
+		"range": "pessoal",
+		"circle": 1,
+		"target": "você",
+		"duration": "cena",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Seu sangue escorre para fora do corpo,\ncobrindo-o sob a forma de uma\ncarapaça protetora que fornece +5 na\nDefesa. Esse bônus é cumulativo com\noutros rituais, mas não com bônus\nfornecido por equipamento.\nDiscente (+5 PE): ao invés do normal,\nfornece +10 de Defesa e resistência\na balístico, corte, impacto e\nperfuração 5. Requer 3º círculo.\nVerdadeiro (+9 PE): ao invés do normal,\nfornece +15 de Defesa e Resistência\na balístico, corte, impacto e\nperfuração 10. Requer 4º círculo e\nafinidade com Sangue."
+	},
+	{
+		"id": "18af9448-1989-f869-1186-59337527a448",
+		"name": "Cinerária",
+		"range": "curto",
+		"circle": 1,
+		"target": "nuvem de 6m de raio",
+		"duration": "cena",
+		"elements": [
+			"medo"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você manifesta uma névoa fina carregada\nde essência paranormal. Rituais\nconjurados dentro da névoa têm sua\nDT aumentada em +2.\nDiscente (+2 PE): além do normal,\nreduz o custo de rituais conjurados\ndentro da névoa em -1 PE.\nVerdadeiro (+ 5 PE): além do normal,\nrituais causam dano maximizado\ndentro da névoa."
+	},
+	{
+		"id": "3bc065ad-64ff-fe9f-b50e-68c4fea662b2",
+		"name": "Decadência",
+		"range": "toque",
+		"circle": 1,
+		"target": "1 criatura ou personagem",
+		"duration": "instantânea",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude reduz à metade",
+		"description": "Espirais de trevas envolvem sua\nmão e definham o corpo do alvo\nao toque, causando 2d8+2 pontos\nde dano de Morte.\nDiscente (+2 PE): muda a resistência\npara nenhuma e o dano para 3d8+3.\nComo parte da execução do ritual,\nvocê transfere as espirais para uma\narma e faz um ataque corpo a corpo\ncontra o alvo com esta arma. Se acertar,\ncausa o dano do ataque e do ritual.\nVerdadeiro (+5 PE): muda o alcance\npara pessoal e o alvo para área: explosão\ncom 6m de raio. As espirais\nafetam todas as criaturas e personagens\nna área."
+	},
+	{
+		"id": "4d5225a4-521d-b065-76fc-4130705f4814",
+		"name": "Consumir Manancial",
+		"range": "pessoal",
+		"circle": 1,
+		"target": "você",
+		"duration": "instantânea",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você suga uma pequena porção do\ntempo de vida de plantas, insetos e\naté mesmo do solo ao redor, gerando\nLodo e recebendo\n3d6 pontos de vida\ntemporários.\nOs PV temporários desaparecem\nao final da cena.\nDiscente (+2 PE): aumenta os PV\ntemporários recebidos para 6d6. Requer\n2º círculo.\nVerdadeiro (+5 PE): muda o alvo\npara “área: esfera\ncom 6m de raio\ncentrada em você” e a resistência para\n“Fortitude reduz à metade”. Em vez do\nnormal, você suga energia de todas\nas criaturas vivas na área, causando\n3d6 pontos de dano de morte em cada\nalvo afetado e recebendo PV temporários\niguais ao dano total causado.\nOs PV temporários\ndesaparecem ao\nfinal da cena. Requer\n3º círculo e afinidade\ncom Morte."
+	},
+	{
+		"id": "777291d6-23f9-0047-a218-42eb8f62b3e7",
+		"name": "Cicatrização",
+		"range": "toque",
+		"circle": 1,
+		"target": "1 criatura",
+		"duration": "instantânea",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você acelera o tempo de maneira\nfocada nas feridas do alvo, que cicatrizam\ncom grande velocidade. O\nalvo recupera 2d8+2 pontos de vida.\nDiscente (+2 PE): recupera 4d8+4\npontos de vida e também remove\numa condição de fadiga do alvo. Requer\n2º círculo.\nVerdadeiro (+9 PE): muda o alcance\npara curto e o alvo para criaturas\nescolhidas. Cada alvo recupera\n6d8+6 PV. Requer 4º círculo e afinidade\ncom Morte."
+	},
+	{
+		"id": "9df297ed-ba60-b3e9-bdf0-15b60994765b",
+		"name": "Arma Atroz",
+		"range": "toque",
+		"circle": 1,
+		"target": "1 arma corpo a corpo",
+		"duration": "cena",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "arma é recoberta de veias carmesim\ne exala uma aura de violência,\npassando a causar +1d6 pontos de\ndano de sangue.\nDiscente (+2 PE): a arma causa +2d6\npontos de dano de sangue. Requer\n2º círculo.\nVerdadeiro (+5 PE): a arma causa\n+3d6 pontos de dano de sangue adicional.\nRequer 4º círculo e afinidade\ncom Sangue."
+	},
+	{
+		"id": "9fc0dad9-343c-c2d8-b2d6-f02fa3f0f6f9",
+		"name": "Amaldiçoar Tecnologia",
+		"range": "toque",
+		"circle": 1,
+		"target": "um acessório, uma arma de fogo ou uma vestimenta",
+		"duration": "cena",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você imbui o alvo com Energia, fazendo-\no funcionar acima de sua capacidade.\nUm acessório ou vestimenta\nimbuído desta forma fornece +2 nos\ntestes da perícia em que é empregado\ne uma arma fornece +2 em testes de\nataque.\nDiscente (+2 PE): o bônus concedido\npelo item se torna +5. Requer\n2º círculo.\nVerdadeiro (+9 PE): o bônus concedido\npelo item se torna +10. Requer\n4º círculo e afinidade com Energia."
+	},
+	{
+		"id": "ab83a005-5145-ecd1-6071-c838352f5369",
+		"name": "Compreensão Paranormal",
+		"range": "toque",
+		"circle": 1,
+		"target": "um texto, gravação ou criatura",
+		"duration": "cena",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade anula",
+		"description": "O ritual confere a você compreensão\nsobrenatural da linguagem. Você\npode focar num texto\nou gravação\npara entender as palavras mesmo que\nnão conheça o idioma, contanto que\nse trate de um idioma humano mundano\n(não funciona com símbolos\nou sigilos paranormais). Se tocar em\noutra pessoa, pode se comunicar com\nela mesmo como se falassem o mesmo\nidioma em comum. Se tocar uma\ncriatura\nnão inteligente, como um\nanimal, pode perceber seus sentimentos\nbásicos, como medo ou felicidade.\nUm alvo involuntário tem direito a\num teste de Vontade.\nDiscente (+2 PE): muda o alcance\npara curto e o alvo para alvos escolhidos.\nVocê pode entender todos os\nalvos afetados.\nRequer 2º círculo.\nVerdadeiro (+5 PE): muda o alcance\npara pessoal e o alvo para você. Em\nvez do normal, você pode falar, entender\ne escrever qualquer idioma\nhumano. Requer 3º círculo."
+	},
+	{
+		"id": "b97fc7d7-46f6-ab52-00b7-de2f12916007",
+		"name": "Corpo Adaptado",
+		"range": "toque",
+		"circle": 1,
+		"target": "1 personagem",
+		"duration": "cena",
+		"elements": [
+			"sangue",
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Este ritual modifica a biologia do alvo\npara permitir a sobrevivência em ambientes\nhostis. O alvo fica imune\naos\nefeitos de calor e frio extremos,\npode\nrespirar na água se respirar\nar (ou\nvice-versa) e não sufoca em fumaça\ndensa.\nDiscente (+2 PE): muda a duração\npara 1 dia.\nVerdadeiro (+5 PE): muda o alcance\npara curto e o alvo para personagens\nescolhidos."
+	},
+	{
+		"id": "f66c9224-f1c9-8c2f-c98c-1d57e0ac9e75",
+		"name": "Definhar",
+		"range": "curto",
+		"circle": 1,
+		"target": "1 criatura",
+		"duration": "cena",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude parcial",
+		"description": "Você dispara uma lufada de cinzas\nque drenam\nas forças do alvo. Se falhar\nna resistência,\no alvo fica fatigado.\nSe passar, fica vulnerável.\nDiscente (+2 PE): em vez do normal,\nse falhar na resistência o alvo\nfica exausto. Se passar,\nfica fatigado.\nRequer 2º círculo.\nVerdadeiro (+5 PE): em vez do\nnormal, se falhar na resistência o\nalvo fica inconsciente. Se passar, fica\nexausto. Requer 3º círculo e afinidade\ncom Morte."
+	},
+	{
+		"id": "f96431af-1732-a002-ab2f-a20aefa8fb90",
+		"name": "Criar Ilusão",
+		"range": "médio",
+		"circle": 1,
+		"target": "Ilusão que se estende a até 4 cubos de 1,5m",
+		"duration": "cena",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade desacredita",
+		"description": "Este ritual cria uma ilusão visual (uma\npessoa, uma parede...) ou sonora (um\ngrito de socorro, um uivo assustador...).\nO ritual cria apenas imagens\nou sons simples, com volume equivalente\nao tom de voz normal para\ncada cubo de 1,5m no efeito. Não é\npossível criar cheiros, texturas ou\ntemperaturas, nem sons complexos,\ncomo uma música ou diálogo. Seres\ne objetos atravessam uma ilusão sem\nsofrer dano, mas o ritual pode, por\nexemplo, esconder uma armadilha\nou emboscada. A ilusão é dissipada\nse você sair do alcance.\nDiscente (+2 PE): muda o efeito para\naté 8 cubos de 1,5m e a duração para\nsustentada.\nVocê pode criar ilusões\nde imagem e sons combinados. A\ncada rodada você pode usar uma ação\nlivre para mover a imagem ou alterar\nlevemente o som, como aumentar\no\nvolume ou fazer com que pareça se\nafastar ou se aproximar, ainda dentro\ndos limites do efeito. Você pode, por\nexemplo, criar a ilusão de um fantasma\nque anda pela sala, controlando\nseus movimentos. Quando você\npara de sustentar o ritual, a imagem\nou som persistem por mais uma rodada\nantes do ritual se dissipar. Requer\n2º círculo.\nVerdadeiro (+ 5 PE): muda o efeito\npara até 16 cubos de 1,5m e a duração\npara sustentada.\nAlém do normal,\nvocê também pode criar sons\ncomplexos\ncom volume máximo\nequivalente\nao que cinco pessoas\npodem produzir\npara cada cubo\nde 1,5m no efeito. Você pode criar\nodores e sensações térmicas, que\nsão percebidos\na uma distância igual\nao dobro do tamanho máximo do\nefeito — por exemplo,\numa ilusão\nde uma fogueira com 4 cubos de\n1,5m poderia emanar calor e cheiro\nde queimado a até 12m. Também\npode criar sensações táteis, como\ntexturas; objetos ainda atravessam\na ilusão, mas personagens não conseguem\natravessá-la sem passar em\num teste de Vontade. A ilusão ainda\né incapaz de causar ou sofrer dano.\nVocê pode gastar uma ação livre para\nmodificar\nlivremente a ilusão. Requer\n3º círculo."
+	},
+	{
+		"id": "2d80e84d-d94f-0e53-e9d2-c481c007e163",
+		"name": "Contenção Fantasmagórica",
+		"range": "médio",
+		"circle": 2,
+		"target": "1 inimigo",
+		"duration": "cena",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "Reflexos anula",
+		"description": "Três laços de Energia surgem do chão\ne se enroscam no alvo, deixando-o\nagarrado. A vítima pode tentar se livrar,\ngastando uma ação padrão para\nfazer um teste de Atletismo (DT do\nritual). Se passar, destrói um laço,\nmais um laço adicional para cada 5\npontos pelos quais superou a DT. Os\nlaços também podem ser atacados\ne destruídos: cada um tem Defesa\n10, 10 PV, RD 5 e imunidade a dano\nde Energia. Se todos os laços forem\ndestruídos,\no ritual é dissipado. Por\nserem feitos de Energia, os laços afetam\ncriaturas\nincorpóreas.\nDiscente (+3 PE): aumenta o número\nde laços para 6, e você pode escolher o\nalvo de cada laço, com um mínimo de\ndois laços por alvo. Requer 3º círculo.\nVerdadeiro (+5 PE): em vez do\nnormal, cada laço é destruído automaticamente\ncom um único ataque\nbem-sucedido; porém, cada laço destruído\nlibera uma onda de choque\nque causa 2d6+2 pontos de dano de\nEnergia no alvo amarrado. Requer\n4º círculo e afinidade com Energia."
+	},
+	{
+		"id": "3aefe97f-62d5-ca9d-87e3-35af05b52f2f",
+		"name": "Descarnar",
+		"range": "toque",
+		"circle": 2,
+		"target": "1 criatura ou personagem",
+		"duration": "instantânea",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude parcial",
+		"description": "Este ritual cruel faz com que lacerações\nhorríveis se manifestem pela\npele e órgãos do alvo, que sofre 6d8\npontos de dano (metade corte, metade\nsangue) e fica com uma hemorragia\nsevera. No início de cada um\nde seus turnos, o alvo deve fazer um\nteste de Fortitude. Se falhar, sofre\n2d8 pontos de dano de sangue. Se\npassar em dois testes seguidos, a\nhemorragia é estancada. Alvos que\npassem no teste de resistência inicial\nsofrem metade do dano e não ficam\ncom hemorragia.\nDiscente (+3 PE): aumenta o dano\ndireto para 10d8 e o dano da hemorragia\npara 4d8.\nVerdadeiro (+7 PE): muda o alvo\npara você e a duração\npara sustentada.\nEnquanto o ritual durar, seus\nataques corpo a corpo causam 4d8\npontos de dano de sangue adicional\ne deixam o alvo com hemorragia\nautomaticamente. O alvo ainda tem\ndireito a um teste de Fortitude no início\nde seus turnos. Requer afinidade\ncom Sangue."
+	},
+	{
+		"id": "462e64e0-5557-052b-c5fb-91097c147720",
+		"name": "Chama do Caos",
+		"range": "curto",
+		"circle": 2,
+		"target": "veja texto",
+		"duration": "cena",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você pede que as energias do caos\nmanipulem chamas e emanações de\ncalor. Ao conjurar o ritual, escolha\num dos seguintes efeitos.\nChamejar: o alvo é uma arma. Ela\ncausa +1d6 pontos de dano de fogo.\nEsquentar: o alvo é um objeto, que\ncomeça\na esquentar. Ele sofre 1d6\npontos de dano de fogo por rodada\ne causa o mesmo dano a qualquer\ncriatura que o esteja segurando ou\nvestindo. A critério\ndo mestre, o objeto\nou a criatura vestindo-o também\npode pegar fogo. Uma criatura pode\ngastar uma ação completa para resfriar\no objeto (jogando\nareia ou se\njogando numa fonte de água próxima,\npor exemplo) e cancelar o efeito\ndo ritual.\nExtinguir: o alvo é uma chama de\ntamanho Grande ou menor, que é\napagada. Isso cria uma nuvem de\nfumaça que ocupa\numa esfera de\n3m de raio centrada onde estava a\nchama. Dentro da fumaça,\ncriaturas\ntêm camuflagem.\nModelar: o alvo é uma chama de\ntamanho Grande ou menor. A cada\nrodada, você pode gastar uma ação\nlivre para movimentá-\nla 9m em qualquer\ndireção. Se atravessar o espaço\nocupado por uma criatura, causa 2d6\npontos de dano de fogo. Uma criatura\nsó pode sofrer dano dessa maneira\numa vez por rodada.\nDiscente (+3 PE): muda a duração\npara sustentada\ne adiciona “Resistência:\nReflexos reduz\nà metade”. Em\nvez do normal, você pode gastar uma\nação de movimento para projetar\numa labareda, acertando um alvo\nem alcance curto a partir da chama.\nO alvo sofre 4d6 pontos de dano de\nfogo (Reflexos reduz à metade).\nVerdadeiro (+ 7 PE): pode produzir\nqualquer um dos efeitos, com o dano\naumentado em +3d6."
+	},
+	{
+		"id": "8bba0fe6-1d32-79ae-4be0-851cb817548a",
+		"name": "Coincidência Forçada",
+		"range": "curto",
+		"circle": 2,
+		"target": "1 criatura",
+		"duration": "cena",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você força os caminhos do Caos\npara que o alvo tenha mais sorte em\num aspecto de sua vida. Escolha um\natributo\n— até o final da cena, sempre\nque o alvo fizer um teste de perícia\nbaseada no atributo escolhido, pode\nrolar novamente o d20 com pior resultado.\nDiscente (+2 PE): o alvo escolhe dois\natributos. Requer 3º círculo.\nVerdadeiro (+5 PE): Muda o alvo\npara “aliados à sua escolha”. Requer\n4º círculo e afinidade com Energia."
+	},
+	{
+		"id": "a3bfd412-1aab-e6b3-31df-8db848e09602",
+		"name": "Desacelerar Impacto",
+		"range": "curto",
+		"circle": 2,
+		"target": "criaturas, personagens, ou objetos somando até 10 espaços",
+		"duration": "até chegar ao solo ou cena, o que vier primeiro",
+		"elements": [
+			"morte"
+		],
+		"execution": "reação",
+		"resistance": "",
+		"description": "O alvo cai lentamente. A velocidade\nda queda é reduzida para 18m por\nrodada — o suficiente para não causar\ndano. Como conjurar este ritual\né uma reação, você pode conjurá-lo\nrápido o bastante para salvar a si ou\num aliado de quedas inesperadas. Se\no alvo for um projétil — como um\ndisparo de arma ou um objeto largado\ndo alto de um prédio —, o ritual faz\ncom que ele cause metade do dano\nnormal, devido à lentidão.\nDesacelerar Impacto só funciona em\nalvos em queda livre ou similar; não\npode frear um golpe de faca ou o mergulho\nrasante de um atacante voador.\nDiscente (+3 PE): aumenta o total de\nalvos para até 100 espaços."
+	},
+	{
+		"id": "bed6a478-522f-7d46-9223-c3bc8c65d753",
+		"name": "Aprimoramento Mental",
+		"range": "toque",
+		"circle": 2,
+		"target": "1 criatura",
+		"duration": "cena",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você imbui a mente do alvo com fagulhas\ndo Conhecimento. Escolha\nentre Intelecto e Presença. O alvo\nrecebe +1 no atributo escolhido. Esse\naumento não fornece PE, Sanidade ou\nperícias treinadas adicionais.\nDiscente (+3 PE): em vez do normal,\no alvo recebe +1 nos dois atributos.\nRequer 3º círculo.\nVerdadeiro (+7 PE): em vez do\nnormal, o alvo recebe +2 nos dois\natributos. Requer 4º círculo e afinidade\ncom Conhecimento."
+	},
+	{
+		"id": "2ac28f7a-765b-b3df-d02d-33322c6c0a09",
+		"name": "Alterar Memória",
+		"range": "toque",
+		"circle": 3,
+		"target": "1 criatura",
+		"duration": "instantânea",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade anula",
+		"description": "Você invade a mente do alvo e altera\nou apaga suas memórias recentes\n(da última hora). Se escolher alterar\nas memórias, você pode substituir\ndetalhes de eventos recentes, como\na identidade de alguém encontrado,\nou o endereço de um lugar visitado,\nmas não reescrever completamente\nesses eventos. O alvo recupera suas\nmemórias após 1d4 dias.\nVerdadeiro (+4 PE): você pode alterar\nou apagar as memórias das\núltimas 24 horas. Requer 4º Círculo."
+	},
+	{
+		"id": "92887b6d-307f-1756-9f22-0659129914e3",
+		"name": "Convocação Instantânea",
+		"range": "ilimitado",
+		"circle": 3,
+		"target": "um objeto de até 2 espaços",
+		"duration": "instantânea",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade anula",
+		"description": "Você invoca um objeto de qualquer\nlugar\npara sua mão. O item deve ter\nsido previamente preparado com o\nsímbolo do ritual. Se o objeto estiver\nsendo empunhado por outra pessoa,\nela pode fazer um teste de Vontade\npara negar o efeito, mas você saberá\nonde o objeto está e quem o está\ncarregando\n(ou sua descrição física,\nOthavio Henrico dos Santos Soares othavio2650@gmail.com\n121\ncaso não conheça a pessoa). Por até\n1h depois da convocação, você pode\ngastar uma ação de movimento para\nenviar o objeto de volta para o local\nem que ele estava antes.\nDiscente (+4 PE): muda o alvo para\num recipiente médio (como uma\nmala ou caixote), a duração para permanente,\ne adiciona\nsacrifício de 1\nPE. Em vez do normal, você encanta\no recipiente para mantê-lo escondido\nparanormalmente intangível, como\nse estivesse em um estado de suspensão\nda realidade, com até 10 espaços\nde equipamento.\nUma vez escondido,\nvocê pode convocar o recipiente para\num espaço\nlivre adjacente, ou de volta\npara esconderijo paranormal, como\numa ação padrão. Para isso, você deve\nter em mãos uma miniatura do objeto,\nque funciona como um utensílio\nde categoria II.\nVerdadeiro (+ 9 PE): Muda o alvo\npara um objeto de até 10 espaços."
+	},
+	{
+		"id": "b01eed03-9637-ed09-681a-9da6e576b4a2",
+		"name": "Âncora Temporal",
+		"range": "curto",
+		"circle": 3,
+		"target": "1 criatura ou objeto",
+		"duration": "cena",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade parcial",
+		"description": "O alvo é envolvido por uma aura\nespiralada que distorce o tempo ao\nseu redor. No início de cada um se\nseus turnos, ele deve fazer um teste\nde Vontade. Se passar, pode se mover\nnormalmente naquela rodada.\nSe falhar, a aura o impede de sair do\nlugar. O efeito termina se o alvo tiver\ndois sucessos consecutivos no teste\nde Vontade.\nVerdadeiro (+4 PE): muda o alvo\npara “criaturas ou objetos à sua escolha”.\nRequer 4º círculo."
+	},
+	{
+		"id": "d3b9e76b-2a3d-f1dc-553e-ea1ad3550a9e",
+		"name": "Contato Paranormal",
+		"range": "pessoal",
+		"circle": 3,
+		"target": "você",
+		"duration": "1 dia",
+		"elements": [
+			"conhecimento",
+			"medo"
+		],
+		"execution": "completa",
+		"resistance": "",
+		"description": "Você entra em um breve transe e\nsua mente se conecta com o Outro\nLado. Você então barganha com a\nentidade de Conhecimento para que\no auxilie durante o dia, em troca de se\nalimentar de sua sanidade. Quando\no ritual é conjurado, você recebe 6d6\nde auxílio. Enquanto o efeito durar,\nsempre que for realizar um teste de\nperícia, você pode gastar um desses\nd6 e adicionar o resultado rolado\ncomo um bônus no teste. No entanto,\nesse auxílio tem um preço: sempre\nque rolar um “6” num desses d6, a\nentidade “toma” 2 pontos de Sanidade\nde você. O ritual acaba quando você\nficar sem dados para rolar, no fim do\ndia, ou se você chegar a 0 de Sanidade,\no que acontecer primeiro.\nDiscente (+4 PE): Muda os dados de\nauxílio para d8. Sempre que rolar um\nresultado 8, a entidade toma 3 pontos\nde sua Sanidade. Requer 4º círculo.\nVerdadeiro (+9 PE): Muda os dados\nde auxílio para d12. Sempre que rolar\num resultado 12 num desses d12, a\nentidade toma 5 pontos de sua Sanidade.\nRequer 4º círculo e afinidade\ncom Conhecimento."
+	},
+	{
+		"id": "105cce56-8e59-e83d-00c5-3f2a68e33f35",
+		"name": "Alterar Destino",
+		"range": "pessoal",
+		"circle": 4,
+		"target": "alvo",
+		"duration": "instantânea",
+		"elements": [
+			"energia"
+		],
+		"execution": "Reação",
+		"resistance": "",
+		"description": "Você vislumbra o caos do destino e\nvisualiza milhões de possibilidades\nde\num evento próximo, permitindo escolher\no melhor curso de ação. Você\npassa automaticamente em um teste\nde resistência ou evitar um ataque\ncontra você.\nVerdadeiro (+5 PE): muda o alcance\npara “curto” e o alvo para “um aliado\nà sua escolha”."
+	},
+	{
+		"id": "1a553d6e-5946-163d-6d4b-b752e49390e7",
+		"name": "Conhecendo o Medo",
+		"range": "toque",
+		"circle": 4,
+		"target": "1 criatura",
+		"duration": "cena",
+		"elements": [
+			"medo"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade parcial",
+		"description": "O ritual manifesta um estado de\nmedo absoluto na mente do alvo,\nfazendo-o entrar em choque. Se o\nalvo falhar no teste de resistência,\nsua Sanidade é reduzida a 0 e ele fica\nenlouquecendo. Se passar, sofre 10d6\npontos de dano mental e fica apavorado\npor uma rodada. Um personagem\nque enlouqueça completamente pelo\nefeito deste ritual se transforma em\numa criatura Paranormal à critério\ndo Mestre."
+	},
+	{
+		"id": "1e7ba53e-fec3-7ba5-bfba-a85995246d52",
+		"name": "Deflagração de Energia",
+		"range": "pessoal",
+		"circle": 4,
+		"target": "explosão de 15m de raio",
+		"duration": "",
+		"elements": [
+			"energia"
+		],
+		"execution": "completa",
+		"resistance": "Fortitude parcial",
+		"description": "Após concentrar uma quantidade\nimensa de Energia, você emana uma\nexplosão de radiação elétrica, como\numa estrela em plena terra. Todos na\nárea sofrem 150 pontos de dano de\nEnergia e todos os itens tecnológicos\n(armas, acessórios e utensílios) param\nde funcionar. Você não é afetado\npela explosão. Alvos que passem no\nteste\nde Fortitude sofrem metade do\ndano e seus itens voltam a funcionar\napós um dia.\nVerdadeiro (+5 PE): afeta apenas\nalvos a sua escolha."
+	},
+	{
+		"id": "5d8877eb-7295-0712-935c-fa6cadaedf5f",
+		"name": "Convocar o Algoz",
+		"range": "longo",
+		"circle": 4,
+		"target": "1 personagem",
+		"duration": "cena, até ser descarregada",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade parcial, Fortiude parcial",
+		"description": "Usando os medos subconscientes do\nalvo, você manipula a espiral da morte\npara criar uma imagem daquilo\nque ele mais teme. Apenas a própria\nvítima pode ver o algoz com nitidez;\noutras criaturas presentes\n(incluindo\no conjurador) enxergam\napenas um\nespectro sombrio. O algoz surge adjacente\na você e flutua em direção à\nvítima com deslocamento\nde voo de\n12m por turno. Ele é incorpóreo e\nimune a dano.\nSe o algoz terminar seu turno em\nalcance curto da vítima, ela deve fazer\num teste de Vontade. Se falhar,\nficará abalada. Se o algoz terminar\nseu turno adjacente\nà vítima, ela deve\nfazer um teste de Fortitude. Se passar,\nsofre 6d6 pontos\nde dano de Morte\n(este dano não pode reduzir o alvo a\nmenos de 1 PV e não o deixa morrendo).\nSe falhar, sofre\num colapso,\nficando imediatamente com 0 PV e\nmorrendo.\nO algoz persegue o alvo implacavelmente,\nmesmo além do alcance do\nritual. Ele só desaparece se deixar o\nalvo morrendo, se for desconjurado\nou ao término da cena."
+	},
+	{
+		"id": "d06e6c23-0a43-7de3-2f77-a58872928af3",
+		"name": "Controle Mental",
+		"range": "médio",
+		"circle": 4,
+		"target": "um personagem",
+		"duration": "sustentada",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade parcial",
+		"description": "Você domina a mente do alvo, que\nobedece cegamente a seus comandos,\nexceto ordens claramente suicidas.\nUm alvo tem direito a um teste de\nVontade no final de cada um de seus\nturnos para se livrar do efeito. Alvos\nque passarem no teste ficam pasmos\npor 1 rodada enquanto\nrecuperam a\nconsciência.\nDiscente (+5 PE): muda o alvo para\n“até cinco personagens”.\nVerdadeiro (+10 PE): muda o alvo\npara “até dez personagens”. Requer\nafinidade com Conhecimento."
+	},
+	{
+		"id": "db0a4dd9-46d2-8e3f-b552-cd3824f7065d",
+		"name": "Capturar o Coraçã",
+		"range": "curto",
+		"circle": 4,
+		"target": "1 pessoa",
+		"duration": "cena",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade parcial",
+		"description": "Você desperta no alvo uma paixão\ndoentia e obcecada por você, fazendo\ncom que ele queira te agradar, proteger\ne estar ao seu lado a qualquer\ncusto, mesmo que seja ficando contra\nseus companheiros. No início do\nturno do alvo ele deve fazer um teste\nde Vontade. Se falhar, age como seu\naliado na melhor de suas capacidades.\nSe passar, o efeito se encerra."
+	},
+	{
+		"id": "e27f58b3-943f-9b47-304f-f375027c713b",
+		"name": "Canalizar o Medo",
+		"range": "toque",
+		"circle": 4,
+		"target": "1 criatura",
+		"duration": "permanente até ser descarregada",
+		"elements": [
+			"medo"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você transfere um pouco de seu poder\nparanormal a outra pessoa. Escolha\num ritual de até 3º círculo que\nvocê conheça; o alvo pode conjurar\neste ritual uma vez, sem pagar seu\ncusto base em PE (mas pode aplicar\naprimoramentos usando seus próprios\nPE para isso). Você sofre uma\npenalidade\nde PE igual ao custo do\nritual “transferido” até que o alvo\nconjure o ritual que você transferiu."
+	}
+]
