@@ -2,8 +2,8 @@ import Sequelize from 'sequelize';
 
 import { db } from '../config/db';
 
-export const Sheet = db.define('sheet',{
-    id:{
+export const Sheet = db.define('sheet', {
+    id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
@@ -33,15 +33,15 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    rank:{
+    rank: {
         type: Sequelize.STRING,
         defaultValue: '',
     },
-    class:{
+    class: {
         type: Sequelize.STRING,
         defaultValue: '',
     },
-    origin:{
+    origin: {
         type: Sequelize.STRING,
         defaultValue: '',
     },
@@ -53,7 +53,7 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    sanity:{
+    sanity: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
@@ -61,15 +61,15 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    effortPoints:{
+    effortPoints: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    maxEffortPoints:{
+    maxEffortPoints: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
     },
-    proficiences:{
+    proficiences: {
         type: Sequelize.STRING(999),
         defaultValue: '',
     },
@@ -85,7 +85,7 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.JSON,
         allowNull: true,
     },
-    rituals:{
+    rituals: {
         type: Sequelize.JSON,
         allowNull: true,
     },
@@ -97,47 +97,47 @@ export const Sheet = db.define('sheet',{
         type: Sequelize.JSON,
         allowNull: true,
     },
-    passiveDefense:{
-        type:Sequelize.INTEGER,
-        defaultValue:0,
+    passiveDefense: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
     },
-    blockDefense:{
-        type:Sequelize.INTEGER,
-        defaultValue:0,
+    blockDefense: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
     },
-    dodgeDefense:{
-        type:Sequelize.INTEGER,
-        defaultValue:0,
+    dodgeDefense: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
     },
-    physicsResistence:{
-        type:Sequelize.INTEGER,
-        defaultValue:0,
+    physicsResistence: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
     },
-    ballisticResistence:{
-        type:Sequelize.INTEGER,
-        defaultValue:0,
+    ballisticResistence: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
     },
-    bloodResistence:{
-        type:Sequelize.INTEGER,
-        defaultValue:0,
+    bloodResistence: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
     },
-    energyResistence:{
-        type:Sequelize.INTEGER,
-        defaultValue:0,
+    energyResistence: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
     },
-    deathResistence:{
-        type:Sequelize.INTEGER,
-        defaultValue:0,
+    deathResistence: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
     },
-    knowledgeResistence:{
-        type:Sequelize.INTEGER,
-        defaultValue:0,
+    knowledgeResistence: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
     },
-    insanityResistence:{
-        type:Sequelize.INTEGER,
-        defaultValue:0,
+    insanityResistence: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
     },
-    notes:{
+    notes: {
         type: Sequelize.STRING(999),
         defaultValue: '',
     }

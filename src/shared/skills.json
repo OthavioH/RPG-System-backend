@@ -1,0 +1,198 @@
+[
+	{
+		"id": "97f22787-6a67-a996-e685-54dd8d767014",
+		"name": "Acrobacia",
+		"value": 0,
+		"description": "Você consegue fazer proezas acrobáticas.\nAmortecer Queda (Veterano, DT 15).\nQuando cai, você pode gastar uma reação e fazer\num teste de Acrobacia para reduzir o dano.\nSe passar, reduz o dano da queda em 1d6, mais\n1d6 para cada 5 pontos pelos quais o resultado\ndo teste exceder a DT. Se reduzir o dano a zero,\nvocê cai de pé.\nEquilíbrio. Se estiver andando por superfícies\nprecárias, você precisa fazer testes de Acrobacia\npara não cair. Cada ação de movimento exige\num teste. Se passar, você avança metade do seu\ndeslocamento. Se falhar, não avança. Se falhar\npor 5 ou mais, cai. A DT é 10 para piso escorregadio,\n15 para uma superfície estreita (como\no topo de um muro) e 20 para uma superfície\nmuito estreita (como uma corda esticada). Você\npode sofrer –5 no teste para avançar seu deslocamento\ntotal. Quando está se equilibrando\nvocê fica desprevenido e, se sofrer dano, deve\nfazer um novo teste de Acrobacia; se falhar, cai.\nEscapar. Você pode escapar de amarras. A\nDT é igual ao resultado do teste de Agilidade de\nquem o amarrou +10, se você estiver preso por\ncordas, ou 30, se você estiver preso por algemas.\nEste uso gasta uma ação completa.\nLevantar-se Rapidamente (Treinado, DT\n20). Se estiver caído, você pode fazer um teste de\nAcrobacia para ficar de pé. Você precisa ter uma\nação de movimento disponível. Se passar no teste,\nse levanta como uma ação livre. Se falhar, gasta\nsua ação de movimento, mas continua caído.\nPassar por Espaço Apertado (Treinado,\nDT 25). Você pode se espremer por lugares\nestreitos, por onde apenas sua cabeça normalmente\npassaria. Você gasta uma ação completa\ne avança metade do deslocamento.\nPassar por Inimigo. Você pode atravessar\num espaço ocupado por um inimigo como parte\nde seu movimento. Faça um teste de Acrobacia\noposto ao teste de Acrobacia, Iniciativa ou Luta\ndo oponente (o que for melhor). Se você passar,\natravessa o espaço; se falhar, não atravessa e sua\nação de movimento termina. Um espaço ocupado\npor um inimigo conta como terreno difícil.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "ee5f2d54-d28f-4696-f2f7-7aa4b9bf8b95",
+		"name": "Adestramento",
+		"value": 0,
+		"description": "Você sabe lidar com animais.\nAcalmar Animal (DT 25). Você acalma um animal\nnervoso ou agressivo. Isso permite a você controlar\num touro furioso ou convencer um cão de guarda\na não atacá-lo. Este uso gasta uma ação completa.\nCavalgar. Você pode andar à cavalo. Montar exige\numa ação de movimento, mas você pode montar como\numa ação livre com um teste de Adestramento contra\nDT 20 (porém, se falhar por 5 ou mais, cai no chão).\nAndar em terreno plano não exige testes, mas passar\npor obstáculos ou andar em terreno acidentado, sim.\nA DT é 15 para obstáculos pequenos ou terreno ruim\n(estrada esburacada) e 20 para obstáculos grandes ou\nterreno muito ruim (floresta à noite). Se você falhar,\ncai da montaria e sofre 1d6 pontos de dano. Cavalgar\né parte de seu movimento e não exige uma ação.\nSe estiver à cavalo, você pode galopar. Gaste uma\nação completa e faça um teste de Adestramento. Você\navança um número de quadrados de 1,5m igual ao\nseu deslocamento (modificado pela montaria) mais\no resultado do teste. Você só pode galopar em linha\nreta e não pode galopar em terreno difícil.\nManejar Animal (DT 15). Você faz um animal realizar\numa tarefa para a qual foi treinado. Isso permite\nusar Adestramento como Pilotagem para veículos de\ntração animal, como carroças. Este uso gasta uma\nação de movimento.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "b37cd9d9-ad05-9ce4-459b-45e8485142ea",
+		"name": "Artes",
+		"value": "0",
+		"description": "Você sabe se expressar com diversas formas de arte,\ncomo música, dança, escrita, pintura, atuação e outras.\nImpressionar. Faça um teste de Artes oposto pelo\nteste de Vontade de quem você está tentando impressionar.\nSe você passar, recebe +2 em testes de perícia\nbaseadas em Presença contra essa pessoa no mesmo\ndia. Se falhar, sofre –2 nesses testes, e não pode tentar\nde novo no mesmo dia. Se estiver tentando impressionar\nmais de uma pessoa, o mestre faz apenas um\nteste pela plateia toda, usando o melhor bônus. Este\nuso leva de alguns minutos (música ou dança) até\nalgumas horas (apresentação de teatro).",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "c2d6a1ed-bba0-754e-6da5-4698dd2ead8a",
+		"name": "Atletismo",
+		"value": 0,
+		"description": "Você pode realizar façanhas atléticas.\nCorrida. Gaste uma ação completa e faça um teste\nde Atletismo. Você avança um número de quadrados\nde 1,5m igual ao seu deslocamento mais o resultado\ndo teste. Por exemplo, se você tem deslocamento 9m\n(6 quadrados) e tira 15 no teste, avança 21 quadrados.\nVocê só pode correr em linha reta e não pode correr\nem terreno difícil. Você pode correr por um número\nde rodadas igual ao seu Vigor. Após isso, deve fazer\num teste de Fortitude por rodada (DT 5 + 5 por teste\nanterior). Se falhar, fica fatigado.\nEscalar. Gaste uma ação de movimento e faça um\nteste de Atletismo. Se passar, você avança metade do\nseu deslocamento. Se falhar, não avança. Se falhar\npor 5 ou mais, você cai. A DT é 10 para superfícies\ncom apoios para os pés e mãos (como um barranco\ncom raízes), 15 para um portão ou árvore, 20 para\num muro ou parede com reentrâncias e 25 para um\nmuro ou parede liso (como um prédio). Você pode\nsofrer –5 no teste para avançar seu deslocamento total.\nQuando está escalando você fica desprevenido e, se\nsofrer dano, deve fazer um novo teste de Atletismo; se\nfalhar, você cai. Se um personagem adjacente a você\nestiver escalando e cair, você pode tentar pegá-lo. Faça\num teste de Atletismo contra a DT da superfície +5.\nSe passar, você segura o personagem. Se falhar por 5\nou mais, você também cai!\nNatação. Se estiver na água, você precisa gastar uma\nação de movimento e fazer um teste de Atletismo por\nrodada para não afundar. A DT é 10 para água calma,\n15 para agitada e 20 ou mais para tempestuosa. Se passar,\nvocê pode avançar metade de seu deslocamento.\nSe falhar, consegue boiar, mas não avançar. Se falhar\npor 5 ou mais, você afunda. Se quiser avançar mais,\nvocê pode gastar uma segunda ação de movimento\nna mesma rodada para outro teste de Atletismo. Se\nvocê estiver submerso (seja por ter falhado no teste de\nAtletismo, seja por ter mergulhado de propósito), deve\nprender a respiração. Você pode prender a respiração\npor um número de rodadas igual ao seu Vigor. Após\nisso, deve fazer um teste de Fortitude por rodada\n(DT 5 + 5 por teste anterior). Se falhar, se afoga (é\nreduzido a 0 pontos de vida) e poderá morrer (veja\no Capítulo 4 para as regras de morte). Você sofre\npenalidade de carga em testes de natação.\nSaltar. Você pode pular sobre buracos ou obstáculos\nou alcançar algo elevado. Para um salto longo, a DT\né 5 por quadrado de 1,5m (DT 10 para 3m, 15 para\n4,5m, 20 para 6m e assim por diante). Para um salto\nem altura, a DT é 15 por quadrado de 1,5m (30 para\n3m). Você deve ter pelo menos 6m para correr e pegar\nimpulso (sem esse espaço, a DT aumenta em +5).\nSaltar é parte de seu movimento e não exige uma ação.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "02bdc993-057a-a9a9-a8f1-c1f1e8e23628",
+		"name": "Atualidades",
+		"value": 0,
+		"description": "Você é um conhecedor de assuntos gerais, como política,\nesporte e entretenimento, e pode responder dúvidas\nrelativas a esses assuntos. A DT é 15 para informações\ncomuns, como o nome do autor de um livro, 20 para\ninformações específicas, como a história do fundador\nde uma empresa, e 25 para informações quase desconhecidas,\ncomo uma lenda urbana já esquecida.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "04346387-fc36-a236-c967-5cf4241dc69f",
+		"name": "Ciências",
+		"value": 0,
+		"description": "Você estudou diversos campos científicos, como\nmatemática, física, química e biologia, e pode responder\ndúvidas relativas a esses assuntos. Questões\nsimples, como a composição química de uma\nsubstância conhecida, não exigem teste. Questões\ncomplexas, como detalhes sobre o funcionamento\nde um procedimento científico específico, exigem\num teste contra DT 20. Por fim, questões envolvendo\ncampos experimentais, como avaliar a capacidade de\nproteção de uma liga metálica recém-criada, exigem\num teste contra DT 30.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "94dce712-28e7-9d97-3206-78c4e701decd",
+		"name": "Crime",
+		"value": 0,
+		"description": "Você sabe exercer atividades ilícitas.\nArrombar. Você abre uma fechadura trancada.\nA DT é 20 para fechaduras comuns (porta de um apartamento), 25 para fechaduras reforçadas (porta\nde uma loja) e 30 para fechaduras avançadas (cofre\nde um banco). Este uso gasta uma ação completa.\nFurto (DT 20). Você pega um objeto de outra pessoa\n(ou planta um objeto nas posses dela). Gaste uma ação\npadrão e faça um teste de Crime. Se passar, você pega\n(ou coloca) o que queria. A vítima tem direito a um\nteste de Percepção (DT igual ao resultado de seu teste\nde Crime). Se passar, ela percebe sua tentativa,\ntenha você conseguido ou não.\nOcultar. Você esconde um objeto em você mesmo.\nGaste uma ação padrão e faça um teste de Crime\noposto pelo teste de Percepção de qualquer um que\npossa vê-lo. Se uma pessoa revistar você, recebe +10\nno teste de Percepção.\nSabotar (Veterano). Você desabilita um dispositivo.\nUma ação simples, como desativar um alarme,\ntem DT 20. Uma ação complexa, como sabotar uma\npistola para que exploda quando disparada, tem DT\n30. Se você falhar por 5 ou mais, algo sai errado (o\nalarme dispara, você acha que a arma está sabotada,\nmas na verdade ainda funciona...). Este uso gasta\n1d4+1 ações completas. Você pode sofrer uma penalidade\nde –5 em seu teste para fazê-lo como uma\nação completa.\nOs usos arrombar e sabotar exigem um kit de ladrão.\nSem ele, você sofre –5 no teste.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "2db1e233-55a3-2cb1-1ac0-3350e0462c1c",
+		"name": "Diplomacia",
+		"value": 0,
+		"description": "Você convence pessoas com lábia e argumentação.\nAcalmar (treinado, DT 20). Você estabiliza um\npersonagem adjacente que esteja enlouquecendo,\nfazendo com que ele fique com Sanidade 1. A DT\naumenta em +5 para cada vez que ele tiver sido\nacalmado na cena. Este uso gasta uma ação padrão.\nMudar Atitude. Você muda a categoria de atitude\nde um NPC em relação a você ou a outra pessoa (veja\na página ao lado para a explicação das categorias de\natitude). Faça um teste de Diplomacia oposto pelo\nteste de Vontade do alvo. Se você passar, muda a\natitude dele em uma categoria para cima ou para\nbaixo, à sua escolha. Se passar por 10 ou mais, muda\na atitude em até duas categorias. Se falhar por 5\nou mais, a atitude do alvo muda uma categoria na\ndireção oposta. Este uso gasta um minuto. Você\npode sofrer –10 no teste para fazê-lo como uma\nação completa (para evitar uma briga, por exemplo).\nVocê só pode mudar a atitude de uma mesma pessoa\numa vez por dia.\nPersuasão (DT 20). Você convence uma pessoa a\nfazer alguma coisa, como responder a uma pergunta\nou prestar um favor. Se essa coisa for custosa (como\nemprestar um carro) você sofre –5 em seu teste. Se\nfor perigosa (como cometer um crime) você sofre\n–10 ou falha automaticamente. De acordo com o\nmestre, seu teste pode ser oposto ao teste de Vontade\nda pessoa. Este uso gasta um minuto ou mais,\nde acordo com o mestre.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "e5830e43-9d8b-0dfb-6bb4-dab4c3da8fc1",
+		"name": "Enganação",
+		"value": "0",
+		"description": "Você manipula pessoas com blefes e trapaças.\nDisfarce (Treinado). Você muda sua aparência\nou a de outra pessoa. Faça um teste de Enganação\noposto pelo teste de Percepção de quem prestar\natenção no disfarçado. Se você passar, a pessoa acredita\nno disfarce; caso contrário, percebe que há algo\nerrado. Se o disfarce é de uma pessoa específica,\naqueles que conhecem essa pessoa recebem +10 no\nteste de Percepção. Um disfarce exige pelo menos\ndez minutos e um kit de disfarces. Sem ele, você\nsofre –5 no teste.\nFalsificação (Veterano). Você falsifica um documento.\nFaça um teste de Enganação oposto pelo\nteste de Percepção de quem examinar o documento.\nSe você passar, a pessoa acredita que ele é válido;\ncaso contrário, percebe que é falso. Se o documento é\nmuito complexo, ou inclui uma assinatura ou carimbo\nespecífico, você sofre –10 no teste.\nFintar (Treinado). Você pode gastar uma ação\npadrão e fazer um teste de Enganação oposto a\num teste de Reflexos de uma criatura em alcance\ncurto. Se você passar, ela fica desprevenida contra\nseu próximo ataque, se realizado até o fim de seu\npróximo turno.\nInsinuação (DT 20). Você fala algo para alguém\nsem que outras pessoas entendam do que você\nestá falando. Se você passar, o receptor entende\nsua mensagem. Se falhar por 5 ou mais, entende\nalgo diferente do que você queria. Outras pessoas\npodem fazer um teste de Intuição oposto ao seu\nteste de Enganação. Se passarem, entendem o que\nvocê está dizendo.\nIntriga (DT 20). Você espalha uma fofoca. Por\nexemplo, pode dizer que o dono do bar está aguando\na cerveja para enfurecer o povo contra ele. Intrigas\nmuito improváveis (convencer o povo que o delegado\né um ET que está abduzindo as pessoas) têm DT 30.\nEste uso exige pelo menos um dia, mas pode levar\nmais tempo, de acordo com o mestre. Uma pessoa\npode investigar a fonte da fofoca e chegar até você.\nIsso exige um teste de Investigação por parte dela,\ncom DT igual ao resultado do seu teste para a intriga.\nMentir. Você faz uma pessoa acreditar em algo que\nnão é verdade. Seu teste é oposto pelo teste de Intuição\nda vítima. Mentiras muito implausíveis impõem\numa penalidade de –10 em seu teste (“Por que estou\ncom o crachá do chefe de segurança? Ora, porque ele\ndeixou cair e estou indo devolver!”).",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "a499e873-d2e5-70e2-6b20-6c97ab6d2a4a",
+		"name": "Fortitude",
+		"value": "0",
+		"description": "Você usa esta perícia para testes de resistência contra\nefeitos que exigem vitalidade, como doenças e venenos.\nA DT é determina pelo efeito. Você também\nusa Fortitude para manter seu fôlego quando está\ncorrendo ou sem respirar. A DT é 5 +5 por teste anterior\n(veja a perícia Atletismo para mais detalhes).",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "c5bfca5a-86a1-2dd5-4075-ac7d013e5439",
+		"name": "Furtividade",
+		"value": 0,
+		"description": "Você sabe ser discreto e sorrateiro.\nEsconder-se. Faça um teste de Furtividade oposto\npelos testes de Percepção de qualquer um que\npossa notá-lo. Todos que falharem não conseguem\npercebê-lo (você tem camuflagem total contra eles).\nEsconder-se é uma ação livre que você só pode fazer\nno final do seu turno e apenas se terminar seu turno\nem um lugar onde seja possível se esconder (atrás de\numa porta, num quarto escuro, numa mata densa, no\nmeio de uma multidão...). Se tiver se movido durante\no turno, você sofre –5 no teste (você pode se mover\nà metade do deslocamento normal para não sofrer\nessa penalidade). Se tiver atacado ou feito outra ação\nmuito chamativa, sofre –15.\nSeguir. Faça um teste de Furtividade oposto ao teste\nde Percepção da pessoa sendo seguida. Você sofre\n–5 se estiver em um lugar sem esconderijos ou sem\nmovimento, como um descampado ou rua deserta.\nA vítima recebe +5 em seu teste de Percepção se\nestiver tomando precauções para não ser seguida\n(como olhar para trás de vez em quando). Se você\npassar, segue a pessoa até ela chegar ao seu destino.\nSe falhar, a pessoa o percebe na metade do caminho.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "a21bd3f6-4dad-54db-d420-515bc82dae73",
+		"name": "Iniciativa",
+		"value": 0,
+		"description": "Esta perícia determina sua velocidade de reação.\nQuando uma cena de ação começa, cada personagem\nenvolvido faz um teste de Iniciativa. Eles então agem\nem ordem decrescente dos resultados.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "75f19c4d-75b6-a608-a0c0-482396f491e6",
+		"name": "Intimidação",
+		"value": 0,
+		"description": "Você pode assustar ou coagir outras pessoas. Todos\nos usos de Intimidação são efeitos de medo.\nAssustar (treinado). Gaste uma ação padrão e faça\num teste de Intimidação oposto pelo teste de Vontade\nde uma criatura em alcance curto. Se você passar, ela\nfica abalada pelo resto da cena (não cumulativo). Se\nvocê passar por 10 ou mais, ela fica apavorada por\numa rodada e então abalada pelo resto da cena.\nCoagir. Faça um teste de Intimidação oposto pelo\nteste de Vontade de uma criatura adjacente. Se você\npassar, ela obedece uma ordem sua (como fazer uma\npequena tarefa, deixar que você passe por um lugar\nque ela estava guardando etc.). Se você mandar a\npessoa fazer algo perigoso ou que vá contra a natureza\ndela, ela recebe +5 no teste ou passa automaticamente.\nEste uso gasta um minuto ou mais, de acordo com o\nmestre, e deixa a pessoa hostil contra você.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "4f124016-bfa7-01bb-6dac-31323fa2d63f",
+		"name": "Intuição",
+		"value": 0,
+		"description": "Esta perícia mede sua empatia e “sexto sentido”.\nPerceber Mentira. Você descobre se alguém está\nmentindo (veja a perícia Enganação).\nPressentimento (treinado, DT 20). Você analisa\numa pessoa, para ter uma ideia de sua índole ou\ncaráter, ou uma situação, para perceber qualquer\nfato estranho (por exemplo, se os habitantes de uma\ncidadezinha estão agindo de forma esquisita). Este\nuso apenas indica se há algo anormal; para descobrir\na causa, veja a perícia Investigação.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "1f0e475e-d10a-0d45-ff97-50438fab6a71",
+		"name": "Investigação",
+		"value": 0,
+		"description": "Você sabe como descobrir pistas e informações.\nInterrogar. Você descobre informações perguntando\nou indo para um lugar movimentado e mantendo os\nouvidos atentos. Informações gerais (“Quem é o dono\ndesse restaurante?”) não exigem teste. Informações\nrestritas, que poucas pessoas conhecem (“Quem é\no delegado encarregado desse caso?”), têm DT 20.\nInformações confidenciais, ou que podem colocar\nem risco quem falar sobre elas, têm DT 30. Este uso\ngasta desde uma hora até um dia, a critério do mestre.\nProcurar. Você examina um local. A DT varia: 15\npara um item discreto ou no meio de uma bagunça,\nmas não necessariamente escondido; 20 para um item\nescondido (cofre atrás de um quadro, documento no\nfundo falso de uma gaveta); 30 para um item muito\nbem escondido (passagem secreta ativada por um\nbotão, documento escrito com tinta invisível). Este\nuso gasta desde uma ação completa (examinar uma\nescrivaninha) até um dia (pesquisar uma biblioteca).",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "0d34a482-c3b3-3677-c846-5f450a7377de",
+		"name": "Luta",
+		"value": "0",
+		"description": "Você usa Luta para fazer ataques corpo a corpo. A\nDT é a Defesa do alvo. Se você acertar, causa dano\nde acordo com a arma utilizada. Veja o Capítulo 4\npara as regras completas de ataque.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "1b181319-522a-35f1-8cbe-65e90146fe16",
+		"name": "Medicina",
+		"value": 0,
+		"description": "Você sabe tratar ferimentos, doenças e venenos.\nPrimeiros Socorros (DT 20). Você estabiliza\num personagem adjacente que esteja morrendo, fazendo\ncom que ele fique consciente e com 1 PV. A\nDT aumenta em +5 para cada vez que ele tiver sido\nestabilizado na cena. Este uso gasta uma ação padrão.\nCuidados Prolongados (Veterano, DT 20).\nVocê trata até uma pessoa por ponto de Intelecto para\nque elas se recuperem mais rapidamente. Se passar,\nelas recuperam o dobro dos PV por descanso nesse\ndia. Este uso leva uma hora.\nNecropsia (Treinado, DT 20). Você examina\num cadáver para determinar a causa e o momento\naproximado da morte. Causas raras ou extraordinárias,\ncomo um veneno exótico ou uma maldição,\npossuem DT +10. Este uso leva dez minutos.\nTratamento (Treinado). Você ajuda a vítima\nde uma doença ou veneno com efeito contínuo.\nGaste uma ação completa e faça um teste contra a\nDT da doença ou veneno. Se você passar, o paciente\nrecebe +5 em seu próximo teste de Fortitude contra\nesse efeito.\nEsta perícia exige um kit de medicina. Sem ele, você\nsofre –5 no teste. Você pode usar a perícia Medicina\nem si mesmo, mas sofre –5 no teste.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "219b61a3-5978-20bd-e524-d5d1cccb987a",
+		"name": "Ocultismo",
+		"value": 0,
+		"description": "Você estudou o Paranormal.\nIdentificar Criatura (DT 20). Você gasta uma\nação completa para analisar uma criatura paranormal\nque possa ver. Se passar, descobre uma característica\nda criatura, como um poder ou vulnerabilidade.\nPara cada 5 pontos pelos quais o resultado do teste\nsuperar a DT, você descobre outra característica. Se\nfalhar por 5 ou mais, tira uma conclusão errada (por\nexemplo, acredita que uma criatura é vulnerável à\nMorte, quando na verdade é vulnerável a Energia).\nIdentificar Item Assombrado. Você pode gastar\numa hora para estudar um item assombrado e identificar\nseus poderes ou qual ritual o objeto contém.\nA DT é 20 para itens menores, 25 para médios e 30\npara itens maiores. Você pode sofrer –10 no teste\npara fazê-lo como uma ação completa.\nIdentificar Ritual (DT 10 +5 por círculo do\nritual). Quando alguém lança um ritual, você pode\ndescobrir qual é observando seus gestos, palavras e\ncomponentes. Este uso é uma reação.\nInformação. Você responde dúvidas relativas ao\nOutro Lado, objetos amaldiçoados, fenômenos paranormais,\nrunas, profecias,etc. Questões simples não\nexigem teste. Questões complexas exigem um teste\ncontra DT 20. Por fim, mistérios e enigmas exigem\num teste contra DT 30.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "4cfb7239-279b-0832-70bd-5ca67cef21c4",
+		"name": "Percepção",
+		"value": 0,
+		"description": "Você nota coisas usando os sentidos.\nObservar. Você vê coisas discretas ou escondidas.\nA DT varia de 15, para coisas difíceis de serem vistas\n(um livro específico em uma estante) a 30, para\ncoisas quase invisíveis (uma gota de sangue em uma\nfolha no meio de uma floresta à noite). Para pessoas\nou coisas escondidas, a DT é o resultado do teste\nde Furtividade ou Crime feito para esconder a pessoa\nou ocultar o item. Você também pode perceber\ndisfarces e falsificações (veja a perícia Enganação)\ne ler lábios (DT 20).\nOuvir. Você escuta barulhos sutis. Uma conversa\ncasual próxima tem DT 0 — ou seja, a menos que\nexista alguma penalidade, você passa automaticamente.\nOuvir pessoas sussurrando tem DT 15. Ouvir\ndo outro lado de uma porta aumenta a DT em\n+5. Você pode fazer testes de Percepção para ouvir\nmesmo que esteja dormindo, mas sofre –10 no teste;\num sucesso faz você acordar. Perceber criaturas que\nnão possam ser vistas tem DT 20, ou +10 no teste\nde Furtividade da criatura, o que for maior. Mesmo\nque você passe no teste, ainda sofre penalidades\nnormais por lutar sem ver o inimigo.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "a5433195-b5f8-e3d2-974d-4de6a9e78be9",
+		"name": "Pilotagem",
+		"value": 0,
+		"description": "Você sabe operar veículos terrestres e aquáticos, como\nmotos, carros e lanchas. Pilotar um veículo gasta uma\nação de movimento por turno. Situações comuns\n(dirigir em uma estrada, velejar em clima tranquilo)\nnão exigem teste. Situações ruins (dirigir em uma\nestrada de chão e sem iluminação, velejar em chuva\nou ventania) exigem um teste por turno contra DT\n15. Situações terríveis (dirigir em terreno acidentado,\nvelejar durante uma tempestade) exigem um teste por\nturno contra DT 25. Se você possuir grau de treinamento\nveterano nesta perícia, pode pilotar veículos\naéreos, como aviões e helicópteros.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "221f084e-03bd-0fe5-76ac-f9ea9e9b05d9",
+		"name": "Pontaria",
+		"value": 0,
+		"description": "Você usa Pontaria para fazer ataques à distância. A\nDT é a Defesa do alvo. Se você acertar, causa dano\nde acordo com a arma utilizada. Veja o Capítulo 4\npara as regras completas de ataque.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "79e7fc36-ee0a-eb86-b8fc-8cd175453e48",
+		"name": "Profissão",
+		"value": 0,
+		"description": "Você sabe exercer uma profissão específica, como\nadvogado, engenheiro, jornalista ou publicitário.\nConverse com o mestre para definir os detalhes de\nsua profissão e que tipos de testes você pode fazer\ncom ela. Por exemplo, um advogado pode fazer um\nteste de Profissão para argumentar com a polícia,\nenquanto um administrador pode usar esta perícia\npara investigar os documentos de uma corporação.\nUm personagem treinado nesta perícia possui seus\npróprios rendimentos ou, caso não trabalhe mais,\numa reserva de capital. Isso permite que você comece\ncada missão com um item adicional, além daqueles\nfornecidos pela Ordem. O item é de categoria I se\nvocê for treinado, de categoria II se você for veterano\ne de categoria III se você for expert.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "7df5e709-9cf6-6201-83a2-3b16b7a630ec",
+		"name": "Reflexos",
+		"value": "0",
+		"description": "Você usa esta perícia para testes de resistência contra\nefeitos que exigem reação rápida, como armadilhas e\nexplosões. A DT é determina pelo efeito. Você também\nusa Reflexos para evitar fintas.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "7faa3bf1-6677-249b-740b-bea36fa848fb",
+		"name": "Religião",
+		"value": 0,
+		"description": "Você possui conhecimento sobre teologia e as diversas\nreligiões do mundo.\nAcalentar (DT 20). Você pode usar Religião como\nDiplomacia para acalmar um personagem que esteja\nenlouquecendo.\nInformação. Você pode responder dúvidas relativas\na deuses, profecias, planos de existência etc. A DT é\n10 para questões simples, 20 para questões complexas\ne 30 para mistérios e enigmas.\nRito (Veterano, DT 20). Você realiza uma cerimônia\nreligiosa (batizado, casamento, funeral...).",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "4f1633d9-f563-2d39-736a-01e4ffd7ac2e",
+		"name": "Sobrevivência",
+		"value": 0,
+		"description": "Você pode se guiar em regiões selvagens e evitar\nperigos da natureza.\nAcampamento (Treinado). Você pode conseguir\nabrigo e alimento nos ermos, caçando, pescando, colhendo\nfrutos, etc. A DT depende do tipo de terreno:\n15 para campo aberto, 20 para mata fechada e 25\npara regiões extremas, como desertos, pântanos ou\nmontanhas. Regiões especialmente áridas ou estéreis\ne clima ruim (neve, tempestade etc.) impõem uma\npenalidade de –5 (cumulativa). Se passar, você e seu\ngrupo podem usar as ações alimentar-se e dormir\nmesmo estando ao relento.\nIdentificar Criatura (Treinado, DT 20). Com\numa ação completa, você pode identificar um animal\nexótico. Veja a perícia Ocultismo.\nOrientar-se. Um personagem viajando em regiões\nselvagens precisa fazer um teste de Sobrevivência por\ndia para avançar. A DT depende do tipo de terreno\n(veja acima). Se passar, você avança seu deslocamento\nnormal. Se falhar, avança metade. Se falhar por\n5 ou mais, se perde e não avança pelo dia inteiro.\nNum grupo, um personagem deve ser escolhido\ncomo guia. Personagens treinados em Sobrevivência\npodem fazer testes para ajudá-lo. Entretanto,\nse mais de um personagem quiser fazer o teste por\nsi só, todos deverão rolar os dados em segredo. Os\njogadores devem decidir qual guia seguir antes de\nverem o resultado!\nRastrear (Treinado). Você pode identificar e\nseguir rastros. A DT varia: 15 para rastrear um grupo\ngrande, ou uma única criatura em solo macio, como\nlama ou neve; 20 para uma criatura em solo comum\n(grama, terra); 25 para uma criatura em solo duro\n(estrada, piso de interiores). Visibilidade precária ou\nclima ruim (noite, chuva, neblina) impõem –5 no teste.\nVocê precisa fazer um teste por dia de perseguição.\nEnquanto rastreia, seu deslocamento é reduzido à\nmetade. Se falhar, pode tentar novamente gastando\nmais um dia. Porém, a cada dia desde a criação dos\nrastros, a DT aumenta em +1.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "0205f600-f1d3-1bad-27f2-ddc41b013320",
+		"name": "Tecnologia",
+		"value": 0,
+		"description": "Você possui conhecimentos avançados de eletrônica\ne informática. Usos cotidianos, como mexer em um\ncomputador ou celular, não exigem treinamento\nnesta perícia ou testes. Esta perícia serve para usos\navançados, como reprogramar um sistema de vigilância\nou invadir um servidor seguro.\nFalsificação (Veterano). Como o uso de Enganação,\nmas apenas para documentos eletrônicos.\nHackear. Você invade um computador protegido.\nA DT é 15 para computadores pessoais, 20 para\nredes profissionais e 25 para grandes servidores\ncorporativos, governamentais ou militares. Este uso\nOthavio Henrico dos Santos Soares othavio2650@gmail.com\n47\ngasta 1d4+1 ações completas. Você pode sofrer uma\npenalidade de –5 em seu teste para fazê-lo como\numa ação completa. Se você falhar no teste, não\npode tentar novamente até ter alguma informação\nnova que o ajude na invasão, como um nome de\nusuário ou senha. Se falhar por 5 ou mais, pode\nser rastreado pelos administradores do sistema\nque tentou invadir.\nUma vez que invada o sistema, você pode fazer\no que veio fazer. Para procurar uma informação\nespecífica, veja o uso localizar arquivo, abaixo.\nOutras ações, como alterar ou deletar arquivos,\ncorromper ou desativar aplicativos ou bloquear\no acesso de outros usuários, podem exigir novos\ntestes de Tecnologia, à critério do mestre.\nLocalizar Arquivo. Você procura um arquivo\nespecífico em um computador ou rede que possa\nacessar (see você não tiver acesso ao sistema,\nprecisará primeiro invadi-lo; veja o uso hackear,\nacima). O tempo exigido e a DT do teste variam de\nacordo com o tamanho do sistema no qual você está\npesquisando: uma ação completa e DT 15 para um\ncomputador pessoal, 1d4+1 ações completas e DT\n20 para uma rede pequena e 1d6+2 ações completas\ne DT 25 para uma rede corporativa ou governamental.\nEste uso se refere apenas a localizar arquivos\nem sistemas privados que você não conhece. Para\nprocurar informações públicas, na internet, use a\nperícia Investigação.\nOperar Dispositivo. Você opera um dispositivo\neletrônico complexo. Isso permite que você acesse\ncâmeras remotamente, destrave fechaduras eletrônicas,\native ou desative alarmes, etc. A DT é 15 para\naparelhos comuns, 20 para equipamento profissional\ne 25 para sistemas protegidos. Este uso gasta 1d4+1\nações completas e exige um kit de eletrônica. Você\npode sofrer uma penalidade de –5 em seu teste para\nfazê-lo como uma ação completa. Sem o kit, você\nsofre –5 nos testes de operar dispositivo.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "6aacdae9-2b55-ed81-6143-80ebbfb6e00a",
+		"name": "Tática",
+		"value": 0,
+		"description": "Você recebeu educação militar.\nAnalisar Terreno (DT 20). Como uma ação de\nmovimento, você pode observar o campo de batalha.\nSe passar, descobre uma vantagem, como cobertura,\ncamuflagem ou terreno elevado, se houver.\nPlano de Ação (Veterano, DT 20). Como uma\nação padrão, você orienta um aliado em alcance\nmédio. Se passar, fornece +5 na Iniciativa dele. Se\nisso fizer com que um aliado que ainda não tenha\nagido nesta rodada fique com uma Iniciativa maior\ndo que a sua, ele age imediatamente após seu turno.\nNas próximas rodadas, ele age de acordo com\na nova ordem.",
+		"experienceLevel": "destreinado"
+	},
+	{
+		"id": "ac7a2652-3295-b347-8e94-c423e6f78ec7",
+		"name": "Vontade",
+		"value": 0,
+		"description": "Você usa esta perícia para testes de resistência contra\nefeitos que exigem determinação, como intimidação\ne rituais que afetam a mente. A DT é determina pelo\nefeito. Você também usa Vontade para lançar magias\nem condições adversas.",
+		"experienceLevel": "destreinado"
+	}
+]
