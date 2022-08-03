@@ -310,7 +310,7 @@
 		"description": "Este ritual cria uma ilusão visual (uma\npessoa, uma parede...) ou sonora (um\ngrito de socorro, um uivo assustador...).\nO ritual cria apenas imagens\nou sons simples, com volume equivalente\nao tom de voz normal para\ncada cubo de 1,5m no efeito. Não é\npossível criar cheiros, texturas ou\ntemperaturas, nem sons complexos,\ncomo uma música ou diálogo. Seres\ne objetos atravessam uma ilusão sem\nsofrer dano, mas o ritual pode, por\nexemplo, esconder uma armadilha\nou emboscada. A ilusão é dissipada\nse você sair do alcance.\nDiscente (+2 PE): muda o efeito para\naté 8 cubos de 1,5m e a duração para\nsustentada.\nVocê pode criar ilusões\nde imagem e sons combinados. A\ncada rodada você pode usar uma ação\nlivre para mover a imagem ou alterar\nlevemente o som, como aumentar\no\nvolume ou fazer com que pareça se\nafastar ou se aproximar, ainda dentro\ndos limites do efeito. Você pode, por\nexemplo, criar a ilusão de um fantasma\nque anda pela sala, controlando\nseus movimentos. Quando você\npara de sustentar o ritual, a imagem\nou som persistem por mais uma rodada\nantes do ritual se dissipar. Requer\n2º círculo.\nVerdadeiro (+ 5 PE): muda o efeito\npara até 16 cubos de 1,5m e a duração\npara sustentada.\nAlém do normal,\nvocê também pode criar sons\ncomplexos\ncom volume máximo\nequivalente\nao que cinco pessoas\npodem produzir\npara cada cubo\nde 1,5m no efeito. Você pode criar\nodores e sensações térmicas, que\nsão percebidos\na uma distância igual\nao dobro do tamanho máximo do\nefeito — por exemplo,\numa ilusão\nde uma fogueira com 4 cubos de\n1,5m poderia emanar calor e cheiro\nde queimado a até 12m. Também\npode criar sensações táteis, como\ntexturas; objetos ainda atravessam\na ilusão, mas personagens não conseguem\natravessá-la sem passar em\num teste de Vontade. A ilusão ainda\né incapaz de causar ou sofrer dano.\nVocê pode gastar uma ação livre para\nmodificar\nlivremente a ilusão. Requer\n3º círculo."
 	},
 	{
-		"id": "3bc065ad-64ff-fe9f-b50e-68c4fea662b2",
+		"id": "19c69a5a-05c8-8451-9b43-eb5a4bb34952",
 		"name": "Decadência",
 		"range": "toque",
 		"circle": 1,
@@ -321,7 +321,7 @@
 		],
 		"execution": "padrão",
 		"resistance": "Fortitude reduz à metade",
-		"description": "Espirais de trevas envolvem sua\nmão e definham o corpo do alvo\nao toque, causando 2d8+2 pontos\nde dano de Morte.\nDiscente (+2 PE): muda a resistência\npara nenhuma e o dano para 3d8+3.\nComo parte da execução do ritual,\nvocê transfere as espirais para uma\narma e faz um ataque corpo a corpo\ncontra o alvo com esta arma. Se acertar,\ncausa o dano do ataque e do ritual.\nVerdadeiro (+5 PE): muda o alcance\npara pessoal e o alvo para área: explosão\ncom 6m de raio. As espirais\nafetam todas as criaturas e personagens\nna área."
+		"description": "Espirais de trevas envolvem sua\nmão e definham o corpo do alvo\nao toque, causando 2d8+2 pontos\nde dano de Morte.\nDiscente (+2 PE): muda a resistência\npara nenhuma e o dano para 3d8+3.\nComo parte da execução do ritual,\nvocê transfere as espirais para uma\narma e faz um ataque corpo a corpo\ncontra o alvo com esta arma. Se acertar,\ncausa o dano do ataque e do ritual.\nVerdadeiro (+5 PE): muda o alcance para pessoal e o alvo para área: explosão\ncom 6m de raio. As espirais\nafetam todas as criaturas e personagens\nna área."
 	},
 	{
 		"id": "f66c9224-f1c9-8c2f-c98c-1d57e0ac9e75",
@@ -380,6 +380,707 @@
 		"description": "Este ritual cruel faz com que lacerações\nhorríveis se manifestem pela\npele e órgãos do alvo, que sofre 6d8\npontos de dano (metade corte, metade\nsangue) e fica com uma hemorragia\nsevera. No início de cada um\nde seus turnos, o alvo deve fazer um\nteste de Fortitude. Se falhar, sofre\n2d8 pontos de dano de sangue. Se\npassar em dois testes seguidos, a\nhemorragia é estancada. Alvos que\npassem no teste de resistência inicial\nsofrem metade do dano e não ficam\ncom hemorragia.\nDiscente (+3 PE): aumenta o dano\ndireto para 10d8 e o dano da hemorragia\npara 4d8.\nVerdadeiro (+7 PE): muda o alvo\npara você e a duração\npara sustentada.\nEnquanto o ritual durar, seus\nataques corpo a corpo causam 4d8\npontos de dano de sangue adicional\ne deixam o alvo com hemorragia\nautomaticamente. O alvo ainda tem\ndireito a um teste de Fortitude no início\nde seus turnos. Requer afinidade\ncom Sangue."
 	},
 	{
+		"id": "e3f1c9be-fee6-8c71-25d8-a141370b5aa4",
+		"name": "Detecção de Ameaças",
+		"range": "pessoal",
+		"circle": 2,
+		"target": "esfera de 18m de raio",
+		"duration": "cena, até ser descarregado",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "O conjurador recebe uma percepção\naguçada sobre perigos que podem\nestar à sua volta. Quando uma criatura\nhostil ou armadilha entra na área\ndo efeito, você tem uma sensação de\nperigo e faz um teste de Percepção\ncom a DT determinada pelo mestre\nde acordo com a situação. Se passar,\nsabe a direção e distância do perigo.\nDiscente (+3 PE): Além do normal,\nvocê não fica desprevenido contra\nperigos detectados e recebe +5 em\ntestes de resistência contra armadilhas.\nRequer 3º círculo.\nVerdadeiro (+5 PE): Muda a duração\npara 1 dia e concede os mesmos benefícios\nde Discente. Requer 4º círculo."
+	},
+	{
+		"id": "08ff23cb-cad7-6559-0bd0-f6e4e6589402",
+		"name": "Dissonância Acústica",
+		"range": "médio",
+		"circle": 2,
+		"target": "esfera com 6m de raio",
+		"duration": "sustentada",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "O ritual desarranja a vibração do ar,\ncriando uma área de dissonância sonora.\nEnquanto estiverem na área,\ntodas as criaturas e personagens ficam\nsurdos e têm dificuldade para se\nconcentrar. Essa dissonância também\nimpede que criaturas dentro da área\nconjurem rituais.\nDiscente (+1 PE): muda a área para\nalvo de 1 objeto.\nEm vez do normal,\no alvo emana uma área de silêncio\ncom 3m de raio. Se conjurar o ritual\nnum objeto de uma criatura ou personagem\ninvoluntário, ela tem direito\na um teste de Vontade para anulá-la.\nVerdadeiro (+3 PE): muda a duração\npara cena. Em vez do normal,\nnenhum som pode deixar\na área,\nmas criaturas e personagens dentro\nda área podem falar, ouvir e conjurar\nrituais normalmente. Requer\n3º círculo."
+	},
+	{
+		"id": "a8f4858c-ccbc-34f9-3809-295a05f81045",
+		"name": "Distorcer Aparência",
+		"range": "pessoal",
+		"circle": 1,
+		"target": "você",
+		"duration": "cena",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade desacredita",
+		"description": "Você modifica sua aparência física\npara se transformar em outra pessoa.\nIsso inclui altura, peso, tom de\npele, cor de cabelo,\ntimbre de voz,\nimpressão digital e córnea etc. Você\nrecebe +10 em testes de Enganação\npara disfarce, mas não recebe habilidades\nda nova forma nem modifica\nsuas demais estatísticas.\nDiscente (+2 PE): muda o alcance\npara curto e o alvo para 1 personagem.\nUm alvo involuntária\npode anular\no efeito com um teste de Vontade.\nVerdadeiro (+5 PE): muda o alcance\npara curto e o alvo para personagens\nescolhidos. Cada alvo pode ter uma\naparência diferente.\nAlvos involuntários\npodem anular o efeito com um\nteste de Vontade.\nRequer 3º círculo."
+	},
+	{
+		"id": "35191a12-9f4e-bb49-30bb-665e920b06e8",
+		"name": "Distorção Temporal",
+		"range": "pessoal",
+		"circle": 4,
+		"target": "veja texto",
+		"duration": "veja texto",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "A influência da Morte distorce o fluxo\nde tempo em relação a você. Você\ncria um pequeno bolsão temporal\nque dura 3 rodadas. Durante este\ntempo, você pode agir livremente,\nmas não pode sair do lugar nem interagir\ncom objetos e criaturas ao\nseu redor. Da mesma forma, efeitos\ncontínuos não o afetam, e quaisquer\nefeitos que você iniciar não afetarão\na área ao seu redor. Efeitos de área\ne com duração maior que este efeito\nvão agir normalmente quando o\nbolsão temporal acabar."
+	},
+	{
+		"id": "8b635c01-e2b8-32b1-1994-4617009abc3f",
+		"name": "Eco Espiral",
+		"range": "curto",
+		"circle": 2,
+		"target": "1 personagem",
+		"duration": "até três rodadas",
+		"elements": [
+			"morte",
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude parcial",
+		"description": "Você manifesta entre suas mãos uma\npequena cópia do alvo feita de cinzas.\nNo começo de cada um de seus\nturnos, você pode gastar uma ação\npadrão para se manter concentrado\nou descarregar o efeito. Se escolher\ndescarregar, a cópia explode e o alvo\nsofre dano de Morte igual a quantidade\nde dano que sofreu desde que\no ritual foi conjurado (Fortitude reduz\no dano pela metade). Se você\nnão descarregar o efeito em até três\nrodadas, ele é dissipado.\nDiscente (+3 PE): muda a duração\npara até 5 rodadas.\nVerdadeiro (+7 PE): além do dano,\nse falhar no teste de Fortitude, o alvo\nsofre novamente qualquer condição\nnegativa que tenha sofrido enquanto\nvocê se concentra."
+	},
+	{
+		"id": "3a8f8d7c-6702-e378-3e2e-99a4c77952dc",
+		"name": "Eletrocussão",
+		"range": "curto",
+		"circle": 1,
+		"target": "1 personagem",
+		"duration": "instantânea",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude parcial",
+		"description": "Você manifesta e dispara uma corrente\nelétrica contra o alvo, que sofre 2d6\npontos de dano de eletricidade e fica\nvulnerável por uma rodada. Se passar\nno teste de resistência, sofre apenas\nmetade\ndo dano e evita a condição.\nSe usado contra objetos eletrônicos,\neste ritual causa o dobro de dano e\nignora resistência.\nDiscente (+2 PE): muda o alvo para\n“Área: linha de 30m”. Você dispara um\npoderoso raio que causa 6d6 pontos\nde dano de energia em todas as criaturas,\npersonagens e objetos livres\nna\nárea. Requer 2º círculo.\nVerdadeiro (+6 PE): muda a área\npara “alvos escolhidos”. Em vez do\nnormal, você dispara vários relâmpagos,\num para cada alvo escolhido,\ncausando 8d6 pontos de dano de eletricidade.\nRequer 3º círculo."
+	},
+	{
+		"id": "025ef367-b441-fe07-72dd-24ec5bbbc239",
+		"name": "Embaralhar",
+		"range": "pessoal",
+		"circle": 1,
+		"target": "você",
+		"duration": "cena",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você cria três cópias ilusórias que se\nparecem com hologramas extremamente\nrealistas. As cópias ficam ao\nseu redor e imitam\nsuas ações, tornando\ndifícil para um inimigo saber\nquem é o verdadeiro. Você recebe +6\nna Defesa. Cada vez que um ataque\ncontra você erra, uma das imagens\ndesaparece e o bônus na Defesa\ndiminui\nem 2. Um oponente deve ver as\ncópias para ser confundido. Se você\nestiver invisível, ou o atacante fechar\nos olhos, você não recebe o bônus\n(mas o atacante ainda sofre penalidades\nnormais por não enxergar).\nDiscente (+2 PE): muda o número\nde cópias para 5 (e o bônus na Defesa\npara +10). Requer 2º círculo.\nVerdadeiro (+5 PE): muda o número\nde cópias para 8 (e o bônus na Defesa\npara +16). Além do normal, toda vez\nque uma cópia é destruída, emite um\nclarão\nde luz. A criatura que destruiu\na cópia fica ofuscada por uma rodada.\nRequer 3º círculo."
+	},
+	{
+		"id": "7e1f8990-5cbc-6cc4-ff33-6f723e19db64",
+		"name": "Enfeitiçar",
+		"range": "curto",
+		"circle": 1,
+		"target": "1 personagem",
+		"duration": "cena",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade anula",
+		"description": "Este ritual torna o alvo prestativo\n(veja a página XXX). Ele não fica sob\nseu controle,\nmas percebe suas palavras\ne ações da maneira mais favorável\npossível. Você recebe um bônus de\n+10 em testes\nde Diplomacia com ele.\nUm alvo hostil ou que esteja envolvido\nem combate recebe +5 em seu\nteste de resistência. Se você ou seus\naliados tomarem\nqualquer ação hostil\ncontra o alvo, o efeito é dissipado e o\nalvo retorna\nà atitude que tinha antes\n(ou piorada,\nde acordo com o mestre).\nDiscente (+2 PE): em vez do normal,\nvocê sugere\numa ação para o alvo e ele\nobedece.\nA sugestão deve ser feita de\nmodo que pareça aceitável, a critério\ndo mestre.\nPedir que o alvo atire em\nseu companheiro, por exemplo, dissipa\no efeito. Já sugerir a um guarda\nque descanse um pouco, de modo que\nvocê e seus aliados passem por ele,\né aceitável. Quando o alvo executa\na ação, o efeito termina. Você pode\ndeterminar uma condição específica\npara a sugestão:\npor exemplo, que\no policial prenda a próxima pessoa\nde casaco verde que ele encontrar.\nRequer 2º Círculo.\nVerdadeiro (+5 PE): afeta todos\nos alvos dentro do alcance. Requer\n3º círculo."
+	},
+	{
+		"id": "e99fdd08-06b7-93c6-00f7-ca55f6fbbaa7",
+		"name": "Esconder dos Olhos",
+		"range": "pessoal",
+		"circle": 2,
+		"target": "você",
+		"duration": "1 rodada",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "livre",
+		"resistance": "",
+		"description": "O alvo fica invisível, incluindo seu\nequipamento, recebendo camuflagem\ntotal e +20 em testes de Furtividade.\nComo o normal, criaturas\nque não possam vê-lo ficam desprevenidas\ncontra seus ataques.\nO efeito termina se você faz um ataque\nou usa uma habilidade hostil.\nAções contra objetos livres não dissipam\nEsconder dos Olhos (você pode\ntocar ou apanhar objetos que não\nestejam sendo segurados por outras\ncriaturas). Causar\ndano indiretamente\n— por exemplo,\npreparando explosivos\npara detonar mais tarde — não\né considerado um ataque.\nObjetos soltos voltam a ser visíveis\ne objetos apanhados por você ficam\ninvisíveis. Uma luz transportada pelo\nalvo nunca fica invisível (mesmo que\nsua fonte seja). Qualquer parte de um\nitem carregado que se estenda além\nde seu alcance corpo a corpo natural\nse torna visível.\nDiscente (+3 PE): muda a duração\npara sustentada.\nEm vez do normal,\nvocê gera uma esfera de invisibilidade.\nVocê e todos os alvos a até 3m\nse tornam invisíveis, como no efeito\nnormal do ritual(ainda ficam visíveis\ncaso façam uma ação hostil). A esfera\nse move juntamente com você;\nqualquer coisa\nque saia da esfera fica\nvisível. Requer\n3º círculo.\nVerdadeiro (+7 PE): muda a execução\npara ação padrão,\no alcance para toque\ne o alvo para 1 criatura ou personagem.\nO efeito não é dissipado caso o\nalvo faça um ataque ou use uma habilidade\nofensiva. Requer 4º círculo e\nafinidade com Conhecimento."
+	},
+	{
+		"id": "f407b60d-94b2-e93d-2401-1607ee91c0b0",
+		"name": "Espirais da Perdição",
+		"range": "curto",
+		"circle": 1,
+		"target": "criaturas escolhidas",
+		"duration": "sustentada ",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "nenhuma",
+		"description": "Você manifesta espirais negras nos\ncorpos dos alvos, que têm dificuldade\nde coordenar seus movimentos\ne recebem –1 em testes de ataque e\nrolagens de dano.\nDiscente (+2 PE): as penalidades em\nataque e dano tornam-se –2. Requer\n2º círculo.\nVerdadeiro (+8 PE): as penalidades\nem ataque e dano tornam-se –5. Requer\n3º círculo."
+	},
+	{
+		"id": "e67049ec-4957-efbe-a020-23183c3a5551",
+		"name": "Ferver Sangue",
+		"range": "curto",
+		"circle": 3,
+		"target": "1 criatura",
+		"duration": "sustentada",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude parcial",
+		"description": "O sangue do alvo aquece rapidamente\naté entrar em ebulição. Quando\no ritual é conjurado, e no início de\ncada um de seus turnos, o alvo deve\nfazer um teste de Fortitude. Se falhar,\nsofre 4d8 pontos de dano de\nsangue e fica fraco; se passar, sofre\nmetade do dano e não fica fraco\nneste turno. Se o alvo passar em\ndois destes testes de Fortitude em\nsequência, o efeito termina.\nVerdadeiro (+4 PE): muda alvo para\ncriaturas escolhidas. Requer 4º círculo\ne afinidade com Sangue."
+	},
+	{
+		"id": "a716dbbb-4efe-7362-ddb3-5e707d15c8f1",
+		"name": "Fim Inevitável",
+		"range": "extremo",
+		"circle": 4,
+		"target": "buraco negro com 1,5m de diâmetro",
+		"duration": "3 rodadas",
+		"elements": [
+			"morte"
+		],
+		"execution": "completa",
+		"resistance": "Fortitude parcial",
+		"description": "Este ritual cria um vácuo temporal,\nem um espaço desocupado a sua escolha,\ncapaz de sugar\ntudo nas proximidades.\nNo início de cada um de\nseus três turnos seguintes, todas as\ncriaturas,\npersonagens e objetos a\naté 90m do vácuo, incluindo\nvocê,\ndevem fazer um teste de Fortitude.\nEm caso de falha, ficam caídas e são\npuxadas 30m na direção do vácuo.\nObjetos soltos também são puxados.\nCriaturas e personagens podem gastar\numa ação de movimento para se\nsegurar em algum objeto fixo, recebendo\n+5 em seus testes\nde resistência.\nCriaturas, personagens e objetos\nque toquem o vácuo temporal são\ndesintegradas, desaparecendo para\nsempre.\nDiscente (+5 PE): muda o efeito para\nque você não seja afetado.\nVerdadeiro (+10 PE): muda o efeito\npara que criaturas\ne personagens\nescolhidos dentro do alcance não\nsejam afetadas. Requer afinidade\ncom Morte."
+	},
+	{
+		"id": "e5abbe2e-097c-c850-335c-809af8c0f665",
+		"name": "Forma Monstruosa",
+		"range": "pessoal",
+		"circle": 2,
+		"target": "você",
+		"duration": "cena",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Seu corpo e sua\nmente se transformam, assumindo\numa forma monstruosa que combina\nsuas características com as de\numa criatura de Sangue; suas roupas\ne proteção se mesclam à sua carne,\ntransformando-se em uma couraça,\ne quaisquer objetos em suas mãos\nse fundem aos seus braços, transformando-\nse em garras afiadas e pontiagudas.\nTodo seu equipamento se\nfunde à nova forma, ficando inacessível,\nmas quaisquer bônus por equipamento\nse mantém. Seu tamanho\nmuda para Grande (aumentando o\ndano das armas de acordo) e você\nrecebe +5 de Defesa, +5 em testes de\nperícia baseadas em Força e Vigor e\n30 PV temporários. Enquanto estiver\ntransformado, sua mente é tomada\npor instintos de fúria selvagem; você\nnão pode falar nem conjurar rituais\ne a cada rodada deve atacar a criatura\nmais próxima possível (aliada ou\ninimiga). Se não houver uma criatura\nem alcance de ataque, você deve se\ndeslocar em direção à criatura mais\npróxima da melhor forma possível.\nSe a criatura mais próxima for um\naliado, você pode fazer um teste de\nVontade (DT igual à do ritual). Se\npassar, neste turno você pode escolher\nqual criatura atacar.\nDiscente (+3 PE): além do normal,\nrecebe imunidade a atordoamento,\nfadiga, sangramento,\nsono e veneno.\nRequer 3º círculo.\nVerdadeiro (+9 PE): muda os\nbônus em Defesa e testes de Perícias\npara +10 e os PV temporários\npara 50. Requer 4º círculo e afinidade\ncom Sangue."
+	},
+	{
+		"id": "b394343e-143c-9aad-099f-b5c7a0bb2e13",
+		"name": "Fortalecimento Sensorial",
+		"range": "pessoal",
+		"circle": 1,
+		"target": "você",
+		"duration": "cena",
+		"elements": [
+			"sangue"
+		],
+		"execution": "ação",
+		"resistance": "",
+		"description": "Você potencializa seus sentidos, recebendo\n+1d em Investigação, Luta,\nPercepção e Pontaria.\nDiscente (+2 PE): além do normal,\nseus inimigos sofrem –1d em testes\nde ataque contra você. Requer\n2º círculo.\nVerdadeiro (+5 PE): muda a execução\npara padrão e a duração para\n1 dia. Além do normal, você apura\nseus sentidos para perceber qualquer\nperigo ou ameaça. Você fica imune\nàs condições surpreendido e desprevenido,\ne recebe +10 em Defesa e Reflexos.\nRequer 4º círculo e afinidade\ncom Sangue."
+	},
+	{
+		"id": "c70fef9e-a04b-5627-dd3e-a537467748a6",
+		"name": "Físico Aprimorado",
+		"range": "toque",
+		"circle": 2,
+		"target": "1 criatura",
+		"duration": "cena",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "O alvo tem seus\nmúsculos tonificados\ne ligamentos reforçados, recebendo\n+1 em Agilidade ou Força,\nà sua escolha.\nDiscente (+3 PE): em vez do normal,\no alvo recebe +1 nos dois atributos.\nRequer 3º círculo.\nVerdadeiro (+7 PE): em vez do\nnormal, o alvo recebe +2 nos dois\natributos. Requer 4º círculo. Requer\nafinidade com Sangue."
+	},
+	{
+		"id": "80bc8310-09c1-e6ab-3843-7c2c682c736b",
+		"name": "Hemofagia",
+		"range": "toque",
+		"circle": 2,
+		"target": "1 criatura",
+		"duration": "instantânea",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude reduz à metade",
+		"description": "Você faz com que o sangue do alvo\nseja arrancado de seu corpo através\nde sua pele, causando 6d6 pontos de\ndano de Sangue. Você então absorve\nesse sangue, recuperando pontos de\nvida iguais à metade do dano causado.\nDiscente (+3 PE): muda a resistência\npara nenhuma. Como parte da execução\ndo ritual, você pode usar uma\narma ao invés das mãos para fazer um\nataque corpo a corpo\ncontra o alvo.\nSe acertar, causa o dano do ataque\ne do ritual, recuperando pontos de\nvida em quantidade igual à metade\ndo dano total causado.\nVerdadeiro (+7 PE): muda o alcance\npara pessoal, o alvo para você e a duração\npara cena. Em vez do normal,\na cada rodada você pode gastar uma\nação padrão para tocar\n1 criatura ou\npersonagem e causar 4d6 pontos de\ndano de Sangue. Você recupera pontos\nde vida iguais à metade do dano\ncausado. Requer\n4º círculo."
+	},
+	{
+		"id": "0544c4b7-81cd-b33e-c73a-4aa442e8f292",
+		"name": "Invólucro de Carne",
+		"range": "longo",
+		"circle": 4,
+		"target": "criar um clone",
+		"duration": "cena",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você manifesta uma poça de sangue\ngrotesca no chão, de onde emerge\numa cópia perfeita sua: ela é idêntica\nem aparência e capacidades (em termos\nde jogo, tem as mesmas estatísticas\nde personagem) e surge com uma\ncópia perfeita de todo equipamento\nmundano que você está carregando\nno momento. A cópia não tem consciência\n(valor de Intelecto e Presença\nnulos) e não interage com o ambiente\nsem que você dê uma ordem. Você\npode usar uma ação de movimento\npara dar uma ordem simples à cópia,\ncomo “lute contra aquela criatura”.\nNo final de cada um de seus turnos,\na cópia segue a ordem da melhor maneira\npossível, mas ainda é incapaz\nde tomar decisões sozinha e acatará\nqualquer ordem perigosa sem hesitar,\nmesmo que leve à sua destruição.\nPara demais regras, a cópia é um NPC\ncontrolado pelo mestre, mas totalmente\nfiel a você.\nAlternativamente, no início de seu\nturno, você pode escolher controlar\nativamente a cópia. Se fizer isso, você\nentra num transe temporário e assume\no controle da cópia como se fosse\nseu próprio corpo, usando inclusive\nseus sentidos.\nQualquer criatura que interagir com\na cópia tem direito a um teste de Percepção\n(DT do ritual) para perceber\nque é uma cópia. A cópia se desfaz\nem uma poça de sangue coagulado\nse chegar a 0 PV ou sair do alcance.\nVerdadeiro (+5 PE): cria uma cópia\nadicional. Você só pode controlar\numa cópia por turno."
+	},
+	{
+		"id": "75b274e8-1c3f-8501-3f74-3bef73ad1615",
+		"name": "Ligação Telepática",
+		"range": "toque",
+		"circle": 2,
+		"target": "2 criaturas voluntárias",
+		"duration": "1 dia",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você cria um elo\nmental entre\nduas pessoas\n(você pode ser\numa delas), que\npodem se comunicar\nindependente\nda distância.\nDiscente (+3 PE): Em vez do normal,\nvocê cria um elo mental que permite\nque você veja e ouça pelos sentidos\ndo alvo, gastando\numa ação de movimento\npara se concentrar. Um alvo\ninvoluntário pode fazer um teste de\nVontade para suprimir o ritual por\numa hora. Requer 3º círculo.\nVerdadeiro (+ 7 PE): você pode\ncriar um vínculo mental entre até\n5 pessoas."
+	},
+	{
+		"id": "edaa1838-cb4b-81c1-d61b-7a9ea9ffbc89",
+		"name": "Localização",
+		"range": "pessoal",
+		"circle": 2,
+		"target": "círculo com 90m de raio",
+		"duration": "cena",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Esta ritual pode encontrar uma pessoa\nou objeto a sua escolha. Você\npode pensar em termos gerais (“um\npolicial”, “algo de metal”) ou específicos\n(“A delegada Joana”, “munição\nde pistola”). A ritual indica a direção\ne distância\nda pessoa ou objeto mais\npróximo\ndesse tipo, caso esteja ao\nalcance. Você pode movimentar-se\npara continuar\nprocurando. Procurar\nalgo muito\nespecífico (“a chave do armazém\n04 no porto”) exige que você\ntenha em mente uma imagem precisa\ndo objeto; caso a imagem não seja\nmuito próxima da verdade, o ritual\nfalha,\nmas você gasta os PE mesmo\nassim.\nEste ritual pode ser bloqueado\npor uma fina camada de chumbo.\nDiscente (+3 PE): muda o alvo para\n1 pessoa e a duração para 1 hora.\nEm vez do normal,\na pessoa tocada\ndescobre o caminho\nmais direto para\nentrar ou sair de um lugar. Assim, o\nritual pode ser usado para descobrir a\nrota até o relicário\nde uma catedral ou\na saída mais próxima de uma caverna\n(mas não para encontrar a localização\nde uma pessoa ou objeto; funciona\napenas em relação a lugares). Caso\na pessoa demore mais de uma hora\npara percorrer o caminho, o conhecimento\nse perde.\nVerdadeiro (+7 PE): aumenta a área\npara círculo de 1km de raio. Requer\n4º círculo."
+	},
+	{
+		"id": "c8f355b5-a857-bec8-1472-44e17f75a90d",
+		"name": "Luz",
+		"range": "curto",
+		"circle": 1,
+		"target": "1 objetoo",
+		"duration": "cena",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade anula (veja texto)",
+		"description": "O alvo emite uma luz de cores alternadas\ne brilhantes (mas não produz\ncalor)\nem uma área com 9m de raio.\nO objeto pode ser guardado (em um\nbolso,\npor exemplo) para interromper\na luz, que voltará a funcionar caso\no objeto\nseja revelado. Se o alvo for\num objeto em posse de uma pessoa\ninvoluntária,\nela tem direito a um\nteste de Vontade\npara anular o efeito.\nDiscente (+2 PE): muda o alcance\npara longo e o efeito para 4 esferas\nbrilhantes. Cria esferas flutuantes\nde\npura luz com 10cm de diâmetro, que\nvocê pode posicionar onde quiser\ndentro do alcance. Você pode enviar\numa esfera à frente, outra para trás,\noutra para cima e manter uma perto\nde você, por exemplo. Uma vez por\nrodada,\nvocê pode mover as esferas\ncom uma ação livre. Cada esfera ilumina\numa área de 6m de raio, mas\nnão produz calor.\nSe uma esfera\nocupar o espaço de uma criatura ou\npersonagem, ela fica ofuscada e sua\nsilhueta\npode ser vista claramente\n(ela não recebe camuflagem por escuridão\nou invisibilidade). Requer\n2º círculo.\nVerdadeiro (+5 PE): a luz é cálida\ncomo a do sol. Dentro da área seus\naliados recebem um bônus de +1d\nem testes de Vontade, e seus inimigos\nficam ofuscados. Requer 3º círculo."
+	},
+	{
+		"id": "1c804c0c-39ed-15b0-1640-bc75e1ec2a5b",
+		"name": "Lâmina do Medo",
+		"range": "toque",
+		"circle": 4,
+		"target": "1 criatura",
+		"duration": "instantânea",
+		"elements": [
+			"medo"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude parcial",
+		"description": "Você manifesta uma lâmina impossível\nque pode apenas ser descrita\ncomo uma “fenda na Realidade” e\nataca um alvo adjacente. Se o alvo\ntocado pela lâmina falhar no teste\nde Fortitude,\nseus PV são reduzidos\na 0; se passar, sofre 10d8 pontos de\ndano de Medo (ignora todas as resistências)\ne fica apavorado por uma\nrodada. Aprender este ritual requer\num poder de trilha específico."
+	},
+	{
+		"id": "3e2047c8-80d2-2051-8f7e-bea6d143a0f1",
+		"name": "Medo Tangível",
+		"range": "pessoal",
+		"circle": 4,
+		"target": "você",
+		"duration": "cena",
+		"elements": [
+			"medo"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "O ritual transforma seu corpo em\numa manifestação do Medo, tornando-\no imune aos efeitos mundanos\nque podem atingi-lo. Você fica imune\nàs condições\natordoado, cego, debilitado,\nenjoado,\nenvenenado, exausto,\nfatigado,\nfraco, lento, ofuscado e paralisado,\nalém de acertos críticos, ataques\nfurtivos\ne doenças. Além disso,\ndano do tipo balístico, corte, impacto\ne perfuração não podem reduzir seu\ntotal de pontos de vida abaixo de 1,\ntornando-o virtualmente imortal."
+	},
+	{
+		"id": "933d5cc7-8b42-5a09-34bc-758005ee8605",
+		"name": "Miasma",
+		"range": "médio",
+		"circle": 2,
+		"target": "nuvem com 6m de raio",
+		"duration": "instantânea",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude (veja texto)",
+		"description": "A área é coberta por emanações tóxicas\nletais. Criaturas na área sofrem\n5d6 pontos de dano de veneno e ficam\nenjoadas por 1 rodada. Se passarem\nna resistência,\nsofrem metade\ndo dano e não ficam\nenjoadas.\nDiscente (+3 PE): muda o tipo do\ndano para Morte.\nVerdadeiro (+7 PE): aumenta o\ndano para 8d6 e muda o tipo de dano\npara Morte. Personagens dentro da\nnuvem não podem respirar. Requer\n4º círculo."
+	},
+	{
+		"id": "c33b1dad-7772-e1b7-ae0a-7eb6189dc986",
+		"name": "Neutralizar Ritual",
+		"range": "médio",
+		"circle": 3,
+		"target": "1 pessoa, objeto ou esfera com 3m de raio",
+		"duration": "instantânea",
+		"elements": [
+			"medo"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você dissipa os efeitos de rituais que\nestejam ativos, como se sua duração\ntivesse acabado. Note que efeitos de\nrituais instantâneos não podem ser\ndissipados (não se pode dissipar uma\nárea de Paradoxo depois que já causou\ndano...). Faça um teste de Ocultismo;\nvocê anula rituais com DT\nigual ou menor que o resultado do\nteste. Você pode conjurar esse ritual\nem objetos amaldiçoados para que se\ntornem objetos comuns (perdendo\nseus poderes) por um dia. Objetos\nem posse de alguém podem fazer um\nteste de Vontade para negar o efeito."
+	},
+	{
+		"id": "7a9cb692-1350-3723-549f-fec466d57a1a",
+		"name": "Nuvem de cinzas",
+		"range": "curto",
+		"circle": 1,
+		"target": "nuvem com 6m de raio e 6m de altura",
+		"duration": "cena",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Uma nuvem de fuligem espessa eleva-\nse de um ponto a sua escolha, obscurecendo\ntoda a visão — criaturas a\naté 1,5m têm camuflagem e criaturas\na partir de 3m têm camuflagem total.\nUm vento forte dispersa a nuvem em\n4 rodadas e um vendaval a dispersa\nem 1 rodada. A nuvem não funciona\nsob a água.\nDiscente (+2 PE): você pode escolher\ncriaturas no alcance ao conjurar o ritual;\nelas enxergam através do efeito.\nRequer 2º círculo.\nVerdadeiro (+5 PE): além do normal,\na nuvem fica espessa, quase sólida.\nQualquer criatura dentro dela tem\nseu deslocamento reduzido para 3m\n(independentemente de seu deslocamento\nnormal) e sofre –2 em testes\nde ataque e rolagens de dano. Requer\n3º círculo."
+	},
+	{
+		"id": "ecb3736a-4f09-b008-412e-2094e1a92595",
+		"name": "Ouvir os Sussurros",
+		"range": "pessoal",
+		"circle": 1,
+		"target": "você",
+		"duration": "instantânea",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "completa",
+		"resistance": "",
+		"description": "O ritual conecta você com os sussurros:\nmemórias ecoadas pelo Outro\nLado, que poderá consultar para\ncompartilharem seu conhecimento\nproibido em relação a uma ação que\nvocê tomará em breve. O mestre\nrola 1d6 em segredo;\ncom um resultado\nde 2 a 6, o ritual funciona\ne você recebe uma das seguintes\nrespostas: “felicidade” (a ação trará\nbons resultados); “miséria” (a ação\ntrará maus resultados); “felicidade\ne miséria” (para ambos) ou “nada”\n(para ações que não trarão resultados\nbons ou ruins).\nCom um resultado 1, o ritual falha\ne oferece o resultado “nada”. Não há\ncomo saber se esse resultado foi dado\nporque o ritual falhou ou não. Lançar\neste ritual múltiplas vezes sobre o\nmesmo assunto gera sempre o primeiro\nresultado.\nPor exemplo, se o grupo está prestes\na abrir a porta de um cofre, os ecos\ndirão “felicidade” se o item que eles\nbuscam está dentro do cofre, “miséria”\nse o item não está lá e ainda for\numa armadilha, “felicidade e miséria”\nse o item estiver lá, mas também\nhouver uma armadilha, ou “nada” se\no cofre estiver\nvazio.\nDiscente (+2 PE): muda a execução\npara 1 minuto.\nEm vez do normal,\nvocê pode consultar\nos ecos fazendo\numa pergunta sobre um evento que\npoderá acontecer até um dia no futuro.\nO mestre rola a chance de falha;\ncom um resultado\nde 2 a 6, você recebe\numa resposta,\ndesde uma simples\nfrase até uma profecia ou enigma. Em\ngeral, este uso sempre oferece pistas,\nindicando um caminho a tomar para\ndescobrir a resposta que se procura.\nNuma falha você não recebe resposta\nalguma. Requer\n2º círculo.\nVerdadeiro (+5 PE): muda a execução\npara 10 minutos\ne a duração para\n1 minuto. Em vez do normal, você\nconsulta os ecos, podendo fazer uma\npergunta\npor rodada, desde que ela\npossa ser respondida com “sim”, “não”\nou “ninguém sabe”. O mestre rola a\nchance de falha para cada pergunta.\nEm caso de falha, a resposta também\né “ninguém sabe”. Requer 3º círculo."
+	},
+	{
+		"id": "55be99c3-6fe4-d066-6e35-33efd4a6f0e2",
+		"name": "Paradoxo",
+		"range": "médio",
+		"circle": 2,
+		"target": "esfera com 6m de raio",
+		"duration": "instantânea",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude reduz à metade",
+		"description": "O ritual cria uma poderosa implosão\nde distorção temporal contraditória,\ncausando 6d6 pontos\nde dano de\nMorte em todas as criaturas\nna área.\nDiscente (+3 PE): muda a área para\n“efeito: esfera\ncom tamanho Médio”\ne a duração para cena. Em vez do\nnormal,\ncria uma esfera de emanações\nespirais sibilantes com 1,5m de\ndiâmetro que causa 4d6 pontos\nde\ndano de Morte a qualquer criatura\nno mesmo espaço. Você pode gastar\numa ação de movimento para fazer a\nesfera\nvoar 9m em qualquer direção.\nUma criatura só pode sofrer dano da\nesfera uma vez por rodada.\nVerdadeiro (+7 PE): muda o dano\npara 9d6. Criaturas reduzidas a 0 PV\npelo dano do Paradoxo devem fazer\num teste de Fortitude. Se falharam,\nsão reduzidas a cinzas (morrem imediatamente).\nRequer 4º círculo."
+	},
+	{
+		"id": "9b0a88e8-6604-01d8-4252-5ba7cecf7f4d",
+		"name": "Perturbação",
+		"range": "curto",
+		"circle": 1,
+		"target": "1 personagem",
+		"duration": "1 rodada",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "ação padrão",
+		"resistance": "Vontade (anula)",
+		"description": "Você dá uma ordem irresistível, que\no alvo deve ser capaz de ouvir (mas\nnão precisa entender). Se falhar na\nresistência, ele deve obedecer ao\ncomando em seu próprio turno da\nmelhor maneira possível. Escolha um\ndos efeitos.\nFuja. O alvo gasta seu turno tentando\nse afastar de você (usando todas\nas suas ações).\nLargue. O alvo solta quaisquer itens\nque esteja segurando e não pode\npegá-los novamente até o início de\nseu próximo turno. Como esta é uma\nação livre, ele ainda pode executar\noutras ações (exceto pegar aquilo\nque largou).\nPare. O alvo fica pasmo (não pode\nfazer ações, exceto reações).\nSente-se. Com uma ação livre, o alvo\nse senta no chão (se estava pendurado\nou voando, desce até o chão). Ele\npode fazer outras ações, mas não se\nlevantar até o início de seu próximo\nturno.\nVenha. O alvo gasta seu turno se aproximando\nde você (usando todas as\nsuas ações)."
+	},
+	{
+		"id": "54e170f0-43ff-69d1-8cfb-6d9e18fa2d75",
+		"name": "Poeira da Podridão",
+		"range": "médio",
+		"circle": 3,
+		"target": "nuvem com 6m de raio",
+		"duration": "cena",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude (veja texto)",
+		"description": "Você manifesta uma nuvem de poeira\nque apodrece lentamente as criaturas\nna área. Ao conjurar a ritual, e\nno início de seus turnos, criaturas e\nobjetos na área sofrem 2d8+8 pontos\nde dano de Morte (Fortitude\nreduz à\nmetade). Alvos que falharem\nno teste\ntambém não podem recuperar PV\nde nenhuma forma por uma rodada.\nVerdadeiro (+4 PE): muda o dano\npara 4d8+16."
+	},
+	{
+		"id": "99b7e975-89fc-9230-75d0-a07bd186ff20",
+		"name": "Polarização Caótica",
+		"range": "curto",
+		"circle": 1,
+		"target": "você",
+		"duration": "sustentada",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade anula",
+		"description": "Você gera uma aura magnética sobrenatural.\nEscolha um dos efeitos\na seguir.\nAtrair: você pode usar uma ação de\nmovimento para puxar um objeto\nmetálico de espaço 2 ou menor dentro\ndo alcance. Se o objeto estiver\nlivre, voa para suas mãos (caso tenha\nmãos livres para apanhá-lo) ou para\nseus pés.\nRepelir: você repele objetos de espaço\n2 ou menor (o que envolve\nquase todos os projéteis e armas de\narremesso), recebendo resistência 5\ncontra dano balístico, corte, impacto\ne perfuração.\nDiscente (+2 PE): nesta versão a\nenergia\nmagnética é expelida de uma\núnica vez e arremessa até 10 objetos,\nou um total de 10 espaços, o que for\nmenor. Os objetos devem estar a até\n3m uns dos outros. Objetos arremessados\npodem atingir\ncriaturas ou personagens\nem seu caminho, causando\nde 1 ponto de dano de impacto por\nespaço (objetos macios, sem pontas\nou sem fio) até 1d6 pontos de dano\npor espaço (objetos duros, pontudos\nou afiados).\nCriaturas atingidas têm\ndireito a um teste de Reflexos para reduzir\no dano à metade. Criaturas dentro\nda capacidade de carga do efeito\npodem ser arremessadas, mas têm\ndireito a um teste de Vontade\npara\nevitar o efeito (em si mesmas ou em\nobjetos que estejam segurando).\nUma\ncriatura arremessada contra uma superfície\nsólida sofre 1d6 pontos\nde\ndano de impacto para cada 3m que\n“voou” no deslocamento (incluindo\noutras criaturas; nesse caso, ambas\nsofrem o dano).\nVerdadeiro (+5 PE): Muda o alcance\npara médio. Você pode usar uma\nação de movimento para fazer com\nque a força magnética levite e mova\numa criatura\nou objeto de espaço 10\nou menor por até 9m em qualquer\ndireção dentro do alcance. Uma\ncriatura pode anular o efeito sobre\nela, ou sobre um objeto\nque possua,\npassando num teste de Vontade. O\nalvo cai no chão se sair do alcance ou\no efeito terminar."
+	},
+	{
+		"id": "de91a2d9-549c-09ef-b151-00c0241008a1",
+		"name": "Possessão",
+		"range": "longo",
+		"circle": 4,
+		"target": "1 personagem",
+		"duration": "1 dia",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade anula",
+		"description": "Você projeta sua consciência no corpo\nde um alvo vivo ou morto. Enquanto\npossuir o alvo, você assume\no controle total do corpo dele, e se\no alvo estiver vivo, a consciência do\nalvo troca de lugar com a sua, ficando\ninerte dentro do seu corpo desacordado.\nEm termos de jogo, você continua\nusando a sua ficha, mas com\nos atributos físicos, deslocamento e\nhabilidades do alvo. Se o alvo passar\nno teste de resistência, sabe que você\ntentou possuí-lo e fica imune a este\nritual por um dia. Caso qualquer\num dos envolvidos no ritual morra\nenquanto ainda ocupa o corpo do\noutro, a mente sobrevivente ficará\npermanentemente presa no corpo\nnovo, a não ser que use o ritual novamente\npara voltar a seu corpo antigo.\nRetornar para o seu corpo voluntariamente\né uma ação livre."
+	},
+	{
+		"id": "0d29fa67-7f52-18ec-a8c9-c687b936e97d",
+		"name": "Presença do Medo",
+		"range": "pessoal",
+		"circle": 4,
+		"target": "emanação com 9m de raio",
+		"duration": "cena",
+		"elements": [
+			"medo"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você se torna um receptáculo para o\nMedo puro, emanando ondas de pavor\ne ruína. Alvos dentro do alcance\nno momento da conjuração ou que\nterminam seus turnos dentro da área\nafetada são acometidos por um sofrimento\nintenso e sofrem 5d8 de dano\nmental e 5d8 de dano de impacto\n(Vontade reduz à metade). Alvos que\nfalharem no teste ficam atordoados\naté o início de seus próximos turnos.\nSe passarem, ficam abalados até o\ninício de seus próximos turnos."
+	},
+	{
+		"id": "91ac231f-8d67-892b-7a01-185978a68fcc",
+		"name": "Proteção contra Rituais",
+		"range": "toque",
+		"circle": 2,
+		"target": "1 criatura",
+		"duration": "cena",
+		"elements": [
+			"medo"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você canaliza uma aura de Medo em\nsua forma pura, que protege o alvo\ncontra efeitos paranormais. O alvo\nrecebe +2 em testes de resistência\ncontra rituais e habilidades de criaturas\nparanormais.\nDiscente (+3 PE): muda o bônus para\n+5. Requer\n3º círculo.\nVerdadeiro(+6 PE): muda o bônus\npara +10. Requer\n4º círculo."
+	},
+	{
+		"id": "6a6ed02c-eb7b-cd84-d161-6b97e29bd9e9",
+		"name": "Purgatório",
+		"range": "curto",
+		"circle": 3,
+		"target": "área de 6m de raio",
+		"duration": "sustentada",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude parcial",
+		"description": "Você faz brotar uma poça de sangue\npegajoso do chão na área afetada.\nInimigos na área se tornam vulneráveis\naos tipos de dano balístico, corte,\nimpacto e perfuração. Um alvo que\ntente sair da área é acometido de uma\ndor terrível, sofre 6d8 pontos de dano\nde sangue e deve fazer um teste de\nFortitude. Se passar, sofre metade\ndo dano e consegue sair. Se falhar,\na dor faz com que perca a ação de\nmovimento."
+	},
+	{
+		"id": "38550d1d-0e1a-9435-37c3-2e93d0bcd019",
+		"name": "Rejeitar Névoa",
+		"range": "curto",
+		"circle": 2,
+		"target": "nuvem de 6m de raio",
+		"duration": "cena",
+		"elements": [
+			"medo"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você manifesta um leve redemoinho\nde névoa que se movimenta suavemente\nao redor da área afetada. Rituais\nconjurados dentro da área têm seu\ncusto base aumentado em +1PE por\ncírculo, e sua execução aumentada em\num passo (de livre para movimento,\nde movimento para padrão, de padrão\npara ação completa, de completa para\nduas rodadas). Rejeitar a Névoa anula\nos efeitos de Cinerária, a menos que o\nconjurador de Cinerária use uma ação\ncompleta por rodada para manter o\nritual ativo neutralizando o efeito dos\ndois rituais.\nDiscente (+2 PE): custo de rituais\nconjurados dentro da névoa aumenta\nem +2 PE por círculo.\nVerdadeiro (+ 5 PE): além do normal,\no dano causado dentro da névoa por\nrituais é sempre mínimo."
+	},
+	{
+		"id": "df562f2f-445f-821b-722e-9b3d6cf88678",
+		"name": "Salto Fantasma",
+		"range": "médio",
+		"circle": 3,
+		"target": "você",
+		"duration": "instantânea",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Seu corpo se transforma momentaneamente\nem Energia pura e viaja\naté outro ponto. Você não precisa\nperceber nem ter linha de efeito ao\nseu destino, podendo simplesmente\nimaginá-lo se já tiver observado o\nlocal de alguma forma, mesmo por\nvídeo ou fotografia. Por exemplo,\npode se transportar 3m adiante para\nultrapassar uma porta fechada. Uma\nvez transportado, você não pode agir\naté a rodada seguinte. Este ritual não\npermite que você apareça dentro de\num corpo sólido; se o ponto de chegada\nnão tem espaço livre, você ressurge\nna área vazia mais próxima.\nDiscente (+2 PE): muda a execução\npara reação. Em vez do normal,\nvocê salta para um espaço adjacente\n(1,5m), recebendo +10 na Defesa\ne em testes de Reflexos contra um\nataque ou efeito que esteja prestes\na atingi-lo.\nVerdadeiro (+4 PE): muda o alcance\npara longo e o alvo para você e até\noutras duas criaturas voluntários que\nvocê estiver tocando."
+	},
+	{
+		"id": "42f06f1f-0346-39be-f60f-3c698cb93cc2",
+		"name": "Sopro do Caos",
+		"range": "médio",
+		"circle": 2,
+		"target": "varia",
+		"duration": "cena",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "veja texto",
+		"description": "Você pode alterar os movimentos e\ncomportamentos de massas de ar de\nforma caótica. Ao conjurar o ritual,\nescolha um dos efeitos abaixo.\nAscender: cria uma corrente de ar\nascendente capaz de erguer do chão\numa criatura ou objeto médio, fazendo\no alvo ﬂutuar para cima e para\nbaixo conforme sua vontade. Você\npode gastar uma ação de movimento\npara subir ou descer o alvo até 6m\npor rodada, até um máximo de 30m\nde altura. Você não pode mover o\nalvo horizontalmente — mas o alvo\npode, por exemplo, escalar uma colina\nou se apoiar no teto para mover-\n-se lateralmente (com metade de seu\ndeslocamento normal). Uma criatura\nlevitando fica vulnerável. Alvos involuntários\ntêm direito a um teste\nde Fortitude no início de seu turno\npara negar o efeito. Derrubar um alvo\nflutuando (simplesmente parando a\ncorrente de ar) causa o dano normal\nde queda, mas um alvo que passe no\nteste pode “nadar” para o chão contra\na corrente. Você pode usar essa opção\npara fazer uma manobra derrubar\ncontra um alvo voador dentro do\nalcance, usando Presença no lugar\nde Força no teste.\nSopro: cria uma lufada de vento a\npartir de suas mãos, que empurra\nqualquer alvo Médio ou menor, em\num cone de 4,5m — faça uma manobra\nempurrar usando Presença\nao invés de força, usando o mesmo\nresultado de sua rolagem para todos\nos alvos. A lufada de vento também\nfaz qualquer coisa que um vento forte\ne súbito faria, como levantar pó,\ndispersar vapores, apagar chamas,\nespalhar papéis ou mover uma embarcação.\nManter o sopro ativo exige\numa ação padrão no seu turno.\nVento: cria uma área de vento forte\n(página XX) dentro do alcance. Se\nconjurada numa área que já esteja\ncom algum efeito de vento, aumenta\nesse efeito em um passo. Manter o\nvento ativo requer uma ação de movimento.\nVocê também pode usar\nessa opção para reduzir os efeitos de\nvento em uma área.\nDiscente (+3 PE): passa a afetar alvos\nGrandes.\nVerdadeiro (+9 PE): passa a afetar\nalvos Enormes."
+	},
+	{
+		"id": "26c9609e-60eb-6ee3-2dc5-d7f1ac3723f5",
+		"name": "Tela de Ruído",
+		"range": "pessoal",
+		"circle": 2,
+		"target": "você",
+		"duration": "cena",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Este ritual cria uma película de energia\nque recobre seu corpo e repele\ncontato cinético. Você recebe 30 PV\ntemporários, mas apenas contra danos\ndos tipos balístico, corte, impacto\nou perfuração.\nAlternativamente, você pode conjurar\neste ritual como uma reação quando\nfor sofrer dano, recebendo resistência\n15 apenas contra esse dano.\nDiscente (+3 PE): aumenta os PV\ntemporário para 60 e a resistência\npara 30.\nVerdadeiro (+7 PE): muda o alcance\npara curto e o alvo para 1 criatura ou\nobjeto Enorme ou menor. Em vez\ndo normal, cria uma esfera imóvel e\ntremeluzente com o tamanho do alvo\ne centrada nele. Nenhuma criatura,\nobjeto ou efeito de dano pode passar\npela esfera, embora criaturas possam\nrespirar normalmente dentro dela.\nCriaturas na área podem fazer um\nteste de Reflexos para evitar serem\naprisionadas. Requer 4º círculo."
+	},
+	{
+		"id": "69cfa389-6def-f219-03c7-faaccc120d76",
+		"name": "Teletransporte",
+		"range": "toque",
+		"circle": 4,
+		"target": "até 5 criaturas voluntárias",
+		"duration": "instantânea",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "O ritual transforma o corpo e equipamento\ndos alvos em energia pura\ne os faz reaparecer num lugar a sua\nescolha a até 1.000km. Você precisa\nfazer um teste de Ocultismo, com\ndificuldade que depende de seu conhecimento\nsobre o local de destino.\nDT 20. Um lugar familiar, que você\nvisita com frequência.\nDT 30. Um lugar conhecido, que você\njá visitou pelo menos uma vez.\nDT 40. Um lugar desconhecido, que\nvocê nunca visitou e só conhece a\npartir da descrição de outra pessoa\nque esteve lá.\nVocê não pode se teletransportar para\num lugar que nunca visitou sem a\ndescrição\nde alguém. Ou seja, não\npode se transportar para “o local onde\nJúlia está presa” se nunca esteve nesse\nlocal nem falou com alguém que\nesteve.\nSe passar no teste, os alvos chegam\nao lugar desejado. Se falhar, os alvos\nsurgem\n1d10 x 10km afastados em\nqualquer\ndireção (se o destino é uma\ncidade\ncosteira, você pode surgir em\nalto-mar). Se falhar por 5 ou mais,\nvocê chega em um lugar parecido,\nmas errado. E se você rolar 1 natural\nno teste o ritualfalha, mas você gasta\nPE normalmente e fica atordoado por\n1d4 rodadas.\nVerdadeiro (+5 PE): pode se teletransportar\npara um local a até\n10.000km."
+	},
+	{
+		"id": "064d1049-8eb6-f863-3db0-c3acdfc8c306",
+		"name": "Tentáculos de Lodo",
+		"range": "médio",
+		"circle": 3,
+		"target": "círculo com 6m de raio",
+		"duration": "cena",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Uma fenda sombria se abre no chão,\nde onde surgem tentáculos\nfeitos de\nlodo da Morte. Ao conjurar o ritual\ne no início de cada um de seus turnos,\nvocê faz um teste da manobra\nagarrar (usando seu bônus de Ocultismo)\ncontra cada alvo na área. Se\nvocê vencer, a criatura é agarrada; se\na vítima já está agarrada, é esmagada,\nsofrendo 4d6 pontos de dano (metade\nimpacto, metade morte). A área conta\ncomo terreno difícil. Os tentáculos\nsão imunes a dano.\nVerdadeiro (+5 PE): aumenta o raio\nda área para 9m e aumenta o dano\ndos tentáculos\npara 6d6."
+	},
+	{
+		"id": "28cfa97c-fed2-d60f-1d7e-7f843f50c455",
+		"name": "Terceiro olho",
+		"range": "pessoal",
+		"circle": 1,
+		"target": "você",
+		"duration": "cena",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Seus olhos se enchem de sigilos e passam\na enxergar auras paranormais.\nEste efeito é similar ao uso de Ocultismo\npara detectar o paranormal,\nmas você detecta todas as auras paranormais\nem alcance médio e recebe\ntodas as informações sobre elas sem\ngastar ações. Além disso, você pode\ngastar uma ação de movimento para\ndescobrir se uma pessoa que pode ver\nem alcance médio tem poderes paranormais\nou se é capaz de conjurar\nrituais e de quais elementos.\nDiscente (+2 PE): muda a duração\npara 1 dia.\nVerdadeiro (+5 PE): também pode enxergar\nobjetos e criaturas invisíveis, que\naparecem como formas translúcidas."
+	},
+	{
+		"id": "a93a4555-73c4-b748-fc46-a759575d29c5",
+		"name": "Transfigurar Terra",
+		"range": "longo",
+		"circle": 3,
+		"target": "9 cubos com 1,5m de raio",
+		"duration": "instantânea",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrão",
+		"resistance": "veja texto",
+		"description": "Você imbui terra, pedra, lama, argila\nou areia na área com Energia, gerando\nefeitos sobrenaturais e caóticos.\nAo conjurar o ritual, escolha.\nAmolecer: se afetar o teto, uma\ncoluna ou suporte, provoca um\ndesabamento\nque causa 10d6 pontos\nde dano de impacto às criaturas\nna área (Reflexos reduz à metade).\nSe afetar um piso de terra ou pedra,\ncria terreno difícil de areia ou argila,\nrespectivamente.\nModelar: pode usar pedra ou argila\npara criar um ou mais objetos simples\nde tamanho\nEnorme ou menor (sem\nmecanismos\nou partes móveis). Por\nexemplo,\npode transformar um tijolo\nem um martelo, criar uma passagem\nonde antes havia apenas uma parede\nou levantar\numa ou mais paredes que\noferecem\ncobertura total (RD 8 e 50\nPV para cada 3m).\nSolidificar: transforma lama ou areia\nem terra ou pedra. Criaturas com os\npés na superfície ficam agarradas.\nElas podem\nse soltar com uma ação\npadrão e um teste de Acrobacia ou\nAtletismo.\nDiscente (+3 PE): muda a área para\n15 cubos com 1,5m de lado.\nVerdadeiro (+7 PE): também afeta\ntodos os tipos de minerais e metais.\nRequer 4º Círculo"
+	},
+	{
+		"id": "86b4ce60-00b5-af18-3499-734847484a45",
+		"name": "Transfigurar Água",
+		"range": "longo",
+		"circle": 3,
+		"target": "esfera com 30m de raio",
+		"duration": "cena",
+		"elements": [
+			"energia"
+		],
+		"execution": "padrã",
+		"resistance": "veja texto",
+		"description": "Você pode canalizar a Energia para\nque a água tenha movimentos e comportamentos\nsobrenaturais de forma\ncaótica. Ao conjurar o ritual, escolha\num dos efeitos abaixo.\nCongelar: toda a água mundana na\nárea é congelada. Criaturas nadando\nna área ficam imóveis; escapar exige\ngastar\numa ação padrão e passar num\nteste\nde Atletismo ou Acrobacia.\nDerreter: gelo mundano na área vira\nágua e a ritual termina. A critério do\nmestre, isso pode criar terreno difícil.\nEnchente: eleva o nível da água\nmundana\nna área em até 4,5m. A sua\nescolha, muda área para alvo: uma\nembarcação. O alvo recebe +3m em\nseu deslocamento\npela duração do\nefeito.\nEvaporar: toda a água e gelo mundano\nna área evaporam instantaneamente\ne o ritual termina. Qualquer\nser vivo na área sofre 5d8 de dano de\nEnergia (Fortitude reduz à metade).\nCriaturas de Morte sofrem o dobro\ndesse dano.\nPartir: diminui o nível de toda água\nmundana na área em até 4,5m. Em\num corpo d’água raso, isso abre um\ncaminho\nseco, que pode ser atravessado\na pé. Em um corpo d’água profundo,\ncria um redemoinho que pode\nprender barcos (um teste de Pilotagem\ncom DT igual à do ritual permite\nao piloto\nlivrar a embarcação).\nVerdadeiro (+5 PE): aumenta o deslocamento\nde enchente para +9m e o\ndano de evaporar para 10d8."
+	},
+	{
+		"id": "263daa6c-9f9c-d99a-c49b-ab66f8a82697",
+		"name": "Transfusão Vital",
+		"range": "toque",
+		"circle": 2,
+		"target": "1 criatura",
+		"duration": "instantânea",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você toca no alvo e transfere sua própria\nenergia vital para ele, podendo\nsofrer até 30 pontos de dano de Sangue\npara que o alvo recupere a mesma\nquantidade em PV. Você não pode\nficar com menos de 1 PV por causa\ndesse ritual.\nDiscente (+3 PE): Você pode transferir\naté 50 pontos de vida. Requer\n3º círculo.\nVerdadeiro (+7 PE): Você pode\ntransferir até 100 pontos de vida.\nRequer 4º círculo."
+	},
+	{
+		"id": "da630fc2-9d46-7e5d-f3c5-c5136dabefa0",
+		"name": "Velocidade Mortal",
+		"range": "curto",
+		"circle": 2,
+		"target": "1 criatura",
+		"duration": "cena",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "Você distorce a maneira como o alvo\ninterage com a passagem do tempo,\ntornando-o impossivelmente veloz.\nO alvo pode realizar uma ação de\nmovimento adicional por turno. Esta\nação não pode ser usada para conjurar\nrituais.\nDiscente (+3 PE): Muda a duração\npara sustentada. O alvo pode realizar\numa ação padrão ou de movimento\nadicional por turno. Uma criatura só\npode receber uma ação adicional por\nturno como efeito deste ritual.\nVerdadeiro (+7 PE): muda o alvo\npara alvos escolhidos\nno alcance.\nRequer 4º círculo."
+	},
+	{
+		"id": "e1493107-2bd8-4100-9b27-b2b7333f8e8b",
+		"name": "Vidência",
+		"range": "ilimitado",
+		"circle": 3,
+		"target": "1 criatura",
+		"duration": "5 rodadas",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "completa",
+		"resistance": "Vontade anula",
+		"description": "Através de uma superfície reflexiva,\ncomo um espelho ou mesmo uma TV\ndesligada, você pode ver e ouvir uma\ncriatura escolhida e seus arredores\n(cerca de 6m em qualquer direção),\nmesmo que ela se mova. O alvo pode\nestar a qualquer distância, mas tem\ndireito a um teste de resistência por\nrodada para impedir a vidência. Se o\nalvo passar em três testes seguidos, o\nritual é encerrado e o alvo fica imune\nao ritual por uma semana. O alvo\nrecebe bônus ou penalidades em seu\nteste de resistência, dependendo do\nco¬nhecimento que você tiver dela.\nI Você não conhece o alvo: +15.\nI Você ouviu falar do alvo: +10.\nI Você nunca interagiu com o alvo\npessoalmente: +5.\nI Já encontrou o alvo\npessoalmente: +0.\nI Tem uma fotografia ou imagem\nclara do alvo: –2.\nI Conhece bem o alvo: –5.\nI Tem um pertence pessoal ou peça\nde roupa do alvo: –5.\nI Tem uma parte do corpo do alvo\n(unhas, cabelos...): –10."
+	},
+	{
+		"id": "85816eac-a5de-cdc7-ebc1-115e65dae9e4",
+		"name": "Visão da Verdade ",
+		"range": "pessoal",
+		"circle": 4,
+		"target": "você",
+		"duration": "cena",
+		"elements": [
+			"conhecimento"
+		],
+		"execution": "movimento",
+		"resistance": "",
+		"description": "Você enxerga a forma real das coisas.\nVocê pode ver através de camuflagem\n(normal e total), escuridão (normal\ne paranormal) e efeitos de ilusão e\ntransformação (como Forma Monstruosa),\nenxergando a verdade como\nsigilos do Outro Lado formando silhuetas\ntranslúcidas e sobrepostas.\nDiscente (+3 PE): além do normal,\nvocê fica com sentidos e perspicácia\napurados, recebendo +10 em todos\nos testes de Percepção e de Intuição.\nVerdadeiro (+5 PE): além do normal,\nvocê enxerga\natravés de paredes e\nbarreiras com 30cm de espessura ou\nmenos (as paredes\ne barreiras parecem\ntranslúcidas)."
+	},
+	{
+		"id": "b4b45abe-f89e-7c18-6eb6-8b94c8c4ac63",
+		"name": "Vomitar Pestes",
+		"range": "médio",
+		"circle": 3,
+		"target": "1 enxame grande (quadrado de 3m)",
+		"duration": "sustentada",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "Reflexos reduz à metade",
+		"description": "Você vomita um enxame de pequenas\ncriaturas de Sangue, que surge\nem um ponto adjacente a sua escolha.\nO enxame pode passar pelo espaço\nde outras criaturas\ne não impede que\noutras criaturas\nentrem no espaço\ndele. No final de cada um de seus\nturnos, o enxame causa\n5d12 pontos\nde dano de sangue a qualquer\ncriatura\nem seu espaço (Reflexos reduz à\nmetade). Você pode gastar uma ação\nde movimento para mover o enxame\ncom deslocamento de 12m.\nDiscente (+2 PE): além do normal,\num alvo que falhe no teste de Reflexos\nfica agarrada\n(o enxame escala\ne cobre o corpo dela). O alvo pode\ngastar uma ação padrão e fazer um\nteste de Acrobacia ou Atletismo para\nescapar. Se você mover\no enxame, o\nalvo fica livre.\nVerdadeiro (+5 PE): o enxame vira\nEnorme (cubo de 6m de lado), ganha\ndeslocamento de voo 18m e\npassa a ocupar um cubo ao invés\nde um quadrado."
+	},
+	{
+		"id": "69de32eb-14d1-e41f-2e9c-99e8685c417b",
+		"name": "Vínculo de Sangue",
+		"range": "curto",
+		"circle": 4,
+		"target": "1 personagem",
+		"duration": "cena",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "Fortitude parcial",
+		"description": "Você manifesta um símbolo de sangue\nno corpo do alvo e no seu próprio.\nEnquanto o efeito durar, sempre\nque você sofrer dano, o alvo deve fazer\num teste de Fortitude. Se falhar,\nvocê recebe apenas metade do dano\ne o alvo a metade restante.\nAlternativamente, você pode inverter\no efeito do ritual quando o conjurar,\nfazendo com que você receba metade\nde todo o dano que o alvo receber.\nAlvos voluntários não precisam fazer\ntestes de resistência."
+	},
+	{
+		"id": "a7263a2c-def6-a8a3-208b-be324d833c33",
+		"name": "Zerar Entropia",
+		"range": "curto",
+		"circle": 3,
+		"target": "1 personagem",
+		"duration": "cena",
+		"elements": [
+			"morte"
+		],
+		"execution": "padrão",
+		"resistance": "Vontade parcial",
+		"description": "Você zera completamente a entropia\ndo alvo em relação ao ambiente,\ndeixando-o paralisado. Se passar na\nresistência, em vez disso fica lento. A\ncada rodada, pode gastar uma ação\ncompleta para fazer um novo teste\nde Vontade. Se passar, se liberta do\nefeito.\nDiscente (+4 PE): muda o alvo para\n1 criatura. Requer 4º círculo.\nVerdadeiro (+11 PE): muda o alvo\npara criaturas escolhidas. Requer\n4º círculo."
+	},
+	{
 		"id": "b01eed03-9637-ed09-681a-9da6e576b4a2",
 		"name": "Âncora Temporal",
 		"range": "curto",
@@ -392,5 +1093,19 @@
 		"execution": "padrão",
 		"resistance": "Vontade parcial",
 		"description": "O alvo é envolvido por uma aura\nespiralada que distorce o tempo ao\nseu redor. No início de cada um se\nseus turnos, ele deve fazer um teste\nde Vontade. Se passar, pode se mover\nnormalmente naquela rodada.\nSe falhar, a aura o impede de sair do\nlugar. O efeito termina se o alvo tiver\ndois sucessos consecutivos no teste\nde Vontade.\nVerdadeiro (+4 PE): muda o alvo\npara “criaturas ou objetos à sua escolha”.\nRequer 4º círculo."
+	},
+	{
+		"id": "eb3b07d5-886c-20d6-b413-0aa37825a224",
+		"name": "Ódio Incontrolável",
+		"range": "toque",
+		"circle": 1,
+		"target": "1 personagem",
+		"duration": "cena",
+		"elements": [
+			"sangue"
+		],
+		"execution": "padrão",
+		"resistance": "",
+		"description": "O alvo entra em um frenesi de combate,\naumentando suas capacidades\nde luta e sua agressividade. Ele recebe\n+5 em testes\nde ataque e rolagens\nde dano corpo a corpo, e RD 5 contra\ndano balístico, corte, impacto e\nperfuração. Enquanto o efeito durar,\no alvo não pode fazer nenhuma\nação que exige calma e concentração\n(como usar a perícia Furtividade ou\nconjurar rituais), e deve sempre atacar\num alvo em sua rodada, mesmo\nque seja um aliado se ele for o único\na seu alcance.\nDiscente (+2 PE): além do normal,\nsempre que o alvo usar a ação agredir,\npode fazer dois ataques corpo a\ncorpo contra o mesmo alvo.\nVerdadeiro (+5 PE): muda o bônus\nde ataque e dano para +10 e o alvo\npassa a sofrer apenas metade do\ndano dos tipos balístico, corte, impacto\ne perfuração. Requer 3º círculo\ne afinidade."
 	}
 ]
