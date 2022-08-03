@@ -91,7 +91,7 @@ export const sheetController = {
                 origin: character.origin,
                 effortPoints: character.effortPoints,
                 maxEffortPoints: character.maxEffortPoints,
-                proficiencies: character.proficiencies,
+                proficiences: character.proficiences,
                 profileImageUrl: character.profileImageUrl,
                 attributes: attributesJSON,
                 skills: skillsJSON,
