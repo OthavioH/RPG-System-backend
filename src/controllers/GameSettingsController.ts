@@ -1,47 +1,89 @@
 import { Request, Response } from 'express';
-import { socket } from '../app';
+import { Socket } from '../config/socket';
 
-import { GameSettings } from '../models/GameSettings';
+import { GameSettings } from '../entity/GameSettings';
+import { AppDataSource } from '../config/data-source';
 
-export const gameSettingsController = {
-    async createGameSettings() {
-        const gameSettings = await GameSettings.create({ id: 1 }).catch((err) => {
-            console.error(err);
+export class GameSettingsController {
+    private static gameSettingsRepository = AppDataSource.getRepository(GameSettings);
+
+    static async createGameSettings(req: Request, res: Response) {
+
+        const gameSettings = GameSettingsController.gameSettingsRepository.create({id:1});
+        GameSettingsController.gameSettingsRepository.save(gameSettings);
+
+        return res.status(200).json({
+            diceScreenTime: gameSettings.diceScreenTime,
+            diceCooldown: gameSettings.diceCooldown,
+            lastRolls: JSON.parse(gameSettings.lastRolls),
+            skills: JSON.parse(gameSettings.skills),  
+            abilities: JSON.parse(gameSettings.abilities),
+            rituals: JSON.parse(gameSettings.rituals),
         });
-        return gameSettings;
-    },
-    async saveGameProperties(req: Request, res: Response) {
-        const { skills, abilities, rituals } = <any>req.body;
+    }
 
-        const skillsJSON = skills != null ? JSON.parse(JSON.stringify(skills)) : skills;
-        const abilitiesJSON = abilities != null ? JSON.parse(JSON.stringify(abilities)) : abilities;
-        const ritualsJSON = rituals != null ? JSON.parse(JSON.stringify(rituals)) : rituals;
+    static async getGameSettings(req: Request, res: Response) {
+        const gameSettings = await GameSettingsController.gameSettingsRepository.findOne({
+            where: { id: 1 },
+        });
 
-        console.log(skills);
+        if (gameSettings) {
+            return res.status(200).json({
+                diceScreenTime: gameSettings.diceScreenTime,
+                diceCooldown: gameSettings.diceCooldown,
+                lastRolls: JSON.parse(gameSettings.lastRolls),
+                skills: JSON.parse(gameSettings.skills),  
+                abilities: JSON.parse(gameSettings.abilities),
+                rituals: JSON.parse(gameSettings.rituals),
+            });
+        }
+        return res.status(404).json({ message: 'Game settings not found' });
+    }
 
-        await GameSettings.update({
-            skills: skillsJSON,
-            abilities: abilitiesJSON,
-            rituals: ritualsJSON,
-        }, { where: { id: 1 } });
+    static async updateGameProperties(req: Request, res: Response) {
+        const { skills, abilities, rituals } = req.body;
 
-        const gameSettings = await GameSettings.findByPk(1);
+        const gameSettings = await GameSettingsController.gameSettingsRepository.findOne({
+            where: { id: 1 },
+        });
 
-        return res.status(200).json(gameSettings);
-    },
-    async saveTimers(req: Request, res: Response) {
-        const { diceCooldown, diceScreenTime } = <any>req.body;
+        gameSettings.skills = JSON.stringify(skills);
+        gameSettings.abilities = JSON.stringify(abilities);
+        gameSettings.rituals = JSON.stringify(rituals);
+        await GameSettingsController.gameSettingsRepository.save(gameSettings);
+        
+        return res.status(200).json({
+            diceScreenTime: gameSettings.diceScreenTime,
+            diceCooldown: gameSettings.diceCooldown,
+            lastRolls: JSON.parse(gameSettings.lastRolls),
+            skills: JSON.parse(gameSettings.skills),  
+            abilities: JSON.parse(gameSettings.abilities),
+            rituals: JSON.parse(gameSettings.rituals),
+        });
+    }
 
-        await GameSettings.update({
-            diceCooldown: diceCooldown,
-            diceScreenTime: diceScreenTime,
-        }, { where: { id: 1 } });
+    static async saveTimers(req: Request, res: Response) {
+        const { diceScreenTime, diceCooldown } = req.body;
 
-        const gameSettings = await GameSettings.findByPk(1);
+        const gameSettings = await GameSettingsController.gameSettingsRepository.findOne({
+            where: { id: 1 },
+        });
 
-        return res.status(200).json(gameSettings);
-    },
-    async addNewRoll(req: Request, res: Response) {
+        gameSettings.diceScreenTime = diceScreenTime;
+        gameSettings.diceCooldown = diceCooldown;
+        await GameSettingsController.gameSettingsRepository.save(gameSettings);
+        
+        return res.status(200).json({
+            diceScreenTime: gameSettings.diceScreenTime,
+            diceCooldown: gameSettings.diceCooldown,
+            lastRolls: JSON.parse(gameSettings.lastRolls),
+            skills: JSON.parse(gameSettings.skills),  
+            abilities: JSON.parse(gameSettings.abilities),
+            rituals: JSON.parse(gameSettings.rituals),
+        });
+    }
+
+    static async addNewRoll(req: Request, res: Response) {
         const { roll, oldRollList } = req.body;
         const rollList: any[] = oldRollList;
         rollList.unshift(roll);
@@ -51,22 +93,27 @@ export const gameSettingsController = {
 
         const actualRollList = rollList;
 
-        const lastRollsJSON = JSON.parse(JSON.stringify(actualRollList));
+        const lastRollsJSON = JSON.stringify(actualRollList);
 
-        await GameSettings.update({
-            lastRolls: lastRollsJSON
-        }, { where: { id: 1 } });
-
-        socket.emit('lastRollListChanged', actualRollList);
-
-        return res.status(200).json(actualRollList);
-    },
-    async getGameSettings(req: Request, res: Response) {
-        const gameSettings = await GameSettings.findByPk(1);
+        const gameSettings = await GameSettingsController.gameSettingsRepository.findOne({
+            where: { id: 1 },
+        });
 
         if (gameSettings) {
-            return res.status(200).json(gameSettings);
+            gameSettings.lastRolls = lastRollsJSON;
+            await GameSettingsController.gameSettingsRepository.save(gameSettings);
+
+            // Socket.socket.emit('lastRollListChanged', actualRollList);
+        
+            return res.status(200).json({
+                diceScreenTime: gameSettings.diceScreenTime,
+                diceCooldown: gameSettings.diceCooldown,
+                lastRolls: JSON.parse(gameSettings.lastRolls),
+                skills: JSON.parse(gameSettings.skills),  
+                abilities: JSON.parse(gameSettings.abilities),
+                rituals: JSON.parse(gameSettings.rituals),
+            });
         }
-        return res.status(500);
-    },
-};
+    }
+    
+}
