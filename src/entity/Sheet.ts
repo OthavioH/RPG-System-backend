@@ -119,6 +119,7 @@ export class Sheet {
         this.origin = newSheet.origin;
         this.gender = newSheet.gender;
         this.rank = newSheet.rank;
+        this.class = newSheet.class;
         this.effortPoints = newSheet.effortPoints;
         this.maxEffortPoints = newSheet.maxEffortPoints;
         this.blockDefense = newSheet.blockDefense;
