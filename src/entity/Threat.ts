@@ -15,31 +15,31 @@ export class Threat {
   @Column({ default: "" })
   element: string;
   @Column({ default: null, type: "longtext" })
-  secondElements: string;
+  secondElements: any;
   @Column({ default: null, type: "longtext" })
-  skills: string;
+  skills: any;
   @Column({ default: "" })
   size: string;
   @Column({ default: "" })
   type: string;
   @Column({ default: null, type: "longtext" })
-  disturbingPresence: string;
+  disturbingPresence: any;
   @Column({ default: null, type: "longtext" })
-  senses: string;
+  senses: any;
   @Column({ default: null, type: "longtext" })
-  defenses: string;
+  defenses: any;
   @Column({ default: null, type: "longtext" })
-  healthPoints: string;
+  healthPoints: any;
   @Column({ default: null, type: "longtext" })
-  vulnerabilities: string;
+  vulnerabilities: any;
   @Column({ default: null, type: "longtext" })
-  attributes: string;
+  attributes: any;
   @Column({ default: null, type: "longtext" })
-  displacements: string;
+  displacements: any;
   @Column({ default: null, type: "longtext" })
-  actions: string;
+  actions: any;
   @Column({ default: null, type: "longtext" })
-  enigma: string;
+  enigma: any;
 
   updateData(data: any) {
     this.vd = data.vd;

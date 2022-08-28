@@ -2,6 +2,10 @@ import { Request, Response } from "express";
 import { AppDataSource } from "../config/data-source";
 import { Threat } from "../entity/Threat";
 import { generateRandomId } from "../shared/view_utils";
+
+const healthPointsJson = JSON.stringify(
+  require("../shared/threat_health_points.json")
+);
 export class ThreatController {
   private static threatRepository = AppDataSource.getRepository(Threat);
 
@@ -14,6 +18,7 @@ export class ThreatController {
       name: newThreat.name,
       vd: newThreat.vd,
       element: newThreat.element,
+      healthPoints: healthPointsJson,
       secondElements: JSON.stringify(newThreat.secondElements),
       type: newThreat.type,
       size: newThreat.size,
