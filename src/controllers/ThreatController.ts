@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { AppDataSource } from "../config/data-source";
 import { Threat } from "../entity/Threat";
-import { generateRandomId } from "../shared/view_utils";
+import { generateRandomId } from "../utils/view_utils";
 
 const healthPointsJson = JSON.stringify(
   require("../shared/threat_health_points.json")
