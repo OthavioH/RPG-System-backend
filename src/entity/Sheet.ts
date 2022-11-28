@@ -38,7 +38,7 @@ export class Sheet {
   @Column({ default: 0 })
   maxEffortPoints: number;
 
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: "", type: "longtext" })
   proficiences: string;
 
   @Column({ default: null, type: "longtext" })
@@ -101,7 +101,7 @@ export class Sheet {
   @Column({ default: 0 })
   insanityResistance: number = 0;
 
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: "", type: "longtext" })
   notes: string;
 
   updateData(newSheet: any) {

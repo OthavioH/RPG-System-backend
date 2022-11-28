@@ -3,6 +3,8 @@ import { Request, Response } from 'express';
 import { Sheet } from '../entity/Sheet';
 import { AppDataSource } from '../config/data-source';
 import { socketController } from '../app';
+import getDefaultAttributes from '../utils/default_attributes';
+import getDefaultInventory from '../utils/default_inventory';
 
 export class SheetController {
     private static sheetRepository = AppDataSource.getRepository(Sheet);
@@ -13,8 +15,8 @@ export class SheetController {
         const { name } = req.body;
         const sheet = SheetController.sheetRepository.create({
             name:name,
-            attributes: "{\"vigor\":{\"id\":\"3\",\"name\":\"Vigor\",\"value\":\"1\",\"abbreviation\":\"VIG\"},\"agility\":{\"id\":\"2\",\"name\":\"Agilidade\",\"value\":\"1\",\"abbreviation\":\"AGI\"},\"presence\":{\"id\":\"5\",\"name\":\"Presença\",\"value\":\"1\",\"abbreviation\":\"PRE\"},\"strength\":{\"id\":\"1\",\"name\":\"Força\",\"value\":\"1\",\"abbreviation\":\"FOR\"},\"intelligence\":{\"id\":\"4\",\"name\":\"Inteligência\",\"value\":1,\"abbreviation\":\"INT\"}}",
-            inventory: "{\"usedSlots\":\"0\",\"maxSlots\":\"5\",\"items\":[]}",
+            attributes: getDefaultAttributes(),
+            inventory: getDefaultInventory(),
             skills: "[]",
             abilities: "[]",
             rituals: "[]",
