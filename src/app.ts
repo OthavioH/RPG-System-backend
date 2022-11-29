@@ -1,7 +1,9 @@
 import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
-import http from 'http';
+import https from 'https';
+import path from 'path';
+import fs from 'fs';
 
 import routes from './routers/routes';
 import { AppDataSource } from './config/data-source';
@@ -19,9 +21,12 @@ AppDataSource.initialize().then(() => {
     
     app.use(routes);
     
-    const server = http.createServer(app);
+    const server = https.createServer({
+        key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
+        cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem')),
+    },app);
     
     socketController.initialize(server);
 
-    server.listen(process.env.PORT || 3000, () => console.log(`Server started on port ${process.env.PORT || 3000}`));
+    server.listen(process.env.PORT || 3443, () => console.log(`Server started on port ${process.env.PORT || 3443}`));
 });
