@@ -1,0 +1,31 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const GameSettingsController_1 = require("../controllers/GameSettingsController");
+const SheetController_1 = require("../controllers/SheetController");
+const ThreatController_1 = require("../controllers/ThreatController");
+const routes = express_1.default.Router();
+routes.get("/", (req, res) => {
+    return res.send("Olá");
+});
+routes.get("/gamesettings/create", GameSettingsController_1.GameSettingsController.createGameSettings);
+routes.get("/gamesettings", GameSettingsController_1.GameSettingsController.getGameSettings);
+routes.post("/gamesettings/properties/save", GameSettingsController_1.GameSettingsController.updateGameProperties);
+routes.post("/gamesettings/timers/save", GameSettingsController_1.GameSettingsController.saveTimers);
+routes.post("/gamesettings/roll/save", GameSettingsController_1.GameSettingsController.addNewRoll);
+routes.post("/sheets/create", SheetController_1.SheetController.createSheet);
+routes.put("/sheets/:id/hp/update", SheetController_1.SheetController.updateHp);
+routes.put("/sheets/:id/sanity/update", SheetController_1.SheetController.updateSanity);
+routes.put("/sheets/:id/update", SheetController_1.SheetController.updateSheet);
+routes.put("/sheets/:id/delete", SheetController_1.SheetController.deleteSheet);
+routes.get("/sheets/:id", SheetController_1.SheetController.getSheet);
+routes.get("/sheets", SheetController_1.SheetController.getAllSheets);
+routes.post("/threats/create", ThreatController_1.ThreatController.createThreat);
+routes.put("/threats/:id/update", ThreatController_1.ThreatController.updateThreat);
+routes.delete("/threats/:id/delete", ThreatController_1.ThreatController.deleteThreat);
+routes.get("/threats/:id", ThreatController_1.ThreatController.getThreat);
+routes.get("/threats", ThreatController_1.ThreatController.getThreats);
+exports.default = routes;
