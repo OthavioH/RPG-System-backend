@@ -1,9 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
-import https from 'https';
-import path from 'path';
-import fs from 'fs';
+import http from 'http';
 
 import routes from './routers/routes';
 import { AppDataSource } from './config/data-source';
@@ -21,10 +19,7 @@ AppDataSource.initialize().then(() => {
     
     app.use(routes);
     
-    const server = https.createServer({
-        key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
-        cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem')),
-    },app);
+    const server = http.createServer(app);
     
     socketController.initialize(server);
 
