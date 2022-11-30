@@ -28,5 +28,5 @@ AppDataSource.initialize().then(() => {
     
     socketController.initialize(server);
 
-    server.listen(process.env.PORT || 8081, () => console.log(`Server started on port ${process.env.PORT || 8081}`));
+    server.listen(process.env.PORT || 3000, () => console.log(`Server started on port ${process.env.PORT || 3000}`));
 });
