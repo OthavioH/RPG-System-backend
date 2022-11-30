@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/app.js",
-    "build": "tsc && npm run copyjson",
-    "clean": "rm -rf dist",
-    "copyjson":"copyfiles -u 2 \"./src/shared/*.json\" \"./dist/shared\"",
+    "start": "node docs/app.js",
+    "build": "tsc && npm run copyjson && npm run copycertficate",
+    "clean": "rm -rf docs",
+    "copyjson":"copyfiles -u 2 \"./src/shared/*.json\" \"./docs/shared\"",
+    "copycertficate": "copyfiles -u 2 \"./src/cert/*.pem\" \"./docs/cert\"",
     "dev": "ts-node src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
