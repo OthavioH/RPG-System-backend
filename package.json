@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node docs/app.js",
+    "start": "node dist/app.js",
     "build": "tsc && npm run copyjson && npm run copycertficate",
-    "clean": "rm -rf docs",
-    "copyjson":"copyfiles -u 2 \"./src/shared/*.json\" \"./docs/shared\"",
-    "copycertficate": "copyfiles -u 2 \"./src/cert/*.pem\" \"./docs/cert\"",
-    "dev": "ts-node src/app.ts",
+    "clean": "rm -rf dist",
+    "copyjson":"copyfiles -u 2 \"./src/shared/*.json\" \"./dist/shared\"",
+    "copycertficate": "copyfiles -u 2 \"./src/cert/*.pem\" \"./dist/cert\"",
+    "start:prod": "ts-node src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

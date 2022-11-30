@@ -1,3 +1,6 @@
 node_modules
 .env-template
 .env
+buildspec.yml
+.npmrc
+docker-compose-template.yml
