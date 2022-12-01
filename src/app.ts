@@ -11,6 +11,7 @@ export const socketController = new SocketController();
 
 AppDataSource.initialize().then(() => {
     const app = express();
+    const PORT = 10000;
 
     app.use(cors({ origin: '*' }));
     app.use(express.json({ limit: '500mb' }));
@@ -23,5 +24,5 @@ AppDataSource.initialize().then(() => {
     
     socketController.initialize(server);
 
-    server.listen(process.env.PORT || 10000, () => console.log(`Server started on port ${process.env.PORT || 10000}`));
+    server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 });
