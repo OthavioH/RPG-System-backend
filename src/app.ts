@@ -9,6 +9,7 @@ import { SocketController } from './controllers/SocketController';
 
 export const socketController = new SocketController();
 
+AppDataSource.initialize().then(() => {
     const app = express();
 
     app.use(cors({ origin: '*' }));
@@ -23,3 +24,4 @@ export const socketController = new SocketController();
     socketController.initialize(server);
 
     server.listen(process.env.PORT || 3000, () => console.log(`Server started on port ${process.env.PORT || 3000}`));
+});
