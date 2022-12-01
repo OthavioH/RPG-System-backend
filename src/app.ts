@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
-import https from 'https';
+import http from 'http';
 
 import routes from './routers/routes';
 import { AppDataSource } from './config/data-source';
@@ -20,7 +20,7 @@ AppDataSource.initialize().then(() => {
     
     app.use(routes);
     
-    const server = https.createServer(app);
+    const server = http.createServer(app);
     
     socketController.initialize(server);
 
