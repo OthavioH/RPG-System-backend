@@ -16,4 +16,5 @@ This is a RPG sheet system to play with my friends. It's my greatest personal pr
 - Express
 - Socket.io
 - Typescript
+- MySQL
 - TypeORM
