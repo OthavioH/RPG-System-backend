@@ -11,7 +11,7 @@ export const socketController = new SocketController();
 
 AppDataSource.initialize().then(() => {
     const app = express();
-    const PORT = 8080;
+    const PORT = process.env.PORT || 8080;
 
     app.use(cors({ origin: '*' }));
     app.use(express.json({ limit: '500mb' }));
