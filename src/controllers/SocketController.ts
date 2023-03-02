@@ -1,6 +1,5 @@
 import { Socket } from "../config/socket";
 import { Sheet } from "../entity/Sheet";
-import { SheetController } from "./SheetController";
 
 export class SocketController {
 

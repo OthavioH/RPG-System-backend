@@ -23,21 +23,25 @@ export class GameSettingsController {
     }
 
     static async getGameSettings(req: Request, res: Response) {
-        const gameSettings = await GameSettingsController.gameSettingsRepository.findOne({
+        let gameSettings:GameSettings = await GameSettingsController.gameSettingsRepository.findOne({
             where: { id: 1 },
         });
 
-        if (gameSettings) {
-            return res.status(200).json({
-                diceScreenTime: gameSettings.diceScreenTime,
-                diceCooldown: gameSettings.diceCooldown,
-                lastRolls: JSON.parse(gameSettings.lastRolls),
-                skills: JSON.parse(gameSettings.skills),  
-                abilities: JSON.parse(gameSettings.abilities),
-                rituals: JSON.parse(gameSettings.rituals),
-            });
+        if (!gameSettings) {
+            // if gameSettings doesn't exist, create it
+            gameSettings = GameSettingsController.gameSettingsRepository.create({id:1});
+            GameSettingsController.gameSettingsRepository.save(gameSettings);   
         }
-        return res.status(404).json({ message: 'Game settings not found' });
+
+        return res.status(200).json({
+            diceScreenTime: gameSettings.diceScreenTime,
+            diceCooldown: gameSettings.diceCooldown,
+            lastRolls: JSON.parse(gameSettings.lastRolls),
+            skills: JSON.parse(gameSettings.skills),  
+            abilities: JSON.parse(gameSettings.abilities),
+            rituals: JSON.parse(gameSettings.rituals),
+        });
+
     }
 
     static async updateGameProperties(req: Request, res: Response) {
