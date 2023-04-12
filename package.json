@@ -6,6 +6,7 @@
   "node":"^18",
   "scripts": {
     "start": "node dist/src/app.js",
+    "start:prod":"npm run build && npm run start",
     "build": "tsc && npm run copyjson && npm run copycertficate",
     "clean": "rm -rf dist",
     "copyjson":"copyfiles -u 2 \"./src/shared/*.json\" \"./dist/src/shared\"",
