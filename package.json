@@ -8,8 +8,8 @@
     "start": "node dist/src/app.js",
     "build": "tsc && npm run copyjson && npm run copycertficate",
     "clean": "rm -rf dist",
-    "copyjson":"copyfiles -u 2 \"./src/shared/*.json\" \"./dist/shared\"",
-    "copycertficate": "copyfiles -u 2 \"./src/cert/*.pem\" \"./dist/cert\"",
+    "copyjson":"copyfiles -u 2 \"./src/shared/*.json\" \"./dist/src/shared\"",
+    "copycertficate": "copyfiles -u 2 \"./src/cert/*.pem\" \"./dist/src/cert\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
