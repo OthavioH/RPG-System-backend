@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.ts",
-  "node":"18.14.0",
+  "node":"^18",
   "scripts": {
-    "start": "ts-node app.ts",
+    "start": "ts-node src/app.ts",
     "build": "",
     "clean": "rm -rf dist",
     "copyjson":"copyfiles -u 2 \"./src/shared/*.json\" \"./dist/shared\"",
