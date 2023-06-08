@@ -1,39 +1,39 @@
-import express, { Router } from "express";
-
 import { GameSettingsController } from "../controllers/GameSettingsController";
 import { SheetController } from "../controllers/SheetController";
 import { ThreatController } from "../controllers/ThreatController";
+import { FastifyReply, FastifyRequest } from "fastify";
 
-const routes = express.Router();
+export default async function routes(fastify, options) {
+  fastify.get("/", (req: FastifyRequest, reply: FastifyReply) => {
+    return reply.send("Olá");
+  });
 
-routes.get("/", (req, res) => {
-  return res.send("Olá");
-});
+  fastify.get(
+    "/gamesettings/create",
+    GameSettingsController.createGameSettings
+  );
+  fastify.get("/gamesettings", GameSettingsController.getGameSettings);
 
-routes.get("/gamesettings/create", GameSettingsController.createGameSettings);
-routes.get("/gamesettings", GameSettingsController.getGameSettings);
+  fastify.post(
+    "/gamesettings/properties/save",
+    GameSettingsController.updateGameProperties
+  );
+  fastify.post("/gamesettings/timers/save", GameSettingsController.saveTimers);
+  fastify.post("/gamesettings/roll/save", GameSettingsController.addNewRoll);
 
-routes.post(
-  "/gamesettings/properties/save",
-  GameSettingsController.updateGameProperties
-);
-routes.post("/gamesettings/timers/save", GameSettingsController.saveTimers);
-routes.post("/gamesettings/roll/save", GameSettingsController.addNewRoll);
+  fastify.post("/sheets/create", SheetController.createSheet);
 
-routes.post("/sheets/create", SheetController.createSheet);
+  fastify.put("/sheets/:id/hp/update", SheetController.updateHp);
+  fastify.put("/sheets/:id/sanity/update", SheetController.updateSanity);
+  fastify.put("/sheets/:id/update", SheetController.updateSheet);
+  fastify.put("/sheets/:id/delete", SheetController.deleteSheet);
 
-routes.put("/sheets/:id/hp/update", SheetController.updateHp);
-routes.put("/sheets/:id/sanity/update", SheetController.updateSanity);
-routes.put("/sheets/:id/update", SheetController.updateSheet);
-routes.put("/sheets/:id/delete", SheetController.deleteSheet);
+  fastify.get("/sheets/:id", SheetController.getSheet);
+  fastify.get("/sheets", SheetController.getAllSheets);
 
-routes.get("/sheets/:id", SheetController.getSheet);
-routes.get("/sheets", SheetController.getAllSheets);
-
-routes.post("/threats/create", ThreatController.createThreat);
-routes.put("/threats/:id/update", ThreatController.updateThreat);
-routes.delete("/threats/:id/delete", ThreatController.deleteThreat);
-routes.get("/threats/:id", ThreatController.getThreat);
-routes.get("/threats", ThreatController.getThreats);
-
-export default routes;
+  fastify.post("/threats/create", ThreatController.createThreat);
+  fastify.put("/threats/:id/update", ThreatController.updateThreat);
+  fastify.delete("/threats/:id/delete", ThreatController.deleteThreat);
+  fastify.get("/threats/:id", ThreatController.getThreat);
+  fastify.get("/threats", ThreatController.getThreats);
+}
