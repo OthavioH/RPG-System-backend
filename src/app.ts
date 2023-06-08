@@ -1,28 +1,44 @@
-import cors from 'cors';
-import express from 'express';
-import morgan from 'morgan';
-import http from 'http';
+import fastify from "fastify";
+import fastifyCors from "@fastify/cors";
+import fastifyMultipart from "@fastify/multipart";
+import fastifyStatic from "@fastify/static";
+import morgan from "morgan";
 
-import routes from './routers/routes';
-import { AppDataSource } from './config/data-source';
-import { SocketController } from './controllers/SocketController';
+import { AppDataSource } from "./config/data-source";
+import { SocketController } from "./controllers/SocketController";
+import routes from "./routers/routes";
 
 export const socketController = new SocketController();
 
+const app = fastify({ logger: true });
+
 AppDataSource.initialize().then(() => {
-    const app = express();
-    const PORT = process.env.PORT || 8080;
+  app.register(fastifyCors, {
+    origin: "*",
+  });
+  app.register(fastifyMultipart, { addToBody: true });
+  app.register(fastifyStatic, {
+    root: __dirname,
+  });
 
-    app.use(cors({ origin: '*' }));
-    app.use(express.json({ limit: '500mb' }));
-    app.use(express.urlencoded({ extended: true, limit: '500mb' }));
-    app.use(morgan('dev'));
-    
-    app.use(routes);
-    
-    const server = http.createServer(app);
-    
-    socketController.initialize(server);
+  app.register(routes);
 
-    server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+  const PORT = process.env.PORT || 3333;
+
+  const start = async () => {
+    try {
+      await app.listen({ port: PORT as number, host: "0.0.0.0" }).then(() => {
+        console.log(`Server started on port ${PORT}`);
+      });
+    } catch (err) {
+      console.error(err);
+      process.exit(1);
+    }
+  };
+
+  socketController.initialize(app.server);
+
+  start();
 });
+
+export default app;

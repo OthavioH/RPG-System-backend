@@ -1,127 +1,125 @@
-import { Request, Response } from 'express';
-
-import { Sheet } from '../entity/Sheet';
-import { AppDataSource } from '../config/data-source';
-import { socketController } from '../app';
-import getDefaultAttributes from '../utils/default_attributes';
-import getDefaultInventory from '../utils/default_inventory';
+import { Sheet } from "../entity/Sheet";
+import { AppDataSource } from "../config/data-source";
+import { socketController } from "../app";
+import getDefaultAttributes from "../utils/default_attributes";
+import getDefaultInventory from "../utils/default_inventory";
+import { FastifyReply, FastifyRequest } from "fastify";
 
 export class SheetController {
-    private static sheetRepository = AppDataSource.getRepository(Sheet);
+  private static sheetRepository = AppDataSource.getRepository(Sheet);
 
-    constructor(){}
+  constructor() {}
 
-    static async createSheet(req: Request, res: Response) {
-        const { name } = req.body;
-        const sheet = SheetController.sheetRepository.create({
-            name:name,
-            attributes: getDefaultAttributes(),
-            inventory: getDefaultInventory(),
-            skills: "[]",
-            abilities: "[]",
-            rituals: "[]",
-            weapons: "[]",
-        });
+  static async createSheet(req: FastifyRequest, reply: FastifyReply) {
+    const { name } = req.body as any;
+    const sheet = SheetController.sheetRepository.create({
+      name: name,
+      attributes: getDefaultAttributes(),
+      inventory: getDefaultInventory(),
+      skills: "[]",
+      abilities: "[]",
+      rituals: "[]",
+      weapons: "[]",
+    });
 
-        await SheetController.sheetRepository.save(sheet);
-        sheet.parseArrays();
-        socketController.emitCharacterListChanged(sheet, 'create');
+    await SheetController.sheetRepository.save(sheet);
+    sheet.parseArrays();
+    socketController.emitCharacterListChanged(sheet, "create");
+  }
+
+  static async getSheet(req: FastifyRequest, reply: FastifyReply) {
+    const { id } = req.params as any;
+    const sheet = await SheetController.sheetRepository.findOne({
+      where: { id: Number(id) },
+    });
+
+    if (sheet) {
+      sheet.parseArrays();
+      return reply.status(200).send(sheet);
     }
+    return reply.status(404).send({ message: "Sheet not found" });
+  }
 
-    static async getSheet(req: Request, res: Response) {
-        const { id } = req.params;
-        const sheet = await SheetController.sheetRepository.findOne({
-            where: { id: Number(id) },
-        });
+  static async updateSheet(req: FastifyRequest, reply: FastifyReply) {
+    const { id } = req.params as any;
+    const { character } = req.body as any;
 
-        if (sheet) {
-            sheet.parseArrays();
-            return res.status(200).json(sheet);
-        }
-        return res.status(404).json({ message: 'Sheet not found' });
+    const sheet = await SheetController.sheetRepository.findOne({
+      where: { id: Number(id) },
+    });
+
+    if (sheet) {
+      sheet.updateData(character);
+      await SheetController.sheetRepository.save(sheet);
+      sheet.parseArrays();
+      socketController.emitCharacterChanged(sheet);
+      return reply.status(200).send(sheet);
     }
+    return reply.status(404).send({ message: "Sheet not found" });
+  }
 
-    static async updateSheet(req: Request, res: Response) {
-        const { id } = req.params;
-        const { character } = req.body;
-    
-        const sheet = await SheetController.sheetRepository.findOne({
-            where: { id: Number(id) },
-        });
+  static async deleteSheet(req: FastifyRequest, reply: FastifyReply) {
+    const { id } = req.params as any;
+    const sheet = await SheetController.sheetRepository.findOne({
+      where: { id: Number(id) },
+    });
 
-        if (sheet) {
-            sheet.updateData(character);
-            await SheetController.sheetRepository.save(sheet);
-            sheet.parseArrays();
-            socketController.emitCharacterChanged(sheet);
-            return res.status(200).json(sheet);
-        }
-        return res.status(404).json({ message: 'Sheet not found' });
+    if (sheet) {
+      await SheetController.sheetRepository.remove(sheet);
+      socketController.emitCharacterListChanged(sheet, "delete");
+      return reply.status(200).send({ message: "Sheet deleted" });
     }
+    return reply.status(404).send({ message: "Sheet not found" });
+  }
 
-    static async deleteSheet(req: Request, res: Response) {
-        const { id } = req.params;
-        const sheet = await SheetController.sheetRepository.findOne({
-            where: { id: Number(id) },
-        });
+  static async getAllSheets(req: FastifyRequest, reply: FastifyReply) {
+    const sheets = await SheetController.sheetRepository.find();
 
-        if (sheet) {
-            await SheetController.sheetRepository.remove(sheet);
-            socketController.emitCharacterListChanged(sheet, 'delete');
-            return res.status(200).json({ message: 'Sheet deleted' });
-        }
-        return res.status(404).json({ message: 'Sheet not found' });
+    sheets.forEach((sheet) => {
+      sheet.parseArrays();
+    });
+
+    return reply.status(200).send(sheets);
+  }
+
+  static async updateHp(req: FastifyRequest, reply: FastifyReply) {
+    const { id } = req.params as any;
+    const { character } = req.body as any;
+    const { hp, maxHp } = character;
+
+    const sheet = await SheetController.sheetRepository.findOne({
+      where: { id: Number(id) },
+    });
+
+    if (sheet) {
+      sheet.hp = hp;
+      sheet.maxHp = maxHp;
+      await SheetController.sheetRepository.save(sheet);
+      return reply.status(200).send(sheet);
     }
+    return reply.status(404).send({ message: "Sheet not found" });
+  }
 
-    static async getAllSheets(req: Request, res: Response) {
-        const sheets = await SheetController.sheetRepository.find();
+  static async updateSanity(req: FastifyRequest, reply: FastifyReply) {
+    const { id } = req.params as any;
+    const { character } = req.body as any;
+    const { sanity, maxSanity } = character;
 
-        sheets.forEach(sheet => {
-            sheet.parseArrays();
-        });
+    const sheet = await SheetController.sheetRepository.findOne({
+      where: { id: Number(id) },
+    });
 
-        return res.status(200).json(sheets);
+    if (sheet) {
+      sheet.sanity = sanity;
+      sheet.maxSanity = maxSanity;
+      await SheetController.sheetRepository.save(sheet);
+      return reply.status(200).send(sheet);
     }
+    return reply.status(404).send({ message: "Sheet not found" });
+  }
 
-    static async updateHp(req: Request, res: Response) {
-        const { id } = req.params;
-        const { character } = req.body;
-        const {hp, maxHp} = character;
-
-        const sheet = await SheetController.sheetRepository.findOne({
-            where: { id: Number(id) },
-        });
-
-        if (sheet) {
-            sheet.hp = hp;
-            sheet.maxHp = maxHp;
-            await SheetController.sheetRepository.save(sheet);
-            return res.status(200).json(sheet);
-        }
-        return res.status(404).json({ message: 'Sheet not found' });
-    }
-
-    static async updateSanity(req: Request, res: Response) {
-        const { id } = req.params;
-        const { character } = req.body;
-        const {sanity, maxSanity} = character;
-
-        const sheet = await SheetController.sheetRepository.findOne({
-            where: { id: Number(id) },
-        });
-
-        if (sheet) {
-            sheet.sanity = sanity;
-            sheet.maxSanity = maxSanity;
-            await SheetController.sheetRepository.save(sheet);
-            return res.status(200).json(sheet);
-        }
-        return res.status(404).json({ message: 'Sheet not found' });
-    }
-
-    static async getSheetsBySocket(){
-        const sheets = await SheetController.sheetRepository.find();
-        return sheets;
-    }
-    
+  static async getSheetsBySocket() {
+    const sheets = await SheetController.sheetRepository.find();
+    return sheets;
+  }
 }
