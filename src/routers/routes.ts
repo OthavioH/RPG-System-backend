@@ -12,6 +12,10 @@ export default async function routes(fastify, options) {
     return reply.send("pong");
   });
 
+  fastify.get("/ping", (req: FastifyRequest, reply: FastifyReply) => {
+    return reply.send("pong");
+  });
+
   fastify.get(
     "/gamesettings/create",
     GameSettingsController.createGameSettings
