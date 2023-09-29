@@ -41,22 +41,22 @@ export class Sheet {
   @Column({ default: null })
   proficiences: string;
 
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   attributes: string;
 
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   skills: string;
 
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   abilities: string;
 
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   rituals: string;
 
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   weapons: string;
 
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   inventory: string;
 
   @Column({ default: 0 })
@@ -101,7 +101,7 @@ export class Sheet {
   @Column({ default: 0 })
   insanityResistance: number = 0;
 
-  @Column({ default: null})
+  @Column({ default: null })
   notes: string;
 
   updateData(newSheet: any) {

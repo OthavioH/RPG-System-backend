@@ -8,37 +8,37 @@ export class Threat {
   vd: number;
   @Column({ default: "" })
   name: string;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   description: string;
   @Column({ default: "" })
   imageUrl: string;
   @Column({ default: "" })
   element: string;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   secondElements: any;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   skills: any;
   @Column({ default: "" })
   size: string;
   @Column({ default: "" })
   type: string;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   disturbingPresence: any;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   senses: any;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   defenses: any;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   healthPoints: any;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   vulnerabilities: any;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   attributes: any;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   displacements: any;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   actions: any;
-  @Column({ default: null, type: "longtext" })
+  @Column({ default: null, type: "text" })
   enigma: any;
 
   updateData(data: any) {
