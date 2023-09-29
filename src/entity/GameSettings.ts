@@ -8,9 +8,9 @@ const ritualsJson = JSON.stringify(require("../shared/rituals.json"));
 export class GameSettings {
   @PrimaryGeneratedColumn()
   id: number;
-  @Column({ default: true })
+  @Column({ default: 2 })
   diceScreenTime: number = 2;
-  @Column({ default: true })
+  @Column({ default: 4 })
   diceCooldown: number = 4;
   @Column({ default: null, type: "text" })
   lastRolls: any = "[]";
