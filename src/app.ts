@@ -2,7 +2,7 @@ import fastify from "fastify";
 import fastifyCors from "@fastify/cors";
 import fastifyMultipart from "@fastify/multipart";
 import fastifyStatic from "@fastify/static";
-import morgan from "morgan";
+require("dotenv").config();
 
 import { AppDataSource } from "./config/data-source";
 import { SocketController } from "./controllers/SocketController";
@@ -39,6 +39,8 @@ AppDataSource.initialize().then(() => {
   socketController.initialize(app.server);
 
   start();
+}).catch((error) => {
+  console.error("Error starting server:", error);
 });
 
 export default app;

@@ -2,6 +2,8 @@ import { GameSettingsController } from "../controllers/GameSettingsController";
 import { SheetController } from "../controllers/SheetController";
 import { ThreatController } from "../controllers/ThreatController";
 import { FastifyReply, FastifyRequest } from "fastify";
+import { UserController } from "../controllers/UserController";
+import { CampaignController } from "../controllers/CampaignController";
 
 export default async function routes(fastify, options) {
   fastify.get("/", (req: FastifyRequest, reply: FastifyReply) => {
@@ -11,10 +13,11 @@ export default async function routes(fastify, options) {
   fastify.head("/ping", (req: FastifyRequest, reply: FastifyReply) => {
     return reply.send("pong");
   });
-
   fastify.get("/ping", (req: FastifyRequest, reply: FastifyReply) => {
     return reply.send("pong");
   });
+
+  fastify.post("/users/create", UserController.createUser);
 
   fastify.get(
     "/gamesettings/create",
@@ -44,4 +47,7 @@ export default async function routes(fastify, options) {
   fastify.delete("/threats/:id/delete", ThreatController.deleteThreat);
   fastify.get("/threats/:id", ThreatController.getThreat);
   fastify.get("/threats", ThreatController.getThreats);
+
+  fastify.post("/campaigns", CampaignController.createCampaign);
+  fastify.get("/campaigns/read-by-user/:id", CampaignController.getUserCampaigns);
 }
