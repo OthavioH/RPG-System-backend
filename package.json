@@ -12,7 +12,10 @@
     "build": "tsc && npm run copyjson",
     "clean": "rm -rf dist",
     "copyjson": "copyfiles -u 2 \"./src/shared/*.json\" \"./dist/src/shared\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "typeorm": "npx typeorm-ts-node-commonjs --dataSource src/config/data-source.ts",
+    "typeorm:migrate": "npm run typeorm migration:run",
+    "typeorm:generate": "npm run typeorm migration:generate migrations/migration --timestamp",
+    "typeorm:revert": "npm run typeorm migration:revert"
   },
   "author": "",
   "license": "ISC",

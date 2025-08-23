@@ -1,9 +1,17 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn, ManyToMany, JoinTable, OneToMany } from "typeorm";
+import { AfterInsert } from "typeorm";
+import { Inventory } from "./Inventory";
+import { WeaponInventory } from "./WeaponInventory";
+import { Ritual } from "./Ritual";
+import { Ability } from "./Ability";
+import { SheetSkill } from "./SheetSkill";
+import { Attribute } from "./Attribute";
+import { SheetAttribute } from "./SheetAttribute";
 
 @Entity({ name: "sheets" })
 export class Sheet {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn("uuid")
+  id: string;
 
   @Column({ default: "" })
   playerName: string = "";
@@ -41,23 +49,34 @@ export class Sheet {
   @Column({ default: null })
   proficiences: string;
 
-  @Column({ default: null, type: "text" })
-  attributes: string;
+  @OneToMany(() => SheetSkill, sheetSkill => sheetSkill.sheet)
+  skills: SheetSkill[];
 
-  @Column({ default: null, type: "text" })
-  skills: string;
+  @OneToMany(() => SheetAttribute, sheetAttribute => sheetAttribute.sheet)
+  attributes: SheetAttribute[];
 
-  @Column({ default: null, type: "text" })
-  abilities: string;
 
-  @Column({ default: null, type: "text" })
-  rituals: string;
+  @ManyToMany(() => Ability)
+  @JoinTable({ name: "sheet_abilities" })
+  abilities: Ability[];
 
-  @Column({ default: null, type: "text" })
-  weapons: string;
+  @ManyToMany(() => Ritual)
+  @JoinTable({ name: "sheet_rituals" })
+  rituals: Ritual[];
 
-  @Column({ default: null, type: "text" })
-  inventory: string;
+  @OneToOne(() => WeaponInventory)
+  @JoinColumn({ name: "weaponInventoryId" })
+  weaponInventory: WeaponInventory;
+
+  @Column()
+  weaponInventoryId: string;
+
+  @OneToOne(() => Inventory)
+  @JoinColumn({ name: "inventoryId" })
+  inventory: Inventory;
+
+  @Column()
+  inventoryId: string;
 
   @Column({ default: 0 })
   hp: number = 0;
@@ -65,6 +84,23 @@ export class Sheet {
   @Column({ default: 0 })
   maxHp: number = 0;
 
+  @AfterInsert()
+  async createDefaultAttributes() {
+    const attrRepo = (this as any).constructor.getRepository(Attribute);
+    const sheetAttrRepo = (this as any).constructor.getRepository(SheetAttribute);
+    const attributes = await attrRepo.find();
+    for (const attr of attributes) {
+      const exists = await sheetAttrRepo.findOneBy({ sheetId: this.id, attributeId: attr.id });
+      if (!exists) {
+        const sheetAttr = sheetAttrRepo.create({
+          sheetId: this.id,
+          attributeId: attr.id,
+          value: 0
+        });
+        await sheetAttrRepo.save(sheetAttr);
+      }
+    }
+  }
   @Column({ default: 0 })
   sanity: number = 0;
 
@@ -103,49 +139,4 @@ export class Sheet {
 
   @Column({ default: null })
   notes: string;
-
-  updateData(newSheet: any) {
-    this.name = newSheet.name;
-    this.playerName = newSheet.playerName;
-    this.profileImageUrl = newSheet.profileImageUrl;
-    this.hp = newSheet.hp;
-    this.maxHp = newSheet.maxHp;
-    this.sanity = newSheet.sanity;
-    this.maxSanity = newSheet.maxSanity;
-    this.age = newSheet.age;
-    this.nex = newSheet.nex;
-    this.origin = newSheet.origin;
-    this.gender = newSheet.gender;
-    this.rank = newSheet.rank;
-    this.class = newSheet.class;
-    this.effortPoints = newSheet.effortPoints;
-    this.maxEffortPoints = newSheet.maxEffortPoints;
-    this.blockDefense = newSheet.blockDefense;
-    this.passiveDefense = newSheet.passiveDefense;
-    this.dodgeDefense = newSheet.dodgeDefense;
-    this.attributes = JSON.stringify(newSheet.attributes);
-    this.skills = JSON.stringify(newSheet.skills);
-    this.abilities = JSON.stringify(newSheet.abilities);
-    this.rituals = JSON.stringify(newSheet.rituals);
-    this.inventory = JSON.stringify(newSheet.inventory);
-    this.weapons = JSON.stringify(newSheet.weapons);
-    this.ballisticResistance = newSheet.ballisticResistance;
-    this.deathResistance = newSheet.deathResistance;
-    this.energyResistance = newSheet.energyResistance;
-    this.bloodResistance = newSheet.bloodResistance;
-    this.physicsResistance = newSheet.physicsResistance;
-    this.insanityResistance = newSheet.insanityResistance;
-    this.knowledgeResistance = newSheet.knowledgeResistance;
-    this.proficiences = newSheet.proficiences;
-    this.notes = newSheet.notes;
-  }
-
-  parseArrays() {
-    this.skills = JSON.parse(this.skills);
-    this.attributes = JSON.parse(this.attributes);
-    this.abilities = JSON.parse(this.abilities);
-    this.rituals = JSON.parse(this.rituals);
-    this.inventory = JSON.parse(this.inventory);
-    this.weapons = JSON.parse(this.weapons);
-  }
 }

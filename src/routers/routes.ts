@@ -50,4 +50,5 @@ export default async function routes(fastify, options) {
 
   fastify.post("/campaigns", CampaignController.createCampaign);
   fastify.get("/campaigns/read-by-user/:id", CampaignController.getUserCampaigns);
+  fastify.delete("/campaigns/:id", CampaignController.deleteCampaign);
 }

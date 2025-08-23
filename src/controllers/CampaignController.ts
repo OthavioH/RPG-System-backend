@@ -26,4 +26,19 @@ export class CampaignController {
 
         return reply.status(200).send(campaigns);
     }
+
+    static async deleteCampaign(req: FastifyRequest<{ Params: { id: string } }>, reply: FastifyReply) {
+        const { id } = req.params;
+
+        const campaign = await CampaignController.campaignRepository.findOne({
+            where: { id: id },
+        });
+
+        if (!campaign) {
+            return reply.status(404).send({ message: "Campaign not found" });
+        }
+
+        await CampaignController.campaignRepository.remove(campaign);
+        return reply.status(204).send();
+    }
 }
