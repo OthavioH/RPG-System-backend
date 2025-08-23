@@ -1,4 +1,5 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn, ManyToMany, JoinTable, OneToMany } from "typeorm";
+import { Campaign } from "./Campaign";
 import { AfterInsert } from "typeorm";
 import { Inventory } from "./Inventory";
 import { WeaponInventory } from "./WeaponInventory";
@@ -13,8 +14,12 @@ export class Sheet {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column({ default: "" })
-  playerName: string = "";
+  @Column({ nullable: true })
+  campaignId: string;
+  
+  @ManyToOne(() => Campaign, campaign => campaign.sheets)
+  @JoinColumn({ name: "campaignId" })
+  campaign: Campaign;
 
   @Column({ default: "" })
   profileImageUrl: string = "";
@@ -54,7 +59,6 @@ export class Sheet {
 
   @OneToMany(() => SheetAttribute, sheetAttribute => sheetAttribute.sheet)
   attributes: SheetAttribute[];
-
 
   @ManyToMany(() => Ability)
   @JoinTable({ name: "sheet_abilities" })
@@ -101,6 +105,7 @@ export class Sheet {
       }
     }
   }
+
   @Column({ default: 0 })
   sanity: number = 0;
 

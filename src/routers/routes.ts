@@ -1,4 +1,3 @@
-import { GameSettingsController } from "../controllers/GameSettingsController";
 import { SheetController } from "../controllers/SheetController";
 import { ThreatController } from "../controllers/ThreatController";
 import { FastifyReply, FastifyRequest } from "fastify";
@@ -19,18 +18,18 @@ export default async function routes(fastify, options) {
 
   fastify.post("/users/create", UserController.createUser);
 
-  fastify.get(
-    "/gamesettings/create",
-    GameSettingsController.createGameSettings
-  );
-  fastify.get("/gamesettings", GameSettingsController.getGameSettings);
+  // fastify.get(
+  //   "/gamesettings/create",
+  //   GameSettingsController.createGameSettings
+  // );
+  // fastify.get("/gamesettings", GameSettingsController.getGameSettings);
 
-  fastify.post(
-    "/gamesettings/properties/save",
-    GameSettingsController.updateGameProperties
-  );
-  fastify.post("/gamesettings/timers/save", GameSettingsController.saveTimers);
-  fastify.post("/gamesettings/roll/save", GameSettingsController.addNewRoll);
+  // fastify.post(
+  //   "/gamesettings/properties/save",
+  //   GameSettingsController.updateGameProperties
+  // );
+  // fastify.post("/gamesettings/timers/save", GameSettingsController.saveTimers);
+  // fastify.post("/gamesettings/roll/save", GameSettingsController.addNewRoll);
 
   fastify.post("/sheets/create", SheetController.createSheet);
 
