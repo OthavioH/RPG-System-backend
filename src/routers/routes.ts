@@ -36,7 +36,7 @@ export default async function routes(fastify, options) {
   fastify.put("/sheets/:id/hp/update", SheetController.updateHp);
   fastify.put("/sheets/:id/sanity/update", SheetController.updateSanity);
   fastify.put("/sheets/:id/update", SheetController.updateSheet);
-  fastify.put("/sheets/:id/delete", SheetController.deleteSheet);
+  fastify.delete("/sheets/:id", SheetController.deleteSheet);
 
   fastify.get("/sheets/:id", SheetController.getSheet);
   fastify.get("/sheets", SheetController.getAllSheets);
@@ -49,5 +49,6 @@ export default async function routes(fastify, options) {
 
   fastify.post("/campaigns", CampaignController.createCampaign);
   fastify.get("/campaigns/read-by-user/:id", CampaignController.getUserCampaigns);
+  fastify.get("/campaigns/:id", CampaignController.getCampaignById);
   fastify.delete("/campaigns/:id", CampaignController.deleteCampaign);
 }

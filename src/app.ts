@@ -10,7 +10,18 @@ import routes from "./routers/routes";
 
 export const socketController = new SocketController();
 
-const app = fastify({ logger: true });
+const app = fastify({
+  logger: {
+    transport: {
+      target: 'pino-pretty',
+      options: {
+        colorize: true,
+        translateTime: 'HH:MM:ss Z',
+        ignore: 'pid,hostname'
+      }
+    }
+  }
+});
 
 AppDataSource.initialize().then(() => {
   app.register(fastifyCors, {

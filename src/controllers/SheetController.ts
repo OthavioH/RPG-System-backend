@@ -4,39 +4,111 @@ import { socketController } from "../app";
 import getDefaultAttributes from "../utils/default_attributes";
 import getDefaultInventory from "../utils/default_inventory";
 import { FastifyReply, FastifyRequest } from "fastify";
+import { Campaign } from "../entity/Campaign";
+import { Inventory } from "../entity/Inventory";
+import { WeaponInventory } from "../entity/WeaponInventory";
+import { Attribute } from "../entity/Attribute";
+import { SheetAttribute } from "../entity/SheetAttribute";
 
 export class SheetController {
   private static sheetRepository = AppDataSource.getRepository(Sheet);
+  private static campaignRepository = AppDataSource.getRepository(Campaign);
+  private static inventoryRepository = AppDataSource.getRepository(Inventory);
+  private static weaponInventoryRepository = AppDataSource.getRepository(WeaponInventory);
 
-  constructor() {}
+  private static attributesRepository = AppDataSource.getRepository(Attribute);
+  private static sheetAttributesRepository = AppDataSource.getRepository(SheetAttribute);
 
-  static async createSheet(req: FastifyRequest, reply: FastifyReply) {
-    const { name } = req.body as any;
-    if (!name) {
-      return reply.status(400).send({ message: "Name is required" });
+  constructor() { }
+
+  static async createSheet(req: FastifyRequest<{
+    Body: {
+      sheetName: string,
+      campaignId: string,
+    }
+  }>, reply: FastifyReply) {
+    const { sheetName, campaignId } = req.body;
+
+    const campaign = await SheetController.campaignRepository.findOne({
+      where: { id: campaignId },
+      relations: ['sheets']
+    });
+
+    if (!campaign) {
+      return reply.status(404).send({ message: "Campaign not found" });
     }
 
-    const sheet = SheetController.sheetRepository.create({ name });
+    const sheet = SheetController.sheetRepository.create({
+      name: sheetName,
+      campaign: campaign
+    });
 
     await SheetController.sheetRepository.save(sheet);
-    socketController.emitCharacterListChanged(sheet, "create");
-    return reply.status(201).send(sheet);
+    campaign.sheets.push(sheet);
+    await SheetController.campaignRepository.save(campaign);
+
+    await SheetController.createDefaultAttributes(sheet.id);
+    await SheetController.createDefaultInventory(sheet.id);
+    await SheetController.createDefaultWeaponInventory(sheet.id);
+
+    const updatedSheet = await SheetController.sheetRepository.findOne({
+      where: { id: sheet.id },
+      relations: ['attributes', 'inventory', 'weaponInventory', 'skills', 'rituals', 'abilities']
+    });
+
+    socketController.emitCharacterListChanged(updatedSheet, "create");
+    return reply.status(201).send(updatedSheet);
   }
 
-  static async getSheet(req: FastifyRequest<{Params: {id: string}}>, reply: FastifyReply) {
+  private static async createDefaultWeaponInventory(sheetId: string) {
+    const weaponInventory = SheetController.weaponInventoryRepository.create({
+      sheetId: sheetId,
+    });
+    await SheetController.weaponInventoryRepository.save(weaponInventory);
+
+    await SheetController.sheetRepository.update(sheetId, { weaponInventoryId: weaponInventory.id });
+  }
+
+  private static async createDefaultInventory(sheetId: string) {
+    const inventory = SheetController.inventoryRepository.create({
+      sheetId: sheetId,
+    });
+    await SheetController.inventoryRepository.save(inventory);
+
+    await SheetController.sheetRepository.update(sheetId, { inventoryId: inventory.id });
+  }
+
+  private static async createDefaultAttributes(sheetId: string) {
+    const attrRepo = SheetController.attributesRepository;
+    const sheetAttrRepo = SheetController.sheetAttributesRepository;
+    const attributes = await attrRepo.find();
+    for (const attr of attributes) {
+      const exists = await sheetAttrRepo.findOneBy({ sheetId: sheetId, attributeId: attr.id });
+      if (!exists) {
+        const sheetAttr = sheetAttrRepo.create({
+          sheetId: sheetId,
+          attributeId: attr.id,
+          value: 0
+        });
+        await sheetAttrRepo.save(sheetAttr);
+      }
+    }
+  }
+
+  static async getSheet(req: FastifyRequest<{ Params: { id: string } }>, reply: FastifyReply) {
     const { id } = req.params;
     const sheet = await SheetController.sheetRepository.findOne({
       where: { id: id },
     });
 
     if (sheet) {
-      
+
       return reply.status(200).send(sheet);
     }
     return reply.status(404).send({ message: "Sheet not found" });
   }
 
-  static async updateSheet(req: FastifyRequest<{Params: {id: string}, Body: any}>, reply: FastifyReply) {
+  static async updateSheet(req: FastifyRequest<{ Params: { id: string }, Body: any }>, reply: FastifyReply) {
     const { id } = req.params;
     const sheetData = req.body as any;
 
@@ -46,10 +118,10 @@ export class SheetController {
 
     if (sheet) {
       const allowedFields = [
-        'name', 'playerName', 'profileImageUrl', 'age', 'gender', 'nex', 'rank', 
-        'class', 'origin', 'effortPoints', 'maxEffortPoints', 'proficiences', 
-        'hp', 'maxHp', 'sanity', 'maxSanity', 'passiveDefense', 'blockDefense', 
-        'dodgeDefense', 'physicsResistance', 'ballisticResistance', 'energyResistance', 
+        'name', 'playerName', 'profileImageUrl', 'age', 'gender', 'nex', 'rank',
+        'class', 'origin', 'effortPoints', 'maxEffortPoints', 'proficiences',
+        'hp', 'maxHp', 'sanity', 'maxSanity', 'passiveDefense', 'blockDefense',
+        'dodgeDefense', 'physicsResistance', 'ballisticResistance', 'energyResistance',
         'bloodResistance', 'deathResistance', 'knowledgeResistance', 'insanityResistance', 'notes'
       ];
 
@@ -69,7 +141,7 @@ export class SheetController {
     return reply.status(404).send({ message: "Sheet not found" });
   }
 
-  static async deleteSheet(req: FastifyRequest<{Params: {id: string}}>, reply: FastifyReply) {
+  static async deleteSheet(req: FastifyRequest<{ Params: { id: string } }>, reply: FastifyReply) {
     const { id } = req.params;
     const sheet = await SheetController.sheetRepository.findOne({
       where: { id: id },
@@ -88,7 +160,7 @@ export class SheetController {
     return reply.status(200).send(sheets);
   }
 
-  static async updateHp(req: FastifyRequest<{Params: {id: string}, Body: any}>, reply: FastifyReply) {
+  static async updateHp(req: FastifyRequest<{ Params: { id: string }, Body: any }>, reply: FastifyReply) {
     const { id } = req.params;
     const { character } = req.body as any;
     const { hp, maxHp } = character;
@@ -106,7 +178,7 @@ export class SheetController {
     return reply.status(404).send({ message: "Sheet not found" });
   }
 
-  static async updateSanity(req: FastifyRequest<{Params: {id: string}, Body: any}>, reply: FastifyReply) {
+  static async updateSanity(req: FastifyRequest<{ Params: { id: string }, Body: any }>, reply: FastifyReply) {
     const { id } = req.params;
     const { character } = req.body as any;
     const { sanity, maxSanity } = character;

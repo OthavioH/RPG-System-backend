@@ -8,15 +8,16 @@ import { Ability } from "./Ability";
 import { SheetSkill } from "./SheetSkill";
 import { Attribute } from "./Attribute";
 import { SheetAttribute } from "./SheetAttribute";
+import { AppDataSource } from "../config/data-source";
 
 @Entity({ name: "sheets" })
 export class Sheet {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: false })
   campaignId: string;
-  
+
   @ManyToOne(() => Campaign, campaign => campaign.sheets)
   @JoinColumn({ name: "campaignId" })
   campaign: Campaign;
@@ -61,25 +62,25 @@ export class Sheet {
   attributes: SheetAttribute[];
 
   @ManyToMany(() => Ability)
-  @JoinTable({ name: "sheet_abilities" })
+  @JoinTable({ name: "abilities" })
   abilities: Ability[];
 
   @ManyToMany(() => Ritual)
-  @JoinTable({ name: "sheet_rituals" })
+  @JoinTable({ name: "rituals" })
   rituals: Ritual[];
 
   @OneToOne(() => WeaponInventory)
   @JoinColumn({ name: "weaponInventoryId" })
   weaponInventory: WeaponInventory;
 
-  @Column()
+  @Column({ nullable: true })
   weaponInventoryId: string;
 
   @OneToOne(() => Inventory)
   @JoinColumn({ name: "inventoryId" })
   inventory: Inventory;
 
-  @Column()
+  @Column({ nullable: true })
   inventoryId: string;
 
   @Column({ default: 0 })
@@ -87,24 +88,6 @@ export class Sheet {
 
   @Column({ default: 0 })
   maxHp: number = 0;
-
-  @AfterInsert()
-  async createDefaultAttributes() {
-    const attrRepo = (this as any).constructor.getRepository(Attribute);
-    const sheetAttrRepo = (this as any).constructor.getRepository(SheetAttribute);
-    const attributes = await attrRepo.find();
-    for (const attr of attributes) {
-      const exists = await sheetAttrRepo.findOneBy({ sheetId: this.id, attributeId: attr.id });
-      if (!exists) {
-        const sheetAttr = sheetAttrRepo.create({
-          sheetId: this.id,
-          attributeId: attr.id,
-          value: 0
-        });
-        await sheetAttrRepo.save(sheetAttr);
-      }
-    }
-  }
 
   @Column({ default: 0 })
   sanity: number = 0;
@@ -142,6 +125,6 @@ export class Sheet {
   @Column({ default: 0 })
   insanityResistance: number = 0;
 
-  @Column({ default: null })
+  @Column({ default: "" })
   notes: string;
 }

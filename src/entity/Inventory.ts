@@ -7,7 +7,7 @@ export class Inventory {
     id: string;
 
     @Column({ unique: true })
-    sheetId: number;
+    sheetId: string;
 
     @OneToOne(() => Sheet, { onDelete: "CASCADE" })
     @JoinColumn({ name: "sheetId" })

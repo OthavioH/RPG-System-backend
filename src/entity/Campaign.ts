@@ -19,6 +19,9 @@ export class Campaign {
     @Column({ default: 4 })
     diceCooldown: number;
 
+    @Column()
+    masterId: string;
+
     @ManyToOne(() => User)
     @JoinColumn({ name: "masterId" })
     master: User;
