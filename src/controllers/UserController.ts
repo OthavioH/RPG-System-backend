@@ -3,6 +3,7 @@ import { Threat } from "../entity/Threat";
 import { User } from "../entity/User";
 import { generateRandomId } from "../utils/view_utils";
 import { FastifyReply, FastifyRequest } from "fastify";
+import bcrypt from 'bcrypt';
 
 export class UserController {
   private static userRepository = AppDataSource.getRepository(User);
@@ -12,10 +13,13 @@ export class UserController {
   static async createUser(req: FastifyRequest, reply: FastifyReply) {
     const { user: newUser } = req.body as any;
 
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(newUser.password, saltRounds);
+
     const user = UserController.userRepository.create({
       name: newUser.name,
       email: newUser.email,
-      password: newUser.password,
+      password: hashedPassword,
     });
 
     await UserController.userRepository.save(user);
