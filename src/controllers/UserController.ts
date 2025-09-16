@@ -10,15 +10,15 @@ export class UserController {
 
   constructor() {}
 
-  static async createUser(req: FastifyRequest, reply: FastifyReply) {
-    const { user: newUser } = req.body as any;
+  static async createUser(req: FastifyRequest<{Body: { name: string; email: string; password: string; }; }>, reply: FastifyReply) {
+    const { name, email, password } = req.body;
 
     const saltRounds = 10;
-    const hashedPassword = await bcrypt.hash(newUser.password, saltRounds);
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     const user = UserController.userRepository.create({
-      name: newUser.name,
-      email: newUser.email,
+      name: name,
+      email: email,
       password: hashedPassword,
     });
 

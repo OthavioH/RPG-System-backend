@@ -1,6 +1,6 @@
 
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from "typeorm";
-import { Sheet } from "./Sheet";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { SheetRitual } from "./SheetRitual";
 
 
 export enum RitualElement {
@@ -46,6 +46,6 @@ export class Ritual {
 	})
 	elements: RitualElement[];
 
-	@ManyToMany(() => Sheet, sheet => sheet.rituals)
-	sheets: Sheet[];
+	@OneToMany(() => SheetRitual, sheetRitual => sheetRitual.ritual)
+	sheetRituals: SheetRitual[];
 }

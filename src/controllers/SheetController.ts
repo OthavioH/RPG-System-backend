@@ -79,8 +79,9 @@ export class SheetController {
   }
 
   private static async createDefaultAttributes(sheetId: string) {
-    const attrRepo = SheetController.attributesRepository;
-    const sheetAttrRepo = SheetController.sheetAttributesRepository;
+    const attrRepo = AppDataSource.getRepository(Attribute);
+    const sheetAttrRepo = AppDataSource.getRepository(SheetAttribute);
+    
     const attributes = await attrRepo.find();
     for (const attr of attributes) {
       const exists = await sheetAttrRepo.findOneBy({ sheetId: sheetId, attributeId: attr.id });
@@ -99,7 +100,20 @@ export class SheetController {
     const { id } = req.params;
     const sheet = await SheetController.sheetRepository.findOne({
       where: { id: id },
+      relations: {
+        skills: true,
+        inventory: {
+          items: true,
+        },
+        weaponInventory: {
+          weapons: true,
+        },
+        attributes: true,
+        rituals: true,
+        abilities: true,
+      }
     });
+    
 
     if (sheet) {
 

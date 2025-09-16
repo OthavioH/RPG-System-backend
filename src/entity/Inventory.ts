@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, OneToMany } from "typeorm";
 import { Sheet } from "./Sheet";
+import { InventoryItem } from "./InventoryItem";
 
 @Entity()
 export class Inventory {
@@ -18,4 +19,7 @@ export class Inventory {
 
     @Column({ default: 0 })
     slots: number;
+
+    @OneToMany(() => InventoryItem, inventoryItem => inventoryItem.inventory, { cascade: true })
+    items: InventoryItem[];
 }

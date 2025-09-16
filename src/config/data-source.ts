@@ -11,10 +11,13 @@ import { Inventory } from "../entity/Inventory";
 import { InventoryItem } from "../entity/InventoryItem";
 import { Ritual } from "../entity/Ritual";
 import { SheetAttribute } from "../entity/SheetAttribute";
+import { SheetRitual } from "../entity/SheetRitual";
 import { SheetSkill } from "../entity/SheetSkill";
 import { Skill } from "../entity/Skill";
 import { Weapon } from "../entity/Weapon";
 import { WeaponInventory } from "../entity/WeaponInventory";
+import { SheetDefense } from "../entity/SheetDefense";
+import { SheetResistances } from "../entity/SheetResistances";
 
 require("dotenv").config();
 
@@ -27,7 +30,26 @@ export const AppDataSource = new DataSource({
   port: Number(process.env.DB_PORT),
   synchronize: true,
   logging: false,
-  entities: [Sheet, Threat, User, Campaign, Ability, Attribute, DiceRoll, Inventory, InventoryItem, Ritual, SheetAttribute, SheetSkill, Skill, Weapon, WeaponInventory],
+  entities: [
+    Sheet,
+    Threat,
+    User,
+    Campaign,
+    Ability,
+    Attribute,
+    DiceRoll,
+    Inventory,
+    InventoryItem,
+    Ritual,
+    SheetAttribute,
+    SheetSkill,
+    Skill,
+    Weapon,
+    WeaponInventory,
+    SheetRitual,
+    SheetDefense,
+    SheetResistances
+  ],
   subscribers: [],
   migrations: [],
 });

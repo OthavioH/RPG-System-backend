@@ -9,6 +9,9 @@ import { SheetSkill } from "./SheetSkill";
 import { Attribute } from "./Attribute";
 import { SheetAttribute } from "./SheetAttribute";
 import { AppDataSource } from "../config/data-source";
+import { SheetRitual } from "./SheetRitual";
+import { SheetDefense } from "./SheetDefense";
+import { SheetResistances } from "./SheetResistances";
 
 @Entity({ name: "sheets" })
 export class Sheet {
@@ -65,9 +68,9 @@ export class Sheet {
   @JoinTable({ name: "abilities" })
   abilities: Ability[];
 
-  @ManyToMany(() => Ritual)
+  @OneToMany(() => SheetRitual, sheetRitual => sheetRitual.sheet)
   @JoinTable({ name: "rituals" })
-  rituals: Ritual[];
+  rituals: SheetRitual[];
 
   @OneToOne(() => WeaponInventory)
   @JoinColumn({ name: "weaponInventoryId" })
@@ -95,35 +98,13 @@ export class Sheet {
   @Column({ default: 0 })
   maxSanity: number = 0;
 
-  @Column({ default: 0 })
-  passiveDefense: number;
+  @OneToOne(() => SheetDefense, defense => defense.sheet, { cascade: true })
+  @JoinColumn()
+  defense: SheetDefense;
 
-  @Column({ default: 0 })
-  blockDefense: number = 0;
-
-  @Column({ default: 0 })
-  dodgeDefense: number = 0;
-
-  @Column({ default: 0 })
-  physicsResistance: number = 0;
-
-  @Column({ default: 0 })
-  ballisticResistance: number = 0;
-
-  @Column({ default: 0 })
-  energyResistance: number = 0;
-
-  @Column({ default: 0 })
-  bloodResistance: number = 0;
-
-  @Column({ default: 0 })
-  deathResistance: number = 0;
-
-  @Column({ default: 0 })
-  knowledgeResistance: number = 0;
-
-  @Column({ default: 0 })
-  insanityResistance: number = 0;
+  @OneToOne(() => SheetResistances, resistances => resistances.sheet, { cascade: true })
+  @JoinColumn()
+  resistances: SheetResistances;
 
   @Column({ default: "" })
   notes: string;
