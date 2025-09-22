@@ -9,6 +9,7 @@ import { Inventory } from "../entity/Inventory";
 import { WeaponInventory } from "../entity/WeaponInventory";
 import { Attribute } from "../entity/Attribute";
 import { SheetAttribute } from "../entity/SheetAttribute";
+import { SheetDefense } from "../entity/SheetDefense";
 
 export class SheetController {
   private static sheetRepository = AppDataSource.getRepository(Sheet);
@@ -53,7 +54,23 @@ export class SheetController {
 
     const updatedSheet = await SheetController.sheetRepository.findOne({
       where: { id: sheet.id },
-      relations: ['attributes', 'inventory', 'weaponInventory', 'skills', 'rituals', 'abilities']
+      relations: {
+        skills: true,
+        inventory: {
+          items: true,
+        },
+        weaponInventory: {
+          weapons: true,
+        },
+        attributes: {
+          attribute: true,
+          sheet: false,
+        },
+        rituals: true,
+        abilities: true,
+        defense: true,
+        resistances: true,
+      },
     });
 
     socketController.emitCharacterListChanged(updatedSheet, "create");
@@ -81,7 +98,7 @@ export class SheetController {
   private static async createDefaultAttributes(sheetId: string) {
     const attrRepo = AppDataSource.getRepository(Attribute);
     const sheetAttrRepo = AppDataSource.getRepository(SheetAttribute);
-    
+
     const attributes = await attrRepo.find();
     for (const attr of attributes) {
       const exists = await sheetAttrRepo.findOneBy({ sheetId: sheetId, attributeId: attr.id });
@@ -108,12 +125,28 @@ export class SheetController {
         weaponInventory: {
           weapons: true,
         },
-        attributes: true,
+        attributes: {
+          attribute: true,
+          sheet: false,
+        },
         rituals: true,
         abilities: true,
+        defense: true,
+        resistances: true,
+      },
+      select: {
+        attributes: {
+          attribute: {
+            name: true,
+          },
+          value: true,
+          id: true,
+          sheet: false,
+          sheetId: false,
+        }
       }
     });
-    
+
 
     if (sheet) {
 

@@ -18,6 +18,7 @@ import { Weapon } from "../entity/Weapon";
 import { WeaponInventory } from "../entity/WeaponInventory";
 import { SheetDefense } from "../entity/SheetDefense";
 import { SheetResistances } from "../entity/SheetResistances";
+import { CreateDefaultAttributesMigration1727024000000 } from "../migrations/create_default_attributes_migration";
 
 require("dotenv").config();
 
@@ -51,5 +52,5 @@ export const AppDataSource = new DataSource({
     SheetResistances
   ],
   subscribers: [],
-  migrations: [],
+  migrations: [CreateDefaultAttributesMigration1727024000000],
 });

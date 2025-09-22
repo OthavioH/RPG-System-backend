@@ -108,4 +108,22 @@ export class Sheet {
 
   @Column({ default: "" })
   notes: string;
+
+  @AfterInsert()
+  async createDefaultRelations() {
+    const sheetDefenseRepo = AppDataSource.getRepository(SheetDefense);
+    const sheetResistancesRepo = AppDataSource.getRepository(SheetResistances);
+    
+    const defense = sheetDefenseRepo.create({
+      sheet: { id: this.id },
+    });
+
+    await sheetDefenseRepo.save(defense);
+
+    const resistances = sheetResistancesRepo.create({
+      sheet: { id: this.id },
+    });
+
+    await sheetResistancesRepo.save(resistances);
+  }
 }
