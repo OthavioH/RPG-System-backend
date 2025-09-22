@@ -3,6 +3,7 @@ import { ThreatController } from "../controllers/ThreatController";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { UserController } from "../controllers/UserController";
 import { CampaignController } from "../controllers/CampaignController";
+import { AuthController } from "../controllers/AuthController";
 
 export default async function routes(fastify, options) {
   fastify.get("/", (req: FastifyRequest, reply: FastifyReply) => {
@@ -17,6 +18,7 @@ export default async function routes(fastify, options) {
   });
 
   fastify.post("/users/create", UserController.createUser);
+  fastify.post("/auth/login", AuthController.login);
 
   // fastify.get(
   //   "/gamesettings/create",
